@@ -1,12 +1,27 @@
 :root {
   --main-bg-color: #D66E00;
-  --secondary-color: #056686;
+  /*--secondary-color: #056686;*/
   --active-color: #2840AB;
-  --menu-hover: rgb(255, 204, 81, 0.30);
+  /*--menu-hover: rgb(255, 204, 81, 0.30);*/
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+.container {
+  width: 1280px;
+  max-width: 100%;
+}
+
+.warn-section {
+    padding: .3em .2em;
+    background-color: rgba(255, 82, 82, 0.3);
+}
+
+a {
+  color: var(--main-bg-color);
+  text-decoration: none;
 }
 
 a:hover {
