@@ -10,14 +10,19 @@ html {
 }
 
 .container {
-  width: 1280px;
+  width: 1080px;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .warn-section {
     padding: 1.0em .6em;
     background-color: rgba(255, 82, 82, 0.2);
     border-radius: 6px;
+    text-align: center;
 }
 
 a {
