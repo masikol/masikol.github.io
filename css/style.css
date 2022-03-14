@@ -50,18 +50,20 @@ a:hover {
     visibility: hidden;
 }
 .sum-table {
-    margin-bottom: 1.1rem
+    margin-bottom: 1.1rem;
+    border-collapse: collapse;
 }
 .sum-table caption {
     caption-side: top;
     font-weight: bold;
+    padding-bottom: 7px;
 }
 .sum-table tr .numcol {
     text-align:right;
 }
 .sum-table tr .subhead {
     text-align:center;
-    color: #7a7a7a;
+    color: #7A7A7A;
     font-weight: bold;
 }
 .sum-table tr .seqid-td {
@@ -84,5 +86,5 @@ a:hover {
     padding: .3rem .6rem .3rem .6rem;
 }
 ul > li {padding-bottom: 7px}
-ul > li > a {font-weight: bold}
+.content-index a {font-weight: bold}
 ul ul li:first-of-type, ol ol li:first-of-type {padding-top:.4rem;}
