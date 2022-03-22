@@ -4,7 +4,7 @@
 }
 html {
     scroll-behavior: smooth;
-    font-family: sans;
+    font-family: sans-serif;
 }
 .container {
   width: 1080px;
@@ -28,63 +28,3 @@ a:hover {
     text-decoration: underline;
     color: var(--active-color);
 }
-.samp {
-    font-family: 'Courier New', monospace;
-}
-.samp-highl {
-    font-family: 'Courier New', monospace;
-    background-color: #DFDFDF;
-    border-radius: 6px;
-    padding: .05em .2em;
-}
-.samp-vwide {
-    padding: .5em .5em;
-}
-.samp-comment {
-    font-size:.875rem!important;
-}
-.pad-anchor {
-    display: block;
-    height: 12.8rem;
-    margin-top: -12.8rem;
-    visibility: hidden;
-}
-.sum-table {
-    margin-bottom: 1.1rem;
-    border-collapse: collapse;
-}
-.sum-table caption {
-    caption-side: top;
-    font-weight: bold;
-    padding-bottom: 7px;
-}
-.sum-table tr .numcol {
-    text-align:right;
-}
-.sum-table tr .subhead {
-    text-align:center;
-    color: #7A7A7A;
-    font-weight: bold;
-}
-.sum-table tr .seqid-td {
-    font-size: .85rem;
-}
-.sum-table tr .alnleft {
-    text-align:left;
-}
-.sum-table tr:first-child {
-    border-top: solid #505050 1.5px
-}
-.sum-table tr:first-child, .sum-table tr:last-child {
-    border-bottom: solid #303030 1px
-}
-.sum-table .sumtab-row:nth-child(even) {background-color: #eaeaea;}
-.sum-table .sumtab-row:hover {
-    background-color: rgba(214, 110, 0, 0.2);
-}
-.sum-table tr td, .sum-table tr th {
-    padding: .3rem .6rem .3rem .6rem;
-}
-ul > li {padding-bottom: 7px}
-.content-index a {font-weight: bold}
-ul ul li:first-of-type, ol ol li:first-of-type {padding-top:.4rem;}
