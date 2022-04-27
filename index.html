@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>RiboGrove mirror</title>
   <link rel="stylesheet" href="css/style.css">
@@ -8,7 +8,9 @@
 
 <body>
 <div class="container">
-<br />
+<div class="lang-section">
+<p>&#127760;<br /><a href="ribogrove_5.211_ru.html">RU</a> / <a href="ribogrove_5.211_ua.html">UA</a></p>
+</div>
 <p><div class="warn-section">The <a href="http://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster. We will keep the latest RiboGrove release here to make it availavle at least to such extent.</div></p><br />
 <img src="img/RiboGrove_logo.png"><br /><br />
 <h2>Contents</h2>
@@ -962,15 +964,15 @@
 <p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_5.211_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-i</span> option tells the program to output only sequence IDs.</p>
 <p><strong>Example 3</strong>. Select all accession numbers</p>
-<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_5.211_sequences.fasta.gz | sort | uniq</p>
-<p class="samp-comment">This might be done only if you have <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
+<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_5.211_sequences.fasta.gz | cut -f1 -d':' | sort | uniq</p>
+<p class="samp-comment">This might be done only if you have <span class="samp">sort</span>, <span class="samp">cut</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
 <h2>Citing RiboGrove</h2>
 <div id="citing-ribogrove" class="pad-anchor"></div>
 <p>If you find RiboGrove useful for your research please cite:</p>
 <p>Maxim A. Sikolenko, Leonid N. Valentovich. "RiboGrove: a database of full-length prokaryotic 16S rRNA genes derived from completely assembled genomes" // Research in Microbiology, 2022, 103936.<br /> (DOI: <a target="_blank" href="https://doi.org/10.1016/j.resmic.2022.103936">10.1016/j.resmic.2022.103936</a>. Epub ahead of print).</p>
 <br />
 <hr />
-<p>RiboGrove, 2022-03-22</p>
+<p>RiboGrove, 2022-04-27</p>
 </div>
 </body>
 </html>
