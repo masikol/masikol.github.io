@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>RiboGrove mirror</title>
 <link rel="stylesheet" href="../css/style.css">
@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 <br />
-<p><div class="warn-section">The <a href="http://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster. We will keep the latest RiboGrove release here to make it availavle at least to such extent.</div></p><br />
+<p><div class="warn-section">The <a href="http://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br />Hence this mirror has been created, and RiboGrove files are available through Dropbox (links are <a href="#downloads">below</a>).</div></p><br />
 <p><img src="../img/RiboGrove_logo.png" /><br /><br /></p>
 <h2>Contents</h2>
 <ul>
@@ -43,9 +43,14 @@
 <hr />
 <h2>Downloads</h2>
 <div id="downloads" class="pad-anchor"></div>
-<h3>Release — 3.209 (2021-11-25)</h3>
+<h3>Release &mdash; 3.209 (2021-11-25)</h3>
 <p>The release is based on RefSeq release 209.</p>
-<p><div class="warn-section">Unfortunately, GitHub is not a proper platform to store large files. Therefore, only the latest release of RiboGrove is available at this mirror: <a href="https://masikol.github.io">https://masikol.github.io</a>.</div></p>
+<ul>
+<li>A fasta file of full-length 16S gene sequences. <a href="https://www.dropbox.com/s/rbgaw8qcgh5osz3/ribogrove_3.209_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 5.12 MB)</a></li>
+<li>A <q>raw</q> version of the fasta file above. This file contains partial sequences. <a href="https://www.dropbox.com/s/q2ufu35t56rgh7w/raw_ribogrove_3.209_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 5.36 MB)</a></li>
+<li>Metadata <a href="https://www.dropbox.com/s/g232cwh7rd4lc2r/metadata_ribogrove_3.209.zip?dl=0">Download (zip archive 15.04 MB)</a></li>
+</ul>
+<p>The fasta files are compressed with gzip, and the metadata file is a zip archive. To uncompress them, Linux and Mac OS users may use gzip and zip programs, they should be built-in. For Windows users, the free and open source (de)compression program <a href="https://www.7-zip.org/">7-Zip</a> is available.</p>
 <h3>RiboGrove release archive</h3>
 <p>You can find all releases at the <a href="ribogrove_archive_en.html">RiboGrove release archive</a>.</p>
 <hr />
@@ -147,7 +152,7 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> — metrics marked with this sign were calculated with preliminary normalization, i.e. median within-species gene length were used for the summary.</p>
+<p><sup>*</sup> &mdash; metrics marked with this sign were calculated with preliminary normalization, i.e. median within-species gene length were used for the summary.</p>
 <table class="sum-table"><caption>16S rRNA gene copy number
 <div id="copy-number" class="pad-anchor"></div>
 </caption>
@@ -265,7 +270,7 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> — these are median within-species copy numbers.</p>
+<p><sup>*</sup> &mdash; these are median within-species copy numbers.</p>
 <table class="sum-table"><caption>Top-10 longest 16S rRNA genes
 <div id="top-longest" class="pad-anchor"></div>
 </caption>
@@ -873,11 +878,11 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> — entropy is <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a> calculated for each column of the multiple sequence alignment (MSA) of all full-length 16S rRNA genes of a genome. Entropy is then summed up (column "Sum of entropy") and averaged (column "Mean entropy").</p>
+<p><sup>*</sup> &mdash; entropy is <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a> calculated for each column of the multiple sequence alignment (MSA) of all full-length 16S rRNA genes of a genome. Entropy is then summed up (column "Sum of entropy") and averaged (column "Mean entropy").</p>
 <hr />
 <h2>Searching data in RiboGrove</h2>
 <div id="searching-data" class="pad-anchor"></div>
-<p>RiboGrove is a very minimalistic database — it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and subset RiboGrove data.</p>
+<p>RiboGrove is a very minimalistic database &mdash; it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and subset RiboGrove data.</p>
 <h3>Header format</h3>
 <p>RiboGrove fasta data has the following format of header:</p>
 <p class="samp-highl samp-vwide">&gt;NZ_CP079719.1:86193-87742_plus Bacillus_velezensis ;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus; category:2</p>
@@ -939,10 +944,10 @@
 <h2>Citing RiboGrove</h2>
 <div id="citing-ribogrove" class="pad-anchor"></div>
 <p>If you find RiboGrove useful for your research please cite:</p>
-<p>Maxim A. Sikolenko, Leonid N. Valentovich. "RiboGrove: a database of full-length prokaryotic 16S rRNA genes derived from completely assembled genomes" // Research in Microbiology, 2022, 103936.<br /> (DOI: <a target="_blank" href="https://doi.org/10.1016/j.resmic.2022.103936">10.1016/j.resmic.2022.103936</a>. Epub ahead of print).</p>
+<p>Maxim A. Sikolenko, Leonid N. Valentovich. <q>RiboGrove: a database of full-length prokaryotic 16S rRNA genes derived from completely assembled genomes</q> // Research in Microbiology, Volume 173, Issue 4, May 2022, 103936.<br /> (DOI: <a href="https://doi.org/10.1016/j.resmic.2022.103936">10.1016/j.resmic.2022.103936</a>.</p>
 <br />
 <hr />
-<p>RiboGrove, 2022-03-22</p>
+<p>RiboGrove, 2022-05-19</p>
 </div>
 </body>
 </html>
