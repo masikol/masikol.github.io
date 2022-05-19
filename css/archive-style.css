@@ -1,4 +1,4 @@
 :root {--main-bg-color: #D66E00;}
 .archive-title {color: var(--main-bg-color); font-size: 2.0rem;}
-.curr-release {margin-top:1.0rem;}
-.old-release {margin-top:.5rem;}
+h1 {margin-bottom:1.0rem;}
+.release-heading {margin-bottom:.5rem;}
