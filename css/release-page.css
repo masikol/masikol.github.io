@@ -5,6 +5,9 @@ h1, h2, h3, h4 {
 .lang-section {
     text-align: right;
 }
+.active-lang {
+    font-weight: bold;
+}
 .samp {
     font-family: 'Courier New', monospace;
 }
