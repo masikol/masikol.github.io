@@ -16,10 +16,14 @@
 <img src="img/RiboGrove_logo.png"><br /><br />
 <h2>Змест</h2>
 <ul>
-<li><a href="#overview">Апісанне</a></li>
+<li><a href="#overview">Што такое RiboGrove</a></li>
 <li><a href="#citing-ribogrove">Цытаванне RiboGrove</a></li>
-<li><a href="#downloads">Запампоўкі</a></li>
-<li><a href="#summary">Статыстычнае падсумоўванне</a>
+<li><a href="#downloads">Файлы</a></li>
+<ul style="list-style-type: none;">
+<li><a href="#current-release">Актуальны выпуск RiboGrove</li>
+<li><a href="#release-archive">Архіў выпускаў RiboGrove</li>
+</ul>
+<li><a href="#summary">Статыстычнае апісанне</a>
 <ul style="list-style-type: none;">
 <li><a href="#db-size">Памер RiboGrove</a></li>
 <li><a href="#gene-lens">Даўжыня генаў 16S рРНК</a></li>
@@ -32,6 +36,7 @@
 </li>
 <li><a href="#searching-data">Пошук дадзеных у RiboGrove</a>
 <ul style="list-style-type: none;">
+<li><a href="#header-format">Фармат загалоўка</a></li>
 <li><a href="#subset-by-header">Адбор паслядоўнасцяў паводле загалоўкаў</a></li>
 <li><a href="#subset-by-len">Адбор паслядоўнасцяў паводле даўжыні</a></li>
 <li><a href="#select-head">Адбор дадзеных загалоўкаў</a></li>
@@ -39,19 +44,20 @@
 </li>
 </ul>
 <hr />
-<h2>Апісанне</h2>
 <div id="overview" class="pad-anchor"></div>
+<h2>Што такое RiboGrove</h2>
 <p>RiboGrove &mdash; гэта база дадзеных паслядоўнасцяў генаў 16S рРНК бактэрый і архей. RiboGrove змяшчае толькі поўнапамерныя паслядоўнасці генаў 16S рРНК, а ампліконныя дадзеныя для яе стварэння не выкарыстоўваліся. Іншымі словамі, у адрозненне ад падобных рэсурсаў, прысвечаных паслядоўнасцяі рРНК, такіх як <a href="https://www.arb-silva.de/">Silva</a> і <a href="http://rdp.cme.msu.edu/">RDP</a>, RiboGrove не змяшчае частковых паслядоўнасцяў генаў 16S рРНК.</p>
 <p>Паслядоўнасці RiboGrove паходзяць з цалкам сабраных геномаў прокарыёт з БД <a href="https://ncbi.nlm.nih.gov/refseq/">RefSeq</a>.</p>
 <p>Праграмы, з дапамогай якіх была створана RiboGrove, знаходзяцца ў наступным ГітХаб-рэпазіторыі: <a href="https://github.com/masikol/ribogrove-tools">ribogrove-tools</a>.</p>
 <hr />
-<h2>Цытаванне RiboGrove</h2>
 <div id="citing-ribogrove" class="pad-anchor"></div>
+<h2>Цытаванне RiboGrove</h2>
 <p>Калі база дадзеных RiboGrove прыдалася вам у вашых даследаваннях, спасылайцеся, калі ласка, на наступную публікацыю:</p>
 <p>Maxim A. Sikolenko, Leonid N. Valentovich. &ldquo;RiboGrove: a database of full-length prokaryotic 16S rRNA genes derived from completely assembled genomes&rdquo; // Research in Microbiology, Volume 173, Issue 4, May 2022, 103936.<br /> (<span style="cursor:help"title="Лічбавы ідэнтыфікатар аб'екта">ЛІА</span>: <a href="https://doi.org/10.1016/j.resmic.2022.103936">10.1016/j.resmic.2022.103936</a>).</p>
 <hr />
-<h2>Запампоўкі</h2>
 <div id="downloads" class="pad-anchor"></div>
+<h2>Запампоўкі</h2>
+<div id="current-release" class="pad-anchor"></div>
 <h3>Актуальны выпуск RiboGrove &mdash; 6.212 (13.05.2022)</h3>
 <p>Выпуск заснованы на базе дадзеных RefSeq 212.</p>
 <ul>
@@ -60,14 +66,15 @@
 <li>Метададзеныя <a href="https://www.dropbox.com/s/5wyketcazxpraw4/metadata_ribogrove_6.212.zip?dl=0">Спампаваць (zip-архіў 16,68 Мб)</a></li>
 </ul>
 <p>Файлы fasta сціснутыя з дапамогаю праграмы gzip, а файлы з метададзенымі сціснутыя ў zip-архіў. Каб распакаваць іх, карыстальнікі Linux і Mac OS могуць скарастыцца якраз праграмамі gzip і zip; гэтыя праграмы звычайна ўсталяваныя разам з аперыцыйнай сістэмай. Карыстальнікам Windows можа прыдацца бясплатная праграма-архіватар <a href="https://www.7-zip.org/">7-Zip</a>.</p>
+<div id="release-archive" class="pad-anchor"></div>
 <h3>Архіў выпускаў RiboGrove</h3>
 <p>Усе папярэднія выпускі можна знайсці ў <a href="archive/ribogrove_archive_en.html"> архіве выпускаў RiboGrove</a>. На жаль, ён вядзецца толькі па-англійску.</p>
 <hr />
-<h2>Статыстычнае падсумоўванне</h2>
 <div id="summary" class="pad-anchor"></div>
-<table class="sum-table"><caption>Памер RiboGrove
+<h2>Статыстычнае апісанне</h2>
 <div id="db-size" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Памер RiboGrove</caption>
 <tbody>
 <tr><th></th><th class="numcol">Бактэрыі</th><th class="numcol">Археі</th><th class="numcol">Усяго</th></tr>
 <tr class="sumtab-row">
@@ -114,9 +121,9 @@
 </tr>
 </tbody>
 </table>
-<table class="sum-table"><caption>Даўжыня генаў 16S рРНК
 <div id="gene-lens" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Даўжыня генаў 16S рРНК</caption>
 <tbody>
 <tr><th></th><th class="numcol">Бактэрыі</th><th class="numcol">Археі</th></tr>
 <tr class="sumtab-row">
@@ -162,9 +169,9 @@
 </tbody>
 </table>
 <p><sup>*</sup> Метрыкі, пазначаныя зорачкай, вылічаныя з папярэдняй нармалізацыяй: вылічэннем <em>медыян</em> даўжынь генаў у межах віду.</p>
-<table class="sum-table"><caption>Колькасць копій генаў 16S рРНК
 <div id="copy-number" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Колькасць копій генаў 16S рРНК</caption>
 <tbody>
 <tr><th class="numcol">Колькасць копій <sup>*</sup></th><th class="numcol">Колькасць відаў</th><th class="numcol">Адсотак відаў, %</th></tr>
 <tr class="sumtab-row">
@@ -275,9 +282,9 @@
 </tbody>
 </table>
 <p><sup>*</sup> Медыянная колькасць копій у межах віду.</p>
-<table class="sum-table"><caption>Топ-10 найдаўжэйшых генаў 16S рРНК
 <div id="top-longest" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Топ-10 найдаўжэйшых генаў 16S рРНК</caption>
 <tbody>
 <tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
 <tr>
@@ -421,9 +428,9 @@
 </tbody>
 </table>
 <p><sup>*</sup> SeqID &mdash; гэта ідэнтыфікатар паслядоўнасці RiboGrove.</p>
-<table class="sum-table"><caption>Топ-10 найкарацейшых генаў 16S рРНК
 <div id="top-shortest" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Топ-10 найкарацейшых генаў 16S рРНК</caption>
 <tbody>
 <tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
 <tr>
@@ -573,9 +580,9 @@
 </tbody>
 </table>
 <p><sup>*</sup> SeqID &mdash; гэта ідэнтыфікатар паслядоўнасці RiboGrove.</p>
-<table class="sum-table"><caption>Топ-10 геномаў з найбольшай колькасцю копій генаў 16S рРНК
 <div id="top-copy-num" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Топ-10 геномаў з найбольшай колькасцю копій генаў 16S рРНК</caption>
 <tbody>
 <tr><th class="alnleft">Арганізм</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
 <tr>
@@ -736,9 +743,9 @@
 </tr>
 </tbody>
 </table>
-<table class="sum-table"><caption>Топ-10 геномаў з найбольшай зменлівасцю генаў 16S рРНК
 <div id="top-var" class="pad-anchor"></div>
-</caption>
+<table class="sum-table">
+<caption>Топ-10 геномаў з найбольшай зменлівасцю генаў 16S рРНК</caption>
 <tbody>
 <tr><th class="alnleft">Арганізм</th><th class="numcol">Сума энтрапіі<sup> *</sup>, біты</th><th class="numcol">Сярэдняя энтрапія<sup> *</sup>, біты</th><th class="numcol">Колькасць зменлівых пазіцый</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
 <tr>
@@ -912,9 +919,10 @@
 <p><sup>*</sup> Энтрапія ў гэтым выпадку &mdash; гэта <a href="https://ru.wikipedia.org/wiki/Информационная_энтропия">энтрапія Шэнана</a>, якую вылічалі для кожнай калонкі множнага выраўноўвання поўнапамерных паслядоўнасцяў генаў 16S рРНК кожнага генома. Пасля гэтага падсумоўвалі энтрапію (калонка <q>Сума энтрапіі</q>) і усярэднівалі (калонка <q>Сярэдняя энтрапія</q>).</p>
 <p><sup>**</sup> <i>Halomicrobium</i> sp. ZPS1 &mdash; паказальны выпадак. У гэтым геноме два гены 16S рРНК, таму энтрапія роўная колькасці нуклеатыдаў, якія не супадаюць у іхніх паслядоўнасцях. Вылічыўшы адсотак ідэнтычнасці (скарочана АІ) паслядоўнасцяў гэтых двух генаў, атрымаем 90,70%! Нагадаем, што за парог АІ паслядоўнасцяў генаў 16S рРНК для аднясення арганізмаў да адрозных <em>родаў</em> звычайна бярэцца (зрэшты, адвольна) значэнне 95%.</p>
 <hr />
-<h2>Пошук дадзеных у RiboGrove</h2>
 <div id="searching-data" class="pad-anchor"></div>
+<h2>Пошук дадзеных у RiboGrove</h2>
 <p>RiboGrove &mdash; вельмі мінімалістычная база дадзеных: яна складаецца з двух файлаў fasta з дадатковымі метададзенымі. Таму пашыраных сродкаў пошуку няма. Мы прызнае&#769;м гэтую праблему і пакідаем ніжэй некалькі парад наконт пошуку дадзеных у RiboGrove.</p>
+<div id="header-format" class="pad-anchor"></div>
 <h3>Фармат загалоўка</h3>
 <p>Запісы паслядоўнасцяў RiboGrove у фармаце fasta маюць наступны фармат загалоўка:</p>
 <p class="samp-highl samp-vwide">&gt;NZ_CP079719.1:86193-87742_plus Bacillus_velezensis ;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus; category:2</p>
@@ -931,8 +939,8 @@
 </ol>
 <h3>Адбор паслядоўнасцяў</h3>
 <p>Адбіраць тыя ці іншыя паслядоўнасці з файлаў fasta можна з дапамогай праграмы <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ГітХаб-рэпазіторый</a>, <a href="https://bioinf.shenwei.me/seqkit/">дакументацыя</a>). Гэта бясплатная, кросплатформавая, шматфункцыянальная і даволі шустрая праграма, якая можа апрацоўваць як &bdquo;гзіп&rsquo;нутыя&ldquo;, так і простыя нясціснутыя файлы fasta. Для адбору паслядоўнасцяў зручна выкарыстоўваць падпраграмы <span class="samp">seqkit grep</span> і <span class="samp">seqkit seq</span> .</p>
-<h4>Адбор паслядоўнасцяў паводле загалоўкаў</h4>
 <div id="subset-by-header" class="pad-anchor"></div>
+<h4>Адбор паслядоўнасцяў паводле загалоўкаў</h4>
 <p>Няхай мы робім выбарку з файла <span class="samp">ribogrove_6.212_sequences.fasta.gz</span>. Карыснымі могуць быць наступныя прыклады каманд карыстання праграмай <span class="samp">seqkit grep</span>:</p>
 <p><strong>Прыклад 1</strong>. Выбраць адну паслядоўнасць паводле SeqID.</p>
 <p class="samp-highl samp-vwide">seqkit grep -p "NZ_CP079719.1:86193-87742_plus" ribogrove_6.212_sequences.fasta.gz</p>
@@ -950,8 +958,8 @@
 <p><strong>Прыклад 6</strong>. Выбраць усе паслядоўнасці апроч тых, якія належаць да тыпу <i>Firmicutes</i>.</p>
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";Firmicutes;" ribogrove_6.212_sequences.fasta.gz</p>
 <p class="samp-comment">Звярніце ўвагу на опцыю <span class="samp">-v</span> у шэгару опцый <span class="samp">-nvrp</span>. Гэтая опцыя інвертуе паводзіны праграмы, і цяпер яна знойдзе ўсе паслядоўнасці, загалоўкі якіх <em>не</em> змяшчаюць радок <span class="samp">;Firmicutes;</span>.</p>
-<h4>Адбор паслядоўнасцяў паводле даўжыні</h4>
 <div id="subset-by-len" class="pad-anchor"></div>
+<h4>Адбор паслядоўнасцяў паводле даўжыні</h4>
 <p>Адбіраць паслядоўнасці паводле даўжыні можна з дапамогай праграмы <span class="samp">seqkit seq</span>.</p>
 <p><strong>Прыклад 1</strong>. Выбраць усе паслядоўнасці даўжэй за 1600 п.а.</p>
 <p class="samp-highl samp-vwide">seqkit seq -m 1601 ribogrove_6.212_sequences.fasta.gz</p>
@@ -961,8 +969,8 @@
 <p class="samp-comment">Опцыя <span class="samp">-M</span> задае максімальную даўжыню паслядоўнасці, якія праграма падасць на выхад.</p>
 <p><strong>Прыклад 3</strong>. Выбраць усе паслядоўнасці, даўжыня якіх знаходзіцца ў прамежку [1500, 1600] п.а.</p>
 <p class="samp-highl samp-vwide">seqkit seq -m 1500 -M 1600 ribogrove_6.212_sequences.fasta.gz</p>
-<h4>Адбор дадзеных загалоўкаў</h4>
 <div id="select-head" class="pad-anchor"></div>
+<h4>Адбор дадзеных загалоўкаў</h4>
 <p>Часам бывае карысна атрымаць толькі дадзеныя загалоўкаў з файла fasta. Гэта можна зрабіць з дапамогай праграмы <span class="samp">seqkit seq</span>.</p>
 <p><strong>Прыклад 1</strong>. Выбраць проста ўсе загалоўкі.</p>
 <p class="samp-highl samp-vwide">seqkit seq -n ribogrove_6.212_sequences.fasta.gz</p>
