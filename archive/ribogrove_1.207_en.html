@@ -40,7 +40,47 @@
 <ul>
 <li>A fasta file of full-length 16S gene sequences. <a href="https://www.dropbox.com/s/duie7tpicpm811c/ribogrove_1.207_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 4.81 MB)</a></li>
 <li>A <q>raw</q> version of the fasta file above. This file contains partial sequences. <a href="https://www.dropbox.com/s/8dhi09ceyuqx6n4/raw_ribogrove_1.207_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 5.04 MB)</a></li>
-<li>Metadata <a href="https://www.dropbox.com/s/lphyvdcneb140ng/metadata_ribogrove_1.207.zip?dl=0">Download (zip archive 13.54 MB)</a></li>
+<li>Metadata <a href="https://www.dropbox.com/s/lphyvdcneb140ng/metadata_ribogrove_1.207.zip?dl=0">Download (zip archive 13.54 MB)</a><br>
+  <details>
+    <summary><small>What information exactly does the metadata contain?</small></summary>
+    <small>
+      <p>The metadata consists of the following files:</p>
+      <ol>
+      <li>
+        <span class="samp-highl">source_RefSeq_genomes.tsv</span><br>
+        This is a TSV files, which contains information about what genomes were used for the RiboGrove construction.
+      </li>
+      <li>
+        <span class="samp-highl">gene_seqs_statistics.tsv</span>, <span class="samp-highl">raw_gene_seqs_statistics.tsv</span><br>
+        These are TSV file, which contains nucleotide conposition, size, genomic and taxonomic affiliation of the gene sequences. The &ldquo;raw&rdquo; file also includes information about partial genes.
+      </li>
+      <li>
+        <span class="samp-highl">per_replicon_statistics.tsv</span>, <span class="samp-highl">raw_per_replicon_statistics.tsv</span><br>
+        These are TSV files, which contain information about number of 16S rRNA genes in each RefSeq genomic sequences, and about sizes of these genes. The &ldquo;raw&rdquo; file also includes information about partial genes.
+      </li>
+      <li>
+        <span class="samp-highl">categories.tsv</span><br>
+        This is a TSV file, which contains information about what genome categories were assigned to each genome and why. Moreover, it contains information about what sequencing technology was used to sequence each genome.
+      </li>
+      <li>
+        <span class="samp-highl">taxonomy.tsv</span><br>
+        This is a TSV file, which contains taxonomic affiliation of each genome and gene.
+      </li>
+      <li>
+        <span class="samp-highl">intragenic_repeats.tsv</span><br>
+        This is a TSV file, which contains information about intragenomic repeats found in gene sequences using <a href="https://github.com/deprekate/RepeatFinder">RepeatFinder</a>.
+      </li>
+      <li>
+        <span class="samp-highl">cmscan_output_table.tblout</span><br>
+        This is a TSV file, which contains complete output of <a href="http://eddylab.org/infernal/">cmscan</a> program outputted after processing all 16S rRNA sequences.
+      </li>
+      <li>
+        <span class="samp-highl">entropy_summary.tsv</span><br>
+        This is a TSV file, which contains summary of instragenomic variability of the 16S rRNA genes. Intragenomic variability are calculated only for the category&nbsp;1 genomes having more than one 16S rRNA gene. Intragenomic variability is evaluated using Shannon entropy. We align gene sequences from each genome using <a href="https://drive5.com/muscle5/">MUSCLE</a>, and then we calculate Shannon entropy for each multiple alignment column (i.e. base).
+      </li>
+    </ol></small>
+  </details>
+</li>
 </ul>
 <p>The fasta files are compressed with gzip, and the metadata file is a zip archive. To uncompress them, Linux and Mac OS users may use gzip and zip programs, they should be built-in. For Windows users, the free and open source (de)compression program <a href="https://www.7-zip.org/">7-Zip</a> is available.</p>
 <p>You may wonder, why RiboGrove 1.207 was realeased on December 8th, 2021, and RiboGrove 2.208 on November 25th, 2021. The reason is that initially (on October 28th, 2021), RiboGrove 1.207 wasn&rsquo;t, strictly speaking, based on RefSeq 207 — it contained sequences, which had been added to RefSeq after release 207 but before release 208. The corrected version of RiboGrove 1.207 (2021-12-08) is based on RefSeq 207, without "contaminations" from RefSeq 208.</p>
@@ -946,7 +986,7 @@
 <p><sup>*</sup> Entropy is <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a> calculated for each column of the multiple sequence alignment (MSA) of all full-length 16S rRNA genes of a genome. Entropy is then summed up (column <q>Sum of entropy</q>) and averaged (column <q>Mean entropy</q>).</p>
 <p><sup>**</sup> <i>Halomicrobium</i> sp. ZPS1 is a quite remarkable case. This genome harbours two 16S rRNA genes, therefore entropy is equal to the number of mismatching nucleotides between sequences of the genes. Respectively, per cent of identity between these two gene sequences is 90.70%! This is remarkable, because the usual (however arbitrary) <em>genus</em> demarcation threshold of per cent of identity is 95%.</p>
 <hr />
-<p>RiboGrove, 2022-06-12</p>
+<p>RiboGrove, 2022-07-17</p>
 </div>
 </body>
 </html>

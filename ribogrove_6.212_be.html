@@ -9,14 +9,19 @@
 <body>
 <div class="container">
 <div class="lang-section">
-<p>&#127760;<br /><a href="index.html">English</a> / <span class="active-lang">Беларуская</span> / <a href="ribogrove_6.212_ua.html">Українська</a> / <a href="ribogrove_6.212_ru.html">Русский</a></p>
+<p>&#127760;<br><a href="index.html">English</a> / <span class="active-lang">Беларуская</span> / <a href="ribogrove_6.212_ua.html">Українська</a> / <a href="ribogrove_6.212_ru.html">Русский</a></p>
 </div>
-<p><div class="warn-section"><a href="http://mbio.bas-net.by/cager/en/ribogrove">Асноўны сайт</a>, дзе размяшчаецца база дадзеных RiboGrove, можа быць недасяжным па-за межамі Беларусі праз тэхнічныя прычыны ды агульную катастрофу. Таму існуе гэтае люстэрка, а файлы RiboGrove дасяжныя праз Дропбокс (спасылкі <a href="#downloads">ніжэй</a>).</div></p><br />
+<p><div class="warn-section"><a href="http://mbio.bas-net.by/cager/en/ribogrove">Асноўны сайт</a>, дзе размяшчаецца база дадзеных RiboGrove, можа быць недасяжным па-за межамі Беларусі праз тэхнічныя прычыны ды агульную катастрофу. Таму існуе гэтае люстэрка, а файлы RiboGrove дасяжныя праз Дропбокс (спасылкі <a href="#downloads">ніжэй</a>).</div></p><br>
 <h1 style="display:none">RiboGrove</h1>
-<img src="img/RiboGrove_logo.png"><br /><br />
+<img src="img/RiboGrove_logo.png"><br><br>
 <h2>Змест</h2>
 <ul>
-<li><a href="#overview">Што такое RiboGrove</a></li>
+<li><a href="#overview">Што такое RiboGrove</a>
+<ul style="list-style-type: none;">
+<li><a href="#other-databases">RiboGrove і іншыя базы дадзеных 16S рРНК</a></li>
+<li><a href="#genome-categories">Катэгорыі геномаў</a></li>
+</ul>
+</li>
 <li><a href="#citing-ribogrove">Цытаванне RiboGrove</a></li>
 <li><a href="#downloads">Файлы</a>
 <ul style="list-style-type: none;">
@@ -38,24 +43,46 @@
 <li><a href="#searching-data">Пошук дадзеных у RiboGrove</a>
 <ul style="list-style-type: none;">
 <li><a href="#header-format">Фармат загалоўка</a></li>
-<li><a href="#subset-by-header">Адбор паслядоўнасцяў паводле загалоўкаў</a></li>
-<li><a href="#subset-by-len">Адбор паслядоўнасцяў паводле даўжыні</a></li>
+<li><a href="#subset-by-header">Адбор паслядоўнасцей паводле загалоўкаў</a></li>
+<li><a href="#subset-by-len">Адбор паслядоўнасцей паводле даўжыні</a></li>
 <li><a href="#select-head">Адбор дадзеных загалоўкаў</a></li>
 </ul>
 </li>
 </ul>
-<hr />
+<hr>
 <div id="overview" class="pad-anchor"></div>
 <h2>Што такое RiboGrove</h2>
-<p>RiboGrove &mdash; гэта база дадзеных паслядоўнасцяў генаў 16S рРНК бактэрый і архей. RiboGrove змяшчае толькі поўнапамерныя паслядоўнасці генаў 16S рРНК, а ампліконныя дадзеныя для яе стварэння не выкарыстоўваліся. Іншымі словамі, у адрозненне ад падобных рэсурсаў, прысвечаных паслядоўнасцяі рРНК, такіх як <a href="https://www.arb-silva.de/">Silva</a> і <a href="http://rdp.cme.msu.edu/">RDP</a>, RiboGrove не змяшчае частковых паслядоўнасцяў генаў 16S рРНК.</p>
-<p>Паслядоўнасці RiboGrove паходзяць з цалкам сабраных геномаў прокарыёт з БД <a href="https://ncbi.nlm.nih.gov/refseq/">RefSeq</a>.</p>
+<p>RiboGrove &mdash; гэта база дадзеных паслядоўнасцей генаў 16S рРНК бактэрый і архей.</p>
+<p>RiboGrove асноўваецца на базе дадзеных <a href="https://ncbi.nlm.nih.gov/refseq/">RefSeq</a>. RiboGrove змяшчае толькі поўнапамерныя паслядоўнасці генаў 16S рРНК, а самі паслядоўнасці паходзяць з цалкам сабраных геномаў прокарыёт, дэпанаваных у RefSeq. Таму мы пастулюем высокую надзейнасць паслядоўнасцей, размешчаных у RiboGrove.</p>
+<div id="other-databases" class="pad-anchor"></div>
+<h3>RiboGrove і іншыя базы дадзеных 16S рРНК</h3>
+<p>Табліца ніжэй паказвае, чым (якасна) RiboGrove адрозніваецца ад падобных баз дадзеных паслядоўнасцей РНК, а менавіта <a href="https://www.arb-silva.de/">Silva</a>, <a href="http://rdp.cme.msu.edu/">RDP</a> і <a href="https://greengenes.secondgenome.com/">Greengenes</a>. Кажучы каротка, RiboGrove саступае аналагам у колькасці паслядоўнасцей і іх разнастайнасці, але пераўзыходзіць у надзейнасці паслядоўнасцей.</p>
+<table class="sum-table">
+<tbody>
+  <tr class="sumtab-row"><th></th><th class="alcentr">RiboGrove</th><th class="alcentr">Silva</th><th class="alcentr">RDP</th><th class="alcentr">Greengenes</th></tr>
+  <tr class="sumtab-row"><td class="feature-col">Прадстаўленыя арганізмы</td><td class="alcentr">Бактэрыі<br>Археі</td><td class="alcentr">Бактэрыі<br>Археі<br>Эўкарыёты</td><td class="alcentr">Бактэрыі<br>Археі<br>Эўкарыёты</td><td class="alcentr">Бактэрыі<br>Археі</td></tr>
+  <tr class="sumtab-row"><td class="feature-col">Прадстаўленыя субадзінкі рыбасом</td><td class="alcentr">Малая</td><td class="alcentr">Вялікая<br>Малая</td><td class="alcentr">Вялікая<br>Малая</td><td class="alcentr">Малая</td></tr>
+  <tr class="sumtab-row"><td class="feature-col">Змяшчае паслядоўнасці сабраных геномаў</td><td class="alcentr">Так</td><td class="alcentr">Так</td><td class="alcentr">Так</td><td class="alcentr">Так</td></tr>
+  <tr class="sumtab-row"><td class="feature-col">Змяшчае паслядоўнасці ампліконаў</td><td class="alcentr">Не</td><td class="alcentr">Так</td><td class="alcentr">Так</td><td class="alcentr">Так</td></tr>
+  <tr class="sumtab-row"><td class="feature-col">Змяшчае няпоўныя паслядоўнасці генаў</td><td class="alcentr">Не</td><td class="alcentr">Так</td><td class="alcentr">Так</td><td class="alcentr">Так</td></tr>
+</tbody>
+</table>
+<div id="genome-categories" class="pad-anchor"></div>
+<h3>Катэгорыі геномаў</h3>
+<p>Усе геномы, з якіх браліся дадзеныя для стварэння RiboGrove, былі падзеленыя на тры катэгорыі паводле іхняй надзейнасці:</p>
+<ol style="list-style:none;">
+  <li><strong>Катэгорыя 1</strong> (найбольшая надзейнасць). Геномы, якія не дэманструюць прыкмет нізкаякаснай зборкі і якія былі секвенаваныя з дапамогай тэхналогіі PacBio альбо камбінацыі (Oxford&nbsp;Nanopore&nbsp;+&nbsp;Illumina).</li>
+  <li><strong>Катэгорыя 2.</strong> Геномы, якія не дэманструюць прыкмет нізкаякаснай зборкі, секвенаваныя з дапамогай любой іншай тэхналогіі (або тыя, для якіх тэхналогія секвенавання не была ўказаная).</li>
+  <li><strong>Катэгорыя 3</strong> (найменшая надзейнасць). Геномы, якія дэманструюць хаця б адну прыкмету нізкаякаснай зборкі.</li>
+</ol>
+<p>Прыкметы нізкаякаснай зборкі:</p>
+<ul>
+  <li>Геном утрымлівае хаця б адну выраджаную аснову у паслядоўнасцях яго генаў 16S рРНК.</li>
+  <li>Зборка генома утрымлівае хаця б адзін запіс базы дадзеных RefSeq, у назве якой ёсць фраза <q>map unlocalized</q>, і гэты запіс утрымлівае паслядоўнасць гена 16S рРНК або яго частку.</li>
+</ul>
+<br>
 <p>Праграмы, з дапамогай якіх была створана RiboGrove, знаходзяцца ў наступным ГітХаб-рэпазіторыі: <a href="https://github.com/masikol/ribogrove-tools">ribogrove-tools</a>.</p>
-<hr />
-<div id="citing-ribogrove" class="pad-anchor"></div>
-<h2>Цытаванне RiboGrove</h2>
-<p>Калі база дадзеных RiboGrove прыдалася вам у вашых даследаваннях, спасылайцеся, калі ласка, на наступную публікацыю:</p>
-<p>Maxim A. Sikolenko, Leonid N. Valentovich. &ldquo;RiboGrove: a database of full-length prokaryotic 16S rRNA genes derived from completely assembled genomes&rdquo; // Research in Microbiology, Volume 173, Issue 4, May 2022, 103936.<br /> (<span style="cursor:help"title="Лічбавы ідэнтыфікатар аб'екта">ЛІА</span>: <a href="https://doi.org/10.1016/j.resmic.2022.103936">10.1016/j.resmic.2022.103936</a>).</p>
-<hr />
+<hr>
 <div id="downloads" class="pad-anchor"></div>
 <h2>Файлы</h2>
 <div id="current-release" class="pad-anchor"></div>
@@ -63,14 +90,54 @@
 <p>Выпуск заснованы на базе дадзеных RefSeq 212.</p>
 <ul>
 <li>Fasta-файл з поўнапамернымі паслядоўнасцямі генаў 16S рРНК. <a href="https://www.dropbox.com/s/ra4hpzu2dx7a9u3/ribogrove_6.212_sequences.fasta.gz?dl=0\">Спампаваць (&bdquo;гзіп&rsquo;нуты&ldquo; fasta-файл, 5,62 Мб)</a></li>
-<li>&bdquo;Сырая&ldquo; версія RiboGrove &mdash; яна змяшчае ў тым ліку і частковыя паслядоўнасці генаў. <a href="https://www.dropbox.com/s/045nrgdsth9rloo/raw_ribogrove_6.212_sequences.fasta.gz?dl=0">Спампаваць (&bdquo;гзіп&rsquo;нуты&ldquo; fasta-файл, 5,90 Мб)</a></li>
-<li>Метададзеныя. <a href="https://www.dropbox.com/s/5wyketcazxpraw4/metadata_ribogrove_6.212.zip?dl=0">Спампаваць (zip-архіў 16,68 Мб)</a></li>
+<li>&bdquo;Сырая&ldquo; версія RiboGrove &mdash; яна змяшчае ў тым ліку і няпоўныя паслядоўнасці генаў. <a href="https://www.dropbox.com/s/045nrgdsth9rloo/raw_ribogrove_6.212_sequences.fasta.gz?dl=0">Спампаваць (&bdquo;гзіп&rsquo;нуты&ldquo; fasta-файл, 5,90 Мб)</a></li>
+<li>Метададзеныя. <a href="https://www.dropbox.com/s/5wyketcazxpraw4/metadata_ribogrove_6.212.zip?dl=0">Спампаваць (zip-архіў 16,68 Мб)</a><br>
+<details>
+  <summary><small>Якая менавіта інфармацыя утрымліваецца ў метададзеных?</small></summary>
+  <small>
+    <p>Метададзеныя складаюцца з наступных файлаў:</p>
+    <ol>
+    <li>
+      <span class="samp-highl">source_RefSeq_genomes.tsv</span><br>
+      Гэта TSV-файл, які змяшчае інфармацыю пра тое, якія геномы выкарыстоўваліся для стварэння RiboGrove.
+    </li>
+    <li>
+      <span class="samp-highl">gene_seqs_statistics.tsv</span>, <span class="samp-highl">raw_gene_seqs_statistics.tsv</span><br>
+      Гэта TSV-файлы, якія змяшчаюць інфармацыю пра нуклеатыдны склад, памер, геномную і таксанамічную прыналежнасць паслядоўнасцей генаў. &bdquo;Сырая&ldquo; (&bdquo;raw&ldquo;) версія дадаткова ўтрымлівае інфармацыю пра няпоўныя гены.
+    </li>
+    <li>
+      <span class="samp-highl">per_replicon_statistics.tsv</span>, <span class="samp-highl">raw_per_replicon_statistics.tsv</span><br>
+      Гэта TSV-файлы, якія змяшчаюць інфармацыю пра колькасць генаў 16S рРНК у кожнай геномнай паслядоўнасці з БД RefSeq і пра памеры гэтых генаў. &bdquo;Сырая&ldquo; (&bdquo;raw&ldquo;) версія дадаткова ўтрымлівае інфармацыю пра няпоўныя гены.
+    </li>
+    <li>
+      <span class="samp-highl">categories.tsv</span><br>
+      Гэта TSV-файл, які змяшчае інфармацыю пра катэгорыю кожнага геному, які быў выкарыстаны для стварэння RiboGrove. Таксама у гэтым файле ёсць інфамацыя пра тэхналогіі, якія выкарыстоўваліся для секвенавання гэтых геномаў.
+    </li>
+    <li>
+      <span class="samp-highl">taxonomy.tsv</span><br>
+      Гэта TSV-файл, які змяшчае таксанамічную прыналежнасць кожнага геному і гена.
+    </li>
+    <li>
+      <span class="samp-highl">intragenic_repeats.tsv</span><br>
+      Гэта TSV-файл, які змяшчае інфармацыю пра унутрыгенныя паўторы ў паслядоўнасцях генаў, знойдзеныя з дапамогай праграмы <a href="https://github.com/deprekate/RepeatFinder">RepeatFinder</a>.
+    </li>
+    <li>
+      <span class="samp-highl">cmscan_output_table.tblout</span><br>
+      Гэта TSV-файл, які змяшчае поўны вынік работы праграмы <a href="http://eddylab.org/infernal/">cmscan</a>, пасля апрацоўкі ўсіх паслядоўнасцяў генаў 16S рРНК.
+    </li>
+    <li>
+      <span class="samp-highl">entropy_summary.tsv</span><br>
+      Гэта TSV-файл, які змяшчае інфармацыю пра унутрыгеномную зменлівасць генаў 16S рРНК. Унутрыгеномную зменлівасць вылічалі толькі для геномаў катэгорыі&nbsp;1, у якіх ёсць хаця б два гены 16S рРНК. Для ацэнкі зменлівасці выкарыстоўвалі энтрапію Шэнана: выраўноўвалі паслядоўнасці генаў кожнага геному з дапамогай праграмы <a href="https://drive5.com/muscle5/">MUSCLE</a>, і пасля вылічалі энтрапію для кожнай калонкі множнага выраўноўвання.
+    </li>
+  </ol></small>
+</details>
+</li>
 </ul>
 <p>Файлы fasta сціснутыя з дапамогаю праграмы gzip, а файлы з метададзенымі сціснутыя ў zip-архіў. Каб распакаваць іх, карыстальнікі Linux і Mac OS могуць скарастыцца якраз праграмамі gzip і zip; гэтыя праграмы звычайна ўсталяваныя разам з аперыцыйнай сістэмай. Карыстальнікам Windows можа прыдацца бясплатная праграма-архіватар <a href="https://www.7-zip.org/">7-Zip</a>.</p>
 <div id="release-archive" class="pad-anchor"></div>
 <h3>Архіў выпускаў RiboGrove</h3>
 <p>Усе папярэднія выпускі можна знайсці ў <a href="archive/ribogrove_archive_en.html"> архіве выпускаў RiboGrove</a>. На жаль, ён вядзецца толькі па-англійску.</p>
-<hr />
+<hr>
 <div id="summary" class="pad-anchor"></div>
 <h2>Статыстычнае апісанне</h2>
 <div id="db-size" class="pad-anchor"></div>
@@ -79,13 +146,13 @@
 <tbody>
 <tr><th></th><th class="numcol">Бактэрыі</th><th class="numcol">Археі</th><th class="numcol">Усяго</th></tr>
 <tr class="sumtab-row">
-<td>Колькасць паслядоўнасцяў генаў</td>
+<td>Колькасць паслядоўнасцей генаў</td>
 <td class="numcol">139&nbsp;010</td>
 <td class="numcol">733</td>
 <td class="numcol">139&nbsp;743</td>
 </tr>
 <tr class="sumtab-row">
-<td>Колькасць унікальных паслядоўнасцяў</td>
+<td>Колькасць унікальных паслядоўнасцей</td>
 <td class="numcol">38&nbsp;693</td>
 <td class="numcol">530</td>
 <td class="numcol">39&nbsp;223</td>
@@ -287,7 +354,7 @@
 <table class="sum-table">
 <caption>Топ-10 найдаўжэйшых генаў 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
+<tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br>геномнай зборкі</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактэрыі</td>
 </tr>
@@ -306,7 +373,7 @@
 <tr class="sumtab-row">
 <td><i>Nitrosophilus</i> <i>labii</i> HRV44</td>
 <td class="numcol">1&nbsp;806</td>
-<td class="seqid-td">NZ_AP022826.1:1258017-1259822_minus<br />NZ_AP022826.1:1532588-1534393_minus<br />NZ_AP022826.1:1939914-1941719_minus</td>
+<td class="seqid-td">NZ_AP022826.1:1258017-1259822_minus<br>NZ_AP022826.1:1532588-1534393_minus<br>NZ_AP022826.1:1939914-1941719_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/8028891">8028891</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -330,37 +397,37 @@
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> RM3237</td>
 <td class="numcol">1&nbsp;744</td>
-<td class="seqid-td">NZ_CP019682.1:607981-609724_plus<br />NZ_CP019682.1:929565-931308_minus<br />NZ_CP019682.1:1501945-1503688_minus</td>
+<td class="seqid-td">NZ_CP019682.1:607981-609724_plus<br>NZ_CP019682.1:929565-931308_minus<br>NZ_CP019682.1:1501945-1503688_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1153941">1153941</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> LMG 7795</td>
 <td class="numcol">1&nbsp;744</td>
-<td class="seqid-td">NZ_CP043427.1:609141-610884_plus<br />NZ_CP043427.1:930699-932442_minus<br />NZ_CP043427.1:1503078-1504821_minus</td>
+<td class="seqid-td">NZ_CP043427.1:609141-610884_plus<br>NZ_CP043427.1:930699-932442_minus<br>NZ_CP043427.1:1503078-1504821_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/4499991">4499991</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> CCUG 20703</td>
 <td class="numcol">1&nbsp;743</td>
-<td class="seqid-td">NZ_CP019683.1:606847-608589_plus<br />NZ_CP019683.1:935163-936905_minus<br />NZ_CP019683.1:1558189-1559931_minus</td>
+<td class="seqid-td">NZ_CP019683.1:606847-608589_plus<br>NZ_CP019683.1:935163-936905_minus<br>NZ_CP019683.1:1558189-1559931_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1153911">1153911</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> sp. RM6137</td>
 <td class="numcol">1&nbsp;742</td>
-<td class="seqid-td">NZ_CP018789.1:273370-275111_plus<br />NZ_CP018789.1:1545743-1547484_minus</td>
+<td class="seqid-td">NZ_CP018789.1:273370-275111_plus<br>NZ_CP018789.1:1545743-1547484_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1101781">1101781</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>hyointestinalis</i> CHY5</td>
 <td class="numcol">1&nbsp;742</td>
-<td class="seqid-td">NZ_CP053828.1:357136-358877_plus<br />NZ_CP053828.1:1667816-1669557_minus</td>
+<td class="seqid-td">NZ_CP053828.1:357136-358877_plus<br>NZ_CP053828.1:1667816-1669557_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/7294871">7294871</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> RM8705</td>
 <td class="numcol">1&nbsp;742</td>
-<td class="seqid-td">NZ_CP019685.1:577810-579551_plus<br />NZ_CP019685.1:891862-893603_minus<br />NZ_CP019685.1:1479764-1481505_minus</td>
+<td class="seqid-td">NZ_CP019685.1:577810-579551_plus<br>NZ_CP019685.1:891862-893603_minus<br>NZ_CP019685.1:1479764-1481505_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1153931">1153931</a></td>
 </tr>
 <tr>
@@ -433,7 +500,7 @@
 <table class="sum-table">
 <caption>Топ-10 найкарацейшых генаў 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
+<tr><th class="alnleft">Арганізм</th><th class="numcol">Даўжыня, п.а.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідэнтыфікатар<br>геномнай зборкі</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактэрыі</td>
 </tr>
@@ -446,7 +513,7 @@
 <tr class="sumtab-row">
 <td><i>Sagittula</i> sp. P11</td>
 <td class="numcol">1&nbsp;449</td>
-<td class="seqid-td">NZ_CP021913.1:2386837-2388285_plus<br />NZ_CP021913.1:3597920-3599368_plus</td>
+<td class="seqid-td">NZ_CP021913.1:2386837-2388285_plus<br>NZ_CP021913.1:3597920-3599368_plus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1460951">1460951</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -458,13 +525,13 @@
 <tr class="sumtab-row">
 <td><i>Antarctobacter</i> <i>heliothermus</i> SMS3</td>
 <td class="numcol">1&nbsp;453</td>
-<td class="seqid-td">NZ_CP022540.1:1369380-1370832_plus<br />NZ_CP022540.1:2482480-2483932_plus</td>
+<td class="seqid-td">NZ_CP022540.1:1369380-1370832_plus<br>NZ_CP022540.1:2482480-2483932_plus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1163161">1163161</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Mameliella</i> <i>alba</i> KU6B</td>
 <td class="numcol">1&nbsp;454</td>
-<td class="seqid-td">NZ_AP022337.1:267139-268592_plus<br />NZ_AP022337.1:1420942-1422395_plus<br />NZ_AP022337.1:3191208-3192661_minus</td>
+<td class="seqid-td">NZ_AP022337.1:267139-268592_plus<br>NZ_AP022337.1:1420942-1422395_plus<br>NZ_AP022337.1:3191208-3192661_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/6279751">6279751</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -500,13 +567,13 @@
 <tr class="sumtab-row">
 <td><i>Pelagovum</i> <i>pacificum</i> SM1903</td>
 <td class="numcol">1&nbsp;459</td>
-<td class="seqid-td">NZ_CP065915.1:2729819-2731277_minus<br />NZ_CP065915.1:3593071-3594529_minus</td>
+<td class="seqid-td">NZ_CP065915.1:2729819-2731277_minus<br>NZ_CP065915.1:3593071-3594529_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/8872011">8872011</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Paracoccus</i> <i>contaminans</i> LMG 29738T</td>
 <td class="numcol">1&nbsp;459</td>
-<td class="seqid-td">NZ_CP020612.1:582021-583479_minus<br />NZ_CP020612.1:1166317-1167775_minus</td>
+<td class="seqid-td">NZ_CP020612.1:582021-583479_minus<br>NZ_CP020612.1:1166317-1167775_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/1078381">1078381</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -539,7 +606,7 @@
 <tr class="sumtab-row">
 <td><i>Methanospirillum</i> <i>hungatei</i> GP1</td>
 <td class="numcol">1&nbsp;466</td>
-<td class="seqid-td">NZ_CP077107.1:4649-6114_plus<br />NZ_CP077107.1:1359562-1361027_minus<br />NZ_CP077107.1:1365502-1366967_minus<br />NZ_CP077107.1:1986020-1987485_minus</td>
+<td class="seqid-td">NZ_CP077107.1:4649-6114_plus<br>NZ_CP077107.1:1359562-1361027_minus<br>NZ_CP077107.1:1365502-1366967_minus<br>NZ_CP077107.1:1986020-1987485_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/10519241">10519241</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -557,13 +624,13 @@
 <tr class="sumtab-row">
 <td><i>Methanospirillum</i> <i>hungatei</i> JF-1</td>
 <td class="numcol">1&nbsp;466</td>
-<td class="seqid-td">NC_007796.1:39814-41279_plus<br />NC_007796.1:1301079-1302544_minus<br />NC_007796.1:3501525-3502990_minus<br />NC_007796.1:3507609-3509074_minus</td>
+<td class="seqid-td">NC_007796.1:39814-41279_plus<br>NC_007796.1:1301079-1302544_minus<br>NC_007796.1:3501525-3502990_minus<br>NC_007796.1:3507609-3509074_minus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/34548">34548</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Methanospirillum</i> sp. J.3.6.1-F.2.7.3</td>
 <td class="numcol">1&nbsp;466</td>
-<td class="seqid-td">NZ_CP075546.1:133354-134819_plus<br />NZ_CP075546.1:825954-827419_plus<br />NZ_CP075546.1:872641-874106_plus<br />NZ_CP075546.1:1727419-1728884_plus</td>
+<td class="seqid-td">NZ_CP075546.1:133354-134819_plus<br>NZ_CP075546.1:825954-827419_plus<br>NZ_CP075546.1:872641-874106_plus<br>NZ_CP075546.1:1727419-1728884_plus</td>
 <td><a href="https://ncbi.nlm.nih.gov/assembly/10123301">10123301</a></td>
 </tr>
 <tr class="sumtab-row">
@@ -585,7 +652,7 @@
 <table class="sum-table">
 <caption>Топ-10 геномаў з найбольшай колькасцю копій генаў 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Арганізм</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
+<tr><th class="alnleft">Арганізм</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br>геномнай зборкі</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактэрыі</td>
 </tr>
@@ -748,7 +815,7 @@
 <table class="sum-table">
 <caption>Топ-10 геномаў з найбольшай зменлівасцю генаў 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Арганізм</th><th class="numcol">Сума энтрапіі<sup> *</sup>, біты</th><th class="numcol">Сярэдняя энтрапія<sup> *</sup>, біты</th><th class="numcol">Колькасць зменлівых пазіцый</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br />геномнай зборкі</th></tr>
+<tr><th class="alnleft">Арганізм</th><th class="numcol">Сума энтрапіі<sup> *</sup>, біты</th><th class="numcol">Сярэдняя энтрапія<sup> *</sup>, біты</th><th class="numcol">Колькасць зменлівых пазіцый</th><th class="numcol">Колькасць копій</th><th class="alnleft">Ідэнтыфікатар<br>геномнай зборкі</th></tr>
 <tr>
 <td colspan="6" class="subhead">Бактэрыі</td>
 </tr>
@@ -917,15 +984,15 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> Энтрапія ў гэтым выпадку &mdash; гэта <a href="https://ru.wikipedia.org/wiki/Информационная_энтропия">энтрапія Шэнана</a>, якую вылічалі для кожнай калонкі множнага выраўноўвання поўнапамерных паслядоўнасцяў генаў 16S рРНК кожнага генома. Пасля гэтага падсумоўвалі энтрапію (калонка <q>Сума энтрапіі</q>) і усярэднівалі (калонка <q>Сярэдняя энтрапія</q>).</p>
-<p><sup>**</sup> <i>Halomicrobium</i> sp. ZPS1 &mdash; паказальны выпадак. У гэтым геноме два гены 16S рРНК, таму энтрапія роўная колькасці нуклеатыдаў, якія не супадаюць у іхніх паслядоўнасцях. Вылічыўшы адсотак ідэнтычнасці (скарочана АІ) паслядоўнасцяў гэтых двух генаў, атрымаем 90,70%! Нагадаем, што за парог АІ паслядоўнасцяў генаў 16S рРНК для аднясення арганізмаў да адрозных <em>родаў</em> звычайна бярэцца (зрэшты, адвольна) значэнне 95%.</p>
-<hr />
+<p><sup>*</sup> Энтрапія ў гэтым выпадку &mdash; гэта <a href="https://ru.wikipedia.org/wiki/Информационная_энтропия">энтрапія Шэнана</a>, якую вылічалі для кожнай калонкі множнага выраўноўвання поўнапамерных паслядоўнасцей генаў 16S рРНК кожнага генома. Пасля гэтага падсумоўвалі энтрапію (калонка <q>Сума энтрапіі</q>) і усярэднівалі (калонка <q>Сярэдняя энтрапія</q>).</p>
+<p><sup>**</sup> <i>Halomicrobium</i> sp. ZPS1 &mdash; паказальны выпадак. У гэтым геноме два гены 16S рРНК, таму энтрапія роўная колькасці нуклеатыдаў, якія не супадаюць у іхніх паслядоўнасцях. Вылічыўшы адсотак ідэнтычнасці (скарочана АІ) паслядоўнасцей гэтых двух генаў, атрымаем 90,70%! Нагадаем, што за парог АІ паслядоўнасцей генаў 16S рРНК для аднясення арганізмаў да адрозных <em>родаў</em> звычайна бярэцца (зрэшты, адвольна) значэнне 95%.</p>
+<hr>
 <div id="searching-data" class="pad-anchor"></div>
 <h2>Пошук дадзеных у RiboGrove</h2>
 <p>RiboGrove &mdash; вельмі мінімалістычная база дадзеных: яна складаецца з двух файлаў fasta з дадатковымі метададзенымі. Таму пашыраных сродкаў пошуку няма. Мы прызнае&#769;м гэтую праблему і пакідаем ніжэй некалькі парад наконт пошуку дадзеных у RiboGrove.</p>
 <div id="header-format" class="pad-anchor"></div>
 <h3>Фармат загалоўка</h3>
-<p>Запісы паслядоўнасцяў RiboGrove у фармаце fasta маюць наступны фармат загалоўка:</p>
+<p>Запісы паслядоўнасцей RiboGrove у фармаце fasta маюць наступны фармат загалоўка:</p>
 <p class="samp-highl samp-vwide">&gt;NZ_CP079719.1:86193-87742_plus Bacillus_velezensis ;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus; category:2</p>
 <p>Асноўныя часткі загалоўка адасобленыя адна ад адной прабеламі. У загалоўку павінна быць чатыры такія часткі:</p>
 <ol>
@@ -938,10 +1005,10 @@
 <li>Радок таксаноміі, а менавіта назвы дамену (<span class="samp-highl">Bacteria</span>), тыпу (<span class="samp-highl">Firmicutes</span>), класу (<span class="samp-highl">Bacilli</span>), парадку (<span class="samp-highl">Bacillales</span>), сямейства (<span class="samp-highl">Bacillaceae</span>) ды роду (<span class="samp-highl">Bacillus</span>). Назвы адасобленыя і аточаныя кропкамі з коскай (<span class="samp-highl">;</span>).</li>
 <li>Катэгорыя генома, з якога паслядоўнасць гена паходзіць: (<span class="samp-highl">category:2</span>). Геномы катэгорыі 1 найбольш надзейныя, а катэгорыі 3 &mdash; найменш надзейныя.</li>
 </ol>
-<h3>Адбор паслядоўнасцяў</h3>
-<p>Адбіраць тыя ці іншыя паслядоўнасці з файлаў fasta можна з дапамогай праграмы <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ГітХаб-рэпазіторый</a>, <a href="https://bioinf.shenwei.me/seqkit/">дакументацыя</a>). Гэта бясплатная, кросплатформавая, шматфункцыянальная і даволі шустрая праграма, якая можа апрацоўваць як &bdquo;гзіп&rsquo;нутыя&ldquo;, так і простыя нясціснутыя файлы fasta. Для адбору паслядоўнасцяў зручна выкарыстоўваць падпраграмы <span class="samp">seqkit grep</span> і <span class="samp">seqkit seq</span> .</p>
+<h3>Адбор паслядоўнасцей</h3>
+<p>Адбіраць тыя ці іншыя паслядоўнасці з файлаў fasta можна з дапамогай праграмы <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ГітХаб-рэпазіторый</a>, <a href="https://bioinf.shenwei.me/seqkit/">дакументацыя</a>). Гэта бясплатная, кросплатформавая, шматфункцыянальная і даволі шустрая праграма, якая можа апрацоўваць як &bdquo;гзіп&rsquo;нутыя&ldquo;, так і простыя нясціснутыя файлы fasta. Для адбору паслядоўнасцей зручна выкарыстоўваць падпраграмы <span class="samp">seqkit grep</span> і <span class="samp">seqkit seq</span> .</p>
 <div id="subset-by-header" class="pad-anchor"></div>
-<h4>Адбор паслядоўнасцяў паводле загалоўкаў</h4>
+<h4>Адбор паслядоўнасцей паводле загалоўкаў</h4>
 <p>Няхай мы робім выбарку з файла <span class="samp">ribogrove_6.212_sequences.fasta.gz</span>. Карыснымі могуць быць наступныя прыклады каманд карыстання праграмай <span class="samp">seqkit grep</span>:</p>
 <p><strong>Прыклад 1</strong>. Выбраць адну паслядоўнасць паводле SeqID.</p>
 <p class="samp-highl samp-vwide">seqkit grep -p "NZ_CP079719.1:86193-87742_plus" ribogrove_6.212_sequences.fasta.gz</p>
@@ -960,11 +1027,11 @@
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";Firmicutes;" ribogrove_6.212_sequences.fasta.gz</p>
 <p class="samp-comment">Звярніце ўвагу на опцыю <span class="samp">-v</span> у шэгару опцый <span class="samp">-nvrp</span>. Гэтая опцыя інвертуе паводзіны праграмы, і цяпер яна знойдзе ўсе паслядоўнасці, загалоўкі якіх <em>не</em> змяшчаюць радок <span class="samp">;Firmicutes;</span>.</p>
 <div id="subset-by-len" class="pad-anchor"></div>
-<h4>Адбор паслядоўнасцяў паводле даўжыні</h4>
+<h4>Адбор паслядоўнасцей паводле даўжыні</h4>
 <p>Адбіраць паслядоўнасці паводле даўжыні можна з дапамогай праграмы <span class="samp">seqkit seq</span>.</p>
 <p><strong>Прыклад 1</strong>. Выбраць усе паслядоўнасці даўжэй за 1600 п.а.</p>
 <p class="samp-highl samp-vwide">seqkit seq -m 1601 ribogrove_6.212_sequences.fasta.gz</p>
-<p class="samp-comment">Опцыя <span class="samp">-m</span> задае мінімальную даўжыню паслядоўнасцяў, якія праграма падасць на выхад.</p>
+<p class="samp-comment">Опцыя <span class="samp">-m</span> задае мінімальную даўжыню паслядоўнасцей, якія праграма падасць на выхад.</p>
 <p><strong>Прыклад 2</strong>. Выбраць усе паслядоўнасці карацей за 1500 п.а.</p>
 <p class="samp-highl samp-vwide">seqkit seq -M 1499 ribogrove_6.212_sequences.fasta.gz</p>
 <p class="samp-comment">Опцыя <span class="samp">-M</span> задае максімальную даўжыню паслядоўнасці, якія праграма падасць на выхад.</p>
@@ -976,15 +1043,15 @@
 <p><strong>Прыклад 1</strong>. Выбраць проста ўсе загалоўкі.</p>
 <p class="samp-highl samp-vwide">seqkit seq -n ribogrove_6.212_sequences.fasta.gz</p>
 <p class="samp-comment">Опцыя <span class="samp">-n</span> кажа праграме, каб тая падавала на выхад толькі загалоўкі.</p>
-<p><strong>Прыклад 2</strong>. Выбраць усе ідэнтыфікатары паслядоўнасцяў (то бок часткі загалоўкаў да першага прабела).</p>
+<p><strong>Прыклад 2</strong>. Выбраць усе ідэнтыфікатары паслядоўнасцей (то бок часткі загалоўкаў да першага прабела).</p>
 <p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_6.212_sequences.fasta.gz</p>
 <p class="samp-comment">Опцыя <span class="samp">-i</span> кажа праграме, каб тая падавала на выхад толькі ідэнтыфікатары.</p>
 <p><strong>Прыклад 3</strong>. Выбраць усе (RefSeq&rsquo;аўскія) коды доступу.</p>
 <p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_6.212_sequences.fasta.gz | cut -f1 -d':' | sort | uniq</p>
 <p class="samp-comment">Такая команда спрацуе, толькі калі на камп&rsquo;ютары ўсталяваныя ўтыліты <span class="samp">sort</span>, <span class="samp">cut</span> і <span class="samp">uniq</span> (на Linux і Mac OS гэтыя праграмы звычайна ўсталяваныя разам з аперацыйная сістэмай).</p>
-<br />
-<hr />
-<p>RiboGrove, 12.06.2022</p>
+<br>
+<hr>
+<p>RiboGrove, 17.07.2022</p>
 </div>
 </body>
 </html>
