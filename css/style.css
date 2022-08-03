@@ -19,18 +19,18 @@ html {
   padding-right: 15px;
 }
 .warn-section {
-    padding: 1.0em .6em;
-    background-color: rgba(255, 82, 82, 0.2);
-    border-radius: 6px;
-    text-align: center;
+  padding: 1.0em .6em;
+  background-color: rgba(255, 82, 82, 0.2);
+  border-radius: 6px;
+  text-align: center;
 }
 a {
   color: var(--main-bg-color);
   text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
-    color: var(--active-color);
+  text-decoration: underline;
+  color: var(--active-color);
 }
 .pad-anchor {
   display: block;
@@ -66,9 +66,6 @@ a:hover {
   border-bottom: solid #303030 1px
 }
 .sum-table .sumtab-row:nth-child(even) {background-color: #eaeaea;}
-.sum-table .sumtab-row:hover {
-  background-color: rgba(214, 110, 0, 0.2);
-}
 .sum-table tr td, .sum-table tr th {
   padding: .3rem .6rem .3rem .6rem;
 }
