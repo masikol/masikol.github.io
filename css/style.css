@@ -78,6 +78,7 @@ a:hover {
 ul > li {padding-bottom: 7px}
 .content-index a {font-weight: bold}
 ul ul li:first-of-type, ol ol li:first-of-type {padding-top:.4rem;}
+ul ul {list-style-type: none;}
 details > summary {
   cursor: pointer;
 }

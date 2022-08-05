@@ -4,6 +4,7 @@
   <title>Дзеркало RiboGrove</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/release-page.css">
+  <meta name="google-site-verification" content="V7soLZAQ2olS4LhqXl5Xp7gVUDYzwOc3zwymWgks5ik" />
 </head>
 <body>
 <div class="container">
@@ -16,20 +17,20 @@
 <h2>Зміст</h2>
 <ul>
 <li><a href="#overview">Що таке RiboGrove</a>
-<ul style="list-style-type: none;">
+<ul>
 <li><a href="#other-databases">RiboGrove і інші бази даних 16S рРНК</a></li>
 <li><a href="#genome-categories">Категорії геномів</a></li>
 </ul>
 </li>
 <li><a href="#citing-ribogrove">Цитування RiboGrove</a></li>
 <li><a href="#downloads">Файли</a>
-<ul style="list-style-type: none;">
+<ul>
   <li><a href="#current-release">Актуальний реліз RiboGrove</li>
   <li><a href="#release-archive">Архів релізів RiboGrove</li>
 </ul>
 </li>
 <li><a href="#summary">Статистичний опис</a>
-<ul style="list-style-type: none;">
+<ul>
 <li><a href="#db-size">Розмір RiboGrove</a></li>
 <li><a href="#gene-lens">Довжина генів 16S рРНК</a></li>
 <li><a href="#copy-number">Кількість копій генів 16S рРНК</a></li>
@@ -40,7 +41,7 @@
 </ul>
 </li>
 <li><a href="#searching-data">Пошук даних у RiboGrove</a>
-<ul style="list-style-type: none;">
+<ul>
   <li><a href="#header-format">Формат заголовку</a></li>
 <li><a href="#subset-by-header">Вибір послідовностей по заголовку</a></li>
 <li><a href="#subset-by-len">Вибір послідовностей по довжині</a></li>
@@ -249,7 +250,7 @@
 <table class="sum-table">
 <caption>Кількість копій генів 16S рРНК<br><small>(Бактерії та Археї)</small></caption>
 <tbody>
-<tr><th class="numcol">Кількість копій <sup>*</sup></th><th class="numcol">Кількість видів</th><th class="numcol">Відсоток видів, %</th></tr>
+<tr><th class="numcol">Кількість<br>копій<sup>&nbsp;*</sup></th><th class="numcol">Кількість видів</th><th class="numcol">Відсоток видів, %</th></tr>
 <tr class="sumtab-row">
 <td class="numcol">1</td>
 <td class="numcol">1&nbsp;059</td>
@@ -362,7 +363,7 @@
 <table class="sum-table">
 <caption>Топ-10 найдовших генів 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Організм</th><th class="numcol">Довжина, п.о.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідентифікатор<br> геномної збірки</th></tr>
+<tr><th class="alnleft">Організм</th><th class="numcol">Довжина, п.о.</th><th class="alnleft">Ідентифікатор<br>послідованості<br>RiboGrove</th><th class="alnleft">Ідентифікатор<br>геномної<br>збірки</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактерії</td>
 </tr>
@@ -503,12 +504,11 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> SeqID &mdash; це ідентифікатор послідовності RiboGrove.</p>
 <div id="top-shortest" class="pad-anchor"></div>
 <table class="sum-table">
 <caption>Топ-10 найкоротших генів 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Організм</th><th class="numcol">Довжина, п.о.</th><th class="alnleft">SeqID <sup>*</sup></th><th class="alnleft">Ідентифікатор<br> геномної збірки</th></tr>
+<tr><th class="alnleft">Організм</th><th class="numcol">Довжина, п.о.</th><th class="alnleft">Ідентифікатор<br>послідованості<br>RiboGrove</th><th class="alnleft">Ідентифікатор<br>геномної<br>збірки</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактерії</td>
 </tr>
@@ -655,12 +655,11 @@
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> SeqID &mdash; це ідентифікатор послідовності RiboGrove.</p>
 <div id="top-copy-num" class="pad-anchor"></div>
 <table class="sum-table">
 <caption>Топ-10 геномів за найбільшею кілкістю копій генів 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Організм</th><th class="numcol">Кількість копій</th><th class="alnleft">Ідентифікатор<br> геномної збірки</th></tr>
+<tr><th class="alnleft">Організм</th><th class="numcol">Кількість<br>копій</th><th class="alnleft">Ідентифікатор<br>геномної<br>збірки</th></tr>
 <tr>
 <td colspan="4" class="subhead">Бактерії</td>
 </tr>
@@ -803,7 +802,7 @@
 <table class="sum-table">
 <caption>Топ-10 геномів за найбільшею мінливістю генів 16S рРНК</caption>
 <tbody>
-<tr><th class="alnleft">Організм</th><th class="numcol">Сума ентропії<sup> *</sup>, біти</th><th class="numcol">Середня ентропія<sup> *</sup>, біти</th><th class="numcol">Кількість мінливих позіцій</th><th class="numcol">Кількість копій</th><th class="alnleft">Ідентифікатор<br> геномної збірки</th></tr>
+<tr><th class="alnleft">Організм</th><th class="numcol">Сума<br>ентропії<sup>&nbsp;*</sup>,<br>біти</th><th class="numcol">Середня<br>ентропія<sup>&nbsp;*</sup>,<br>біти</th><th class="numcol">Кількість<br>мінливих<br>позіцій</th><th class="numcol">Кількість<br>копій<br>генів</th><th class="alnleft">Ідентифікатор<br>геномної<br>збірки</th></tr>
 <tr>
 <td colspan="6" class="subhead">Бактерії</td>
 </tr>
@@ -1039,7 +1038,7 @@
 <p class="samp-comment">Така команда спрацює, тільки якщо на комп&rsquo;ютері установлені утиліти <span class="samp">sort</span>, <span class="samp">cut</span> та <span class="samp">uniq</span> (на Linux та Mac OS оці програми звичайно встановлені разом із сістемою).</p>
 <br>
 <hr>
-<p>RiboGrove, 21.07.2022</p>
+<p>RiboGrove, 05.08.2022</p>
 </div>
 </body>
 </html>
