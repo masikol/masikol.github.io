@@ -3,7 +3,7 @@
   --active-color: #2840AB;
 }
 h1, h2, h3, h4 {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.2rem;
 }
 html {
@@ -26,7 +26,7 @@ html {
 }
 a {
   color: var(--main-bg-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:hover {
   text-decoration: underline;
