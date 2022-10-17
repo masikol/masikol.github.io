@@ -43,8 +43,8 @@
 <li><a href="#searching-data">Пошук даних у RiboGrove</a>
 <ul class="ribogrove-nested-list">
   <li><a href="#header-format">Формат заголовку</a></li>
-<li><a href="#subset-by-header">Вибір послідовностей по заголовку</a></li>
-<li><a href="#subset-by-len">Вибір послідовностей по довжині</a></li>
+<li><a href="#select-by-header">Вибір послідовностей по заголовку</a></li>
+<li><a href="#select-by-len">Вибір послідовностей по довжині</a></li>
 <li><a href="#select-head">Вибір даних заголовків</a></li>
 </ul>
 </li>
@@ -1074,7 +1074,7 @@
 </ol>
 <h3>Вибір послідовностей</h3>
 <p>Відбирати ті чи інші послідовності із файлів fasta можна за допомогою програми <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ҐітХаб-репозиторій</a>, <a href="https://bioinf.shenwei.me/seqkit/">документація</a>). Це безкоштовна, кросплатформенна, багатофункціональна та доволі швидка програма, яка може обробляти як &bdquo;ґзіп&rsquo;нуті&ldquo;, так і прості нестиснуті файли fasta. Для відбіру послідовностей зручно выкористовувати програми <span class="samp">seqkit grep</span> та <span class="samp">seqkit seq</span>.</p>
-<div id="subset-by-header" class="pad-anchor"></div>
+<div id="select-by-header" class="pad-anchor"></div>
 <h4>Вибір послідовностей по заголовку</h4>
 <p>Нехай ми робимо вибірку з файла <span class="samp">ribogrove_8.214_sequences.fasta.gz</span>. Корисними можуть статися наступні приклади команд користання програмою <span class="samp">seqkit grep</span>:</p>
 <p><strong>Приклад 1</strong>. Вибрати одну послідовність по SeqID.</p>
@@ -1095,7 +1095,7 @@
 <p><strong>Приклад 6</strong>. Вибрати всі послідовності крім тих, які належать до типу <i>Firmicutes</i>.</p>
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";p__Firmicutes;" ribogrove_8.214_sequences.fasta.gz</p>
 <p class="samp-comment">Зверніть увагу на опцію <span class="samp">-v</span> у рядку з опціями <span class="samp">-nvrp</span>. Оця опція інвертує поведінку програми, і тепер вона знайде всі послідовності, заголовки яких <em>не</em> утримують рядку &laquo;<span class="samp">;p__Firmicutes;</span>&raquo;.</p>
-<div id="subset-by-len" class="pad-anchor"></div>
+<div id="select-by-len" class="pad-anchor"></div>
 <h4>Вибір послідовностей по довжині</h4>
 <p>Відбірати послідовності по довжині можна за допомогою програми <span class="samp">seqkit seq</span>.</p>
 <p><strong>Приклад 1</strong>. Вибрати всі послідовності довше ніж 1600 п.о.</p>

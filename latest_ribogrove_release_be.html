@@ -43,8 +43,8 @@
 <li><a href="#searching-data">Пошук дадзеных у RiboGrove</a>
 <ul class="ribogrove-nested-list">
 <li><a href="#header-format">Фармат загалоўка</a></li>
-<li><a href="#subset-by-header">Адбор паслядоўнасцяў паводле загалоўкаў</a></li>
-<li><a href="#subset-by-len">Адбор паслядоўнасцяў паводле даўжыні</a></li>
+<li><a href="#select-by-header">Адбор паслядоўнасцяў паводле загалоўкаў</a></li>
+<li><a href="#select-by-len">Адбор паслядоўнасцяў паводле даўжыні</a></li>
 <li><a href="#select-head">Адбор дадзеных загалоўкаў</a></li>
 </ul>
 </li>
@@ -1074,7 +1074,7 @@
 </ol>
 <h3>Адбор паслядоўнасцяў</h3>
 <p>Адбіраць тыя ці іншыя паслядоўнасці з файлаў fasta можна з дапамогай праграмы <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ГітХаб-рэпазіторый</a>, <a href="https://bioinf.shenwei.me/seqkit/">дакументацыя</a>). Гэта бясплатная, кросплатформавая, шматфункцыянальная і даволі шустрая праграма, якая можа апрацоўваць як &bdquo;гзіп&rsquo;нутыя&ldquo;, так і простыя нясціснутыя файлы fasta. Для адбору паслядоўнасцяў зручна выкарыстоўваць падпраграмы <span class="samp">seqkit grep</span> і <span class="samp">seqkit seq</span> .</p>
-<div id="subset-by-header" class="pad-anchor"></div>
+<div id="select-by-header" class="pad-anchor"></div>
 <h4>Адбор паслядоўнасцяў паводле загалоўкаў</h4>
 <p>Няхай мы робім выбарку з файла <span class="samp">ribogrove_8.214_sequences.fasta.gz</span>. Карыснымі могуць быць наступныя прыклады каманд карыстання праграмай <span class="samp">seqkit grep</span>:</p>
 <p><strong>Прыклад 1</strong>. Выбраць адну паслядоўнасць паводле SeqID.</p>
@@ -1095,7 +1095,7 @@
 <p><strong>Прыклад 6</strong>. Выбраць усе паслядоўнасці апроч тых, якія належаць да тыпу <i>Firmicutes</i>.</p>
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";p__Firmicutes;" ribogrove_8.214_sequences.fasta.gz</p>
 <p class="samp-comment">Звярніце ўвагу на опцыю <span class="samp">-v</span> у шэгару опцый <span class="samp">-nvrp</span>. Гэтая опцыя інвертуе паводзіны праграмы, і цяпер яна знойдзе ўсе паслядоўнасці, у загалоўках якіх <em>няма</em> радку &laquo;<span class="samp">;p__Firmicutes;</span>&raquo;.</p>
-<div id="subset-by-len" class="pad-anchor"></div>
+<div id="select-by-len" class="pad-anchor"></div>
 <h4>Адбор паслядоўнасцяў паводле даўжыні</h4>
 <p>Адбіраць паслядоўнасці паводле даўжыні можна з дапамогай праграмы <span class="samp">seqkit seq</span>.</p>
 <p><strong>Прыклад 1</strong>. Выбраць усе паслядоўнасці даўжэй за 1600 п.а.</p>

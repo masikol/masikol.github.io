@@ -33,8 +33,8 @@
 <li><a href="#searching-data">Searching data in RiboGrove</a>
 <ul>
 <li><a href="#header-format">Header format</a></li>
-<li><a href="#subset-by-header">Subsetting sequences by header</a></li>
-<li><a href="#subset-by-len">Subsetting sequences by length</a></li>
+<li><a href="#select-by-header">Search sequences by header</a></li>
+<li><a href="#select-by-len">Search sequences by length</a></li>
 <li><a href="#select-head">Selecting header data</a></li>
 </ul>
 </li>
@@ -930,7 +930,7 @@
 <hr>
 <div id="searching-data" class="pad-anchor"></div>
 <h2>Searching data in RiboGrove</h2>
-<p>RiboGrove is a very minimalistic database &mdash; it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and subset RiboGrove data.</p>
+<p>RiboGrove is a very minimalistic database &mdash; it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and select RiboGrove data.</p>
 <div id="header-format" class="pad-anchor"></div>
 <h3>Header format</h3>
 <p>RiboGrove fasta data has the following format of header:</p>
@@ -946,11 +946,11 @@
 <li>Taxonomy string, comprising domain (<span class="samp-highl">Bacteria</span>), phylum (<span class="samp-highl">Firmicutes</span>), class (<span class="samp-highl">Bacilli</span>), order (<span class="samp-highl">Bacillales</span>), family (<span class="samp-highl">Bacillaceae</span>), and genus (<span class="samp-highl">Bacillus</span>) names. The names are separated and flanked by semicolons (<span class="samp-highl">;</span>).</li>
 <li>The category of the genome, from which the gene sequence originates: (<span class="samp-highl">category:2</span>). Category 1 genomes are of the highest reliability, and category 3 genomes are least reliable.</li>
 </ol>
-<h3>Subsetting sequences</h3>
-<p>You can subset specific sequences from fasta files using the <strong>Seqkit</strong> program (<a href="https://github.com/shenwei356/seqkit">GitHub repo</a>, <a href="https://bioinf.shenwei.me/seqkit/">documentation</a>). It is free, cross-platform, multifunctional and pretty fast and can process both gzipped and uncompressed fasta files. Programs <span class="samp">seqkit grep</span> and <span class="samp">seqkit seq</span> are useful for sequence subsetting.</p>
-<div id="subset-by-header" class="pad-anchor"></div>
-<h4>Subsetting sequences by header</h4>
-<p>Given the downloaded fasta file <span class="samp">ribogrove_7.213_sequences.fasta.gz</span>, consider the following examples of sequence subsetting using <span class="samp">seqkit grep</span>:</p>
+<h3>Sequence selection</h3>
+<p>You can select specific sequences from fasta files using the <strong>Seqkit</strong> program (<a href="https://github.com/shenwei356/seqkit">GitHub repo</a>, <a href="https://bioinf.shenwei.me/seqkit/">documentation</a>). It is free, cross-platform, multifunctional and pretty fast and can process both gzipped and uncompressed fasta files. Programs <span class="samp">seqkit grep</span> and <span class="samp">seqkit seq</span> are useful for sequence selection.</p>
+<div id="select-by-header" class="pad-anchor"></div>
+<h4>Search sequences by header</h4>
+<p>Given the downloaded fasta file <span class="samp">ribogrove_7.213_sequences.fasta.gz</span>, consider the following examples of sequence selection using <span class="samp">seqkit grep</span>:</p>
 <p><strong>Example 1</strong>. Select a single sequence by SeqID.</p>
 <p class="samp-highl samp-vwide">seqkit grep -p "NZ_CP079719.1:86193-87742_plus" ribogrove_7.213_sequences.fasta.gz</p>
 <p class="samp-comment">The <span>-p</span> option sets a pattern to search in fasta headers (only in sequence IDs, actually).</p>
@@ -967,9 +967,9 @@
 <p><strong>Example 6</strong>. Select all sequences except for those belonging to <i>Firmicutes</i>.</p>
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";Firmicutes;" ribogrove_7.213_sequences.fasta.gz</p>
 <p class="samp-comment">Recognize the <span class="samp">-v</span> option within option sequence <span class="samp">-nvrp</span>. This option inverts match, i.e. without it the search would result in sequences belonging to <i>Firmicutes</i> only.</p>
-<div id="subset-by-len" class="pad-anchor"></div>
-<h4>Subsetting sequences by length</h4>
-<p>You can use program <span class="samp">seqkit seq</span> to subset sequences by length.</p>
+<div id="select-by-len" class="pad-anchor"></div>
+<h4>Search sequences by length</h4>
+<p>You can use program <span class="samp">seqkit seq</span> to select sequences by length.</p>
 <p><strong>Example 1</strong>. Select all sequences longer than 1600 bp.</p>
 <p class="samp-highl samp-vwide">seqkit seq -m 1601 ribogrove_7.213_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-m</span> option sets the minimum length of a sequence to be printed to output.</p>

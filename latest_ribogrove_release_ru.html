@@ -44,8 +44,8 @@
 <li><a href="#searching-data">Поиск данных в базе данных RiboGrove</a>
 <ul class="ribogrove-nested-list">
 <li><a href="#header-format">Формат заголовка</a></li>
-<li><a href="#subset-by-header">Выборка последовательностей по заголовку</a></li>
-<li><a href="#subset-by-len">Выборка последовательностей по длине</a></li>
+<li><a href="#select-by-header">Выборка последовательностей по заголовку</a></li>
+<li><a href="#select-by-len">Выборка последовательностей по длине</a></li>
 <li><a href="#select-head">Извлечение информации из заголовков последовательностей</a></li>
 </ul>
 </li>
@@ -1075,7 +1075,7 @@
 </ol>
 <h3>Выборка последовательностей</h3>
 <p>Отбирать последовательности из fasta-файлов можно с помощью программы <strong>Seqkit</strong> (<a href="https://github.com/shenwei356/seqkit">ГитХаб-репозиторий</a>, <a href="https://bioinf.shenwei.me/seqkit/">документация</a>). Это бесплатная, кроссплатформенная, многофункциональная и весьма шустрая программа; она может обрабатывать gzip&rsquo;нутые и простые fasta-файлы. Для выборки данных из fasta-файлов удобно использовать программы <span class="samp">seqkit grep</span> и <span class="samp">seqkit seq</span>.</p>
-<div id="subset-by-header" class="pad-anchor"></div>
+<div id="select-by-header" class="pad-anchor"></div>
 <h4>Выборка последовательностей по заголовку</h4>
 <p>Пусть мы делаем выборку из файла <span class="samp">ribogrove_6.212_sequences.fasta.gz</span>. Полезными могут быть следующие примеры команд для выборки последовательностей с помощью <span class="samp">seqkit grep</span>:</p>
 <p><strong>Пример 1</strong>. Выбрать индивидуальную последовательность по идентификатору (seqID).</p>
@@ -1096,7 +1096,7 @@
 <p><strong>Пример 6</strong>. Выбрать все последовательности генов, кроме тех, которые принадлежат фирмикутам.</p>
 <p class="samp-highl samp-vwide">seqkit grep -nvrp ";p__Firmicutes;" ribogrove_8.214_sequences.fasta.gz</p>
 <p class="samp-comment">Обратите внимание на опцию <span class="samp">-v</span> внутри строки с опциями (<span class="samp">-nvrp</span>). Эта опция инвертирует поведение программы, и теперь она находит только те последовательности, в заголовках которых нет подстроки &laquo;<span class="samp">;p__Firmicutes;</span>&raquo;.</p>
-<div id="subset-by-len" class="pad-anchor"></div>
+<div id="select-by-len" class="pad-anchor"></div>
 <h4>Выборка последовательностей по длине</h4>
 <p>Отбирать последовательности по длине можно с помощью программы <span class="samp">seqkit seq</span>.</p>
 <p><strong>Пример 1</strong>. Выбрать все последовательности длиннее 1600 п.н.</p>
