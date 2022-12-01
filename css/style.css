@@ -82,3 +82,11 @@ ul ul {list-style-type: none;}
 details > summary {
   cursor: pointer;
 }
+.sabaka {
+  border: 0px;
+  height: 1rem;
+  width: 1rem;
+}
+.primer-cov-tbody {
+  font-size: .7rem;
+}
