@@ -19,3 +19,6 @@
 .samp-comment {
   font-size:.875rem!important;
 }
+.sum-table tr .alncenter {
+  text-align: center;
+}
