@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>RiboGrove mirror</title>
@@ -8,60 +8,46 @@
 <body>
 <div class="container">
 <br>
-<p><div class="warn-section">The <a href="http://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br>Hence this mirror has been created, and RiboGrove files are available through Dropbox.</div></p><br>
+<p><div class="warn-section">The <a href="https://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br>Hence this mirror has been created, and RiboGrove files are available through Dropbox.</div></p><br>
 <img src="img/RiboGrove_logo.png"><br><br>
 <p><a href="index.html">Home</a> / Release notes</p>
 <h1 class="archive-title">RiboGrove release notes</h1>
 
-<h2 style="margin-top:1.0rem;">Release 9.215 (2022-11-30). Latest release.</h2>
-<p>Starting with release 9.215, we publish section &ldquo;Coverage of primer pairs for different V-regions of bacterial 16S rRNA genes&rdquo;.</p>
-<p><a href="index.html">Go to release 9.215.</a></p>
+<h2 style="margin-top: 1.0rem;">Release 10.216 (2023-01-18). Latest release.</h2>
+<p>Starting with RiboGrove 10.216 we use Rfam 14.9 for sequence filtering. In Rfam 14.9, the model RF00177 (Bacterial small subunit ribosomal RNA) is updated. Before RiboGrove 10.216 we used Rfam 14.6.</p>
+<p><a href="index.html">Go to release 10.216.</a></p>
 
-<h2 style="margin-top:1.0rem;">Release 8.214 (2022-10-13).</h2>
+<h2 style="margin-top: .5rem;">Release 9.215 (2022-11-30).</h2>
+<p>Starting with release 9.215, we publish section “Coverage of primer pairs for different V-regions of bacterial 16S rRNA genes”.</p>
+<p><a href="archive/ribogrove_9.215_en.html">Go to release 9.215.</a></p>
+<h2 style="margin-top: .5rem;">Release 8.214 (2022-10-13).</h2>
 <p>Starting with release 8.214:</p>
 <ol>
-  <li>
-    RiboGrove uses new format of fasta headers to improve search specificity. Example:<br>
-    Old header:<br><span style="font-family:monospace;font-size:14px">>NZ_CP009686.1:8908-10459_plus Bacillus_cereus ;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus; category:1</span><br>
-    New header:<br><span style="font-family:monospace;font-size:14px">>G_324861:NZ_CP009686.1:8908-10459:plus ;d__Bacteria;p__Firmicutes;c__Bacilli;o__Bacillales;f__Bacillaceae;g__Bacillus;s__cereus; category:1</span><br>
-    Please, see the <a href="index.html#header-format">8.214 release page</a> for details.
-  </li>
-  <li>We don&rsquo;t publish fasta file of &ldquo;raw&rdquo; gene sequences any more because its content is mostly the same as data stored in the fasta file of full-length sequences.</li>
-  <li>To replace &ldquo;raw&rdquo; fasta file, metadata now contains file <span style="font-family:monospace;">discarded_sequences.fasta.gz</span>. This file contains 16S rRNA gene sequences which were present in source RefSeq genomes and were annotated a 16S rRNA genes but which have been discarded according to their incompleteness, internal repeats etc. and thus haven&rsquo;t been included into RiboGrove.</li>
-  <li>Metadata now does not contain files <span style="font-family:monospace;">per_replicon_statistics.tsv</span> and <span style="font-family:monospace;">raw_per_replicon_statistics.tsv</span> because of their unnecessary redundancy. All data they contained can be easily obtained from files <span style="font-family:monospace;">gene_seqs_statistics.tsv</span> and <span style="font-family:monospace;">discarded_gene_seqs_statistics.tsv</span>.</li>
+<li>RiboGrove uses new format of fasta headers to improve search specificity. Example:<br /> Old header:<br /><span style="font-family: monospace; font-size: 14px;">&gt;NZ_CP009686.1:8908-10459_plus Bacillus_cereus ;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus; category:1</span><br /> New header:<br /><span style="font-family: monospace; font-size: 14px;">&gt;G_324861:NZ_CP009686.1:8908-10459:plus ;d__Bacteria;p__Firmicutes;c__Bacilli;o__Bacillales;f__Bacillaceae;g__Bacillus;s__cereus; category:1</span><br /> Please, see the <a href="archive/ribogrove_8.214_en.html#header-format">8.214 release page</a> for details.</li>
+<li>We don’t publish fasta file of “raw” gene sequences any more because its content is mostly the same as data stored in the fasta file of full-length sequences.</li>
+<li>To replace “raw” fasta file, metadata now contains file <span style="font-family: monospace;">discarded_sequences.fasta.gz</span>. This file contains 16S rRNA gene sequences which were present in source RefSeq genomes and were annotated a 16S rRNA genes but which have been discarded according to their incompleteness, internal repeats etc. and thus haven’t been included into RiboGrove.</li>
+<li>Metadata now does not contain files <span style="font-family: monospace;">per_replicon_statistics.tsv</span> and <span style="font-family: monospace;">raw_per_replicon_statistics.tsv</span> because of their unnecessary redundancy. All data they contained can be easily obtained from files <span style="font-family: monospace;">gene_seqs_statistics.tsv</span> and <span style="font-family: monospace;">discarded_gene_seqs_statistics.tsv</span>.</li>
 </ol>
-<p><a href="archive/ribogrove_7.213_en.html">Go to release 8.214.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 7.213 (2022-07-20).</h2>
-<p>Starting with release 7.213, metadata contains file <span style="font-family:monospace;">QIIME2-compatible-taxonomy.txt</span>. This is a TSV file, which can be used to train a QIIME2 classifier (see the <a href="https://docs.qiime2.org">tutorial</a>).</p>
+<p><a href="archive/ribogrove_8.214_en.html">Go to release 8.214.</a></p>
+<h2 style="margin-top: .5rem;">Release 7.213 (2022-07-20).</h2>
+<p>Starting with release 7.213, metadata contains file <span style="font-family: monospace;">QIIME2-compatible-taxonomy.txt</span>. This is a TSV file, which can be used to train a QIIME2 classifier (see the <a href="https://docs.qiime2.org">tutorial</a>).</p>
 <p><a href="archive/ribogrove_7.213_en.html">Go to release 7.213.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 6.212 (2022-05-13).</h2>
-<p><i style="font-size:14px">No significant differences from the previous release.</i><br>
-<a href="archive/ribogrove_6.212_en.html">Go to release 6.212.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 5.211 (2022-03-14).</h2>
-<p><i style="font-size:14px">No significant differences from the previous release.</i><br>
-<a href="archive/ribogrove_5.211_en.html">Go to release 5.211.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 4.210 (2022-01-12).</h2>
-<p><i style="font-size:14px">No significant differences from the previous release.</i><br>
-<a href="archive/ribogrove_4.210_en.html">Go to release 4.210.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 3.209 (2021-11-25).</h2>
-<p>The release data is correct: releases 2.208 and 3.209 were released on the same day.<br>
-<a href="archive/ribogrove_3.209_en.html">Go to release 3.209.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 2.208 (2021-11-25)</h2>
-<p>The release data is correct: releases 2.208 and 3.209 were released on the same day.<br>
-<a href="archive/ribogrove_2.208_en.html">Go to release 2.208.</a></p>
-
-<h2 style="margin-top:.5rem;">Release 1.207 (2021-12-08)</h2>
+<h2 style="margin-top: .5rem;">Release 6.212 (2022-05-13).</h2>
+<p><i style="font-size: 14px;">No significant differences from the previous release.</i><br /> <a href="archive/ribogrove_6.212_en.html">Go to release 6.212.</a></p>
+<h2 style="margin-top: .5rem;">Release 5.211 (2022-03-14).</h2>
+<p><i style="font-size: 14px;">No significant differences from the previous release.</i><br /> <a href="archive/ribogrove_5.211_en.html">Go to release 5.211.</a></p>
+<h2 style="margin-top: .5rem;">Release 4.210 (2022-01-12).</h2>
+<p><i style="font-size: 14px;">No significant differences from the previous release.</i><br /> <a href="archive/ribogrove_4.210_en.html">Go to release 4.210.</a></p>
+<h2 style="margin-top: .5rem;">Release 3.209 (2021-11-25).</h2>
+<p>The release data is correct: releases 2.208 and 3.209 were released on the same day.<br /> <a href="archive/ribogrove_3.209_en.html">Go to release 3.209.</a></p>
+<h2 style="margin-top: .5rem;">Release 2.208 (2021-11-25)</h2>
+<p>The release data is correct: releases 2.208 and 3.209 were released on the same day.<br /> <a href="archive/ribogrove_2.208_en.html">Go to release 2.208.</a></p>
+<h2 style="margin-top: .5rem;">Release 1.207 (2021-12-08)</h2>
 <p>You may wonder, why RiboGrove 1.207 was realeased on December 8<sup>th</sup>, 2021, and RiboGrove 2.208 on November 25<sup>th</sup>, 2021. The reason is that initially (on October 28<sup>th</sup>, 2021), RiboGrove 1.207 wasn’t, strictly speaking, based on RefSeq 207 — it contained sequences, which had been added to RefSeq after release 207 but before release 208. The corrected version of RiboGrove 1.207 (2021-12-08) is based on RefSeq 207, without “contaminations” from RefSeq 208.</p>
 <p><a href="archive/ribogrove_1.207_en.html">Go to release 1.207.</a></p>
 
 <hr>
-<p>RiboGrove, 2022-12-01</p>
+<p>RiboGrove, 2023-01-19</p>
 </div>
 </body>
 </html>
