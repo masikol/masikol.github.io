@@ -1,4 +1,6 @@
-# RiboGrove mirror source files
+# RiboGrove mirror
+
+![](img/RiboGrove_logo.png "RiboGrove logo")
 
 Here you can find source files for RiboGrove database mirror.
 

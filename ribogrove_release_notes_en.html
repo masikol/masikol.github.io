@@ -13,9 +13,25 @@
 <p><a href="index.html">Home</a> / Release notes</p>
 <h1 class="archive-title">RiboGrove release notes</h1>
 
-<h2 style="margin-top: 1.0rem;">Release 10.216 (2023-01-18). Latest release.</h2>
+<h2 style="margin-top: 1.0rem;">Release 11.217 (2023-03-21). Latest release.</h2>
+<p>Starting with release 11.217:
+  <ul>
+  <li>Header format has been changed again, and this is the last time it changes. Now, Assembly accession numbers are used instead of Assembly IDs with a <span class="samp-highl">G_</span> prefix (e.g. <span class="samp-highl">GCF_004799645.1:</span> instead of <span class="samp-highl">G_2580821:</span>).</li>
+  <li>Redundant data has been removed from metadata files. Now, for example, instead of a taxonomy string for each gene, the <span class="samp-highl">taxonomy.tsv</span> file contains a taxonomy string for each genome, thus reducing the file size.</li>
+  <li>File <span class="samp-highl">QIIME2-compatible-taxonomy.txt</span> has been removed from metadata archive. You can easily make it with the script <a href="https://github.com/masikol/ribogrove-tools/tree/main/data_transformation_scripts">make_qiime_taxonomy_file.py</a> from ribogrove-tools v11.217 and later.</li>
+  <li>The process of sequence filtering has been modified:
+    <ul>
+      <li>we removed the step which searches the gene sequences for 16S rRNA conserved regions according to <a href="https://doi.org/10.7717%2Fpeerj.3036">Martinez-Porchas M et al.</a></li>
+      <li>now, the pipeline uses ribotyper program from the <a href="https://github.com/ncbi/ribovore">Ribovore</a> suite to detect pivotal genes, instead of cmscan.</li>
+    </ul>
+  </li>
+  </ul>
+</p>
+<p><a href="index.html">Go to release 11.217.</a></p>
+
+<h2 style="margin-top: .5rem;">Release 10.216 (2023-01-18).</h2>
 <p>Starting with RiboGrove 10.216 we use Rfam 14.9 for sequence filtering. In Rfam 14.9, the model RF00177 (Bacterial small subunit ribosomal RNA) is updated. Before RiboGrove 10.216 we used Rfam 14.6.</p>
-<p><a href="index.html">Go to release 10.216.</a></p>
+<p><a href="archive/ribogrove_10.216_en.html">Go to release 10.216.</a></p>
 
 <h2 style="margin-top: .5rem;">Release 9.215 (2022-11-30).</h2>
 <p>Starting with release 9.215, we publish section “Coverage of primer pairs for different V-regions of bacterial 16S rRNA genes”.</p>
@@ -47,7 +63,7 @@
 <p><a href="archive/ribogrove_1.207_en.html">Go to release 1.207.</a></p>
 
 <hr>
-<p>RiboGrove, 2023-01-19</p>
+<p>RiboGrove, 2023-03-21</p>
 </div>
 </body>
 </html>
