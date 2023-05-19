@@ -1,4 +1,9 @@
 
+12.218
+
+final -- https://www.dropbox.com/s/y247nj6oh27aoe8/ribogrove_12.218_sequences.fasta.gz?dl=0
+metadata -- https://www.dropbox.com/s/7ralplwup8b6p4x/metadata_ribogrove_12.218.zip?dl=0
+
 11.217
 
 final -- https://www.dropbox.com/s/slpnzhmf554g5jr/ribogrove_11.217_sequences.fasta.gz?dl=0

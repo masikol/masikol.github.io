@@ -11,12 +11,11 @@
 <div class="container">
 <p><div class="warn-section">The <a href="https://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br>Hence this mirror has been created, and RiboGrove files are available through Dropbox (links are <a href="#downloads">below</a>).</div></p><br>
 <img src="../img/RiboGrove_logo.png"><br><br>
-<p><a href="../index.html">Home</a> / <a href="ribogrove_archive_en.html">Release archive</a> / 9.215</p>
 <h2>Contents</h2>
 <ul>
 <li><a href="#downloads">Downloads</a>
 <ul class="ribogrove-nested-list">
-  <li><a href="#current-release">Latest RiboGrove release &mdash; 9.215</li>
+  <li><a href="#current-release">RiboGrove 11.217</li>
   <li><a href="#release-archive">RiboGrove release archive</li>
   <li><a href="#release-notes">Release notes</li>
 </ul>
@@ -46,11 +45,11 @@
 <div id="downloads" class="pad-anchor"></div>
 <h2>Downloads</h2>
 <div id="current-release" class="pad-anchor"></div>
-<h3>Latest RiboGrove release &mdash; 9.215 (2022-11-30)</h3>
-<p>The release is based on RefSeq release 215.</p>
+<h3>RiboGrove 11.217 (2023-03-21)</h3>
+<p>The release is based on RefSeq release 217.</p>
 <ul>
-<li>A fasta file of full-length 16S gene sequences. <a href="https://www.dropbox.com/s/hsexqh2h55tippb/ribogrove_9.215_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 6.53 MB)</a></li>
-<li>Metadata <a href="https://www.dropbox.com/s/c1mna630rm0dhar/metadata_ribogrove_9.215.zip?dl=0">Download (zip archive 17.88 MB)</a><br>
+<li>A fasta file of full-length 16S gene sequences. <a href="https://www.dropbox.com/s/slpnzhmf554g5jr/ribogrove_11.217_sequences.fasta.gz?dl=0">Download (gzipped fasta file, 6.92 MB)</a></li>
+<li>Metadata <a href="https://www.dropbox.com/s/djr8dwj1b1rjz3a/metadata_ribogrove_11.217.zip?dl=0">Download (zip archive 5.01 MB)</a><br>
   <details>
     <summary><small>What information exactly does the metadata contain?</small></summary>
     <small>
@@ -58,7 +57,7 @@
       <ol>
       <li>
         <span class="samp-highl">discarded_sequences.fasta.gz</span><br>
-        This is a fasta file of sequences, which were present in source RefSeq genomes and were annotated a 16S rRNA genes but which have been discarded according to their incompleteness, internal repeats etc. and thus haven&rsquo;t been included into RiboGrove.
+        This is a fasta file of sequences, which were present in source RefSeq genomes and were annotated a 16S rRNA genes but which have been discarded according to their incompleteness, internal repeats etc. and thus haven’t been included into RiboGrove.
       </li>
       <li>
         <span class="samp-highl">source_RefSeq_genomes.tsv</span><br>
@@ -81,16 +80,8 @@
         This is a TSV file, which contains information about intragenomic repeats found in gene sequences using <a href="https://github.com/deprekate/RepeatFinder">RepeatFinder</a>.
       </li>
       <li>
-        <span class="samp-highl">cmscan_output_table.tblout</span><br>
-        This is a TSV file, which contains complete output of <a href="http://eddylab.org/infernal/">cmscan</a> program outputted after processing all 16S rRNA sequences.
-      </li>
-      <li>
         <span class="samp-highl">entropy_summary.tsv</span><br>
         This is a TSV file, which contains summary of instragenomic variability of the 16S rRNA genes. Intragenomic variability are calculated only for the category&nbsp;1 genomes having more than one 16S rRNA gene. Intragenomic variability is evaluated using Shannon entropy. We align gene sequences from each genome using <a href="https://drive5.com/muscle5/">MUSCLE</a>, and then we calculate Shannon entropy for each multiple alignment column (i.e. base).
-      </li>
-      <li>
-        <span class="samp-highl">QIIME2-compatible-taxonomy.txt</span><br>
-        This is a TSV file, which can be used to train a QIIME2 classifier (see the <a href="https://docs.qiime2.org">tutorial</a>).
       </li>
     </ol></small>
   </details>
@@ -99,10 +90,22 @@
 <p>The fasta file is compressed with gzip, and the metadata file is a zip archive. To uncompress them, Linux and Mac OS users may use gzip and zip programs, they should be built-in. For Windows users, the free and open-source (de)compression program <a href="https://www.7-zip.org/">7-Zip</a> is available.</p>
 <div id="release-archive" class="pad-anchor"></div>
 <h3>RiboGrove release archive</h3>
-<p>You can find all releases in the <a href="ribogrove_archive_en.html">RiboGrove release archive</a>.</p>
+<p>You can find all releases in the <a href="../archive/ribogrove_archive_en.html">RiboGrove release archive</a>.</p>
 <div id="release-notes" class="pad-anchor"></div>
 <h3>Release notes</h3>
-<p>Starting with release 9.215, we publish section &ldquo;Coverage of primer pairs for different V-regions of bacterial 16S rRNA genes&rdquo;.</p>
+<p>Starting with release 11.217:
+  <ul>
+  <li>Header format has been changed again, and this is the last time it changes. Now, Assembly accession numbers are used instead of Assembly IDs with a <span class="samp-highl">G_</span> prefix (e.g. <span class="samp-highl">GCF_004799645.1:</span> instead of <span class="samp-highl">G_2580821:</span>).</li>
+  <li>Redundant data has been removed from metadata files. Now, for example, instead of a taxonomy string for each gene, the <span class="samp-highl">taxonomy.tsv</span> file contains a taxonomy string for each genome, thus reducing the file size.</li>
+  <li>File <span class="samp-highl">QIIME2-compatible-taxonomy.txt</span> has been removed from metadata archive. You can easily make it with the script <a href="https://github.com/masikol/ribogrove-tools/tree/main/data_transformation_scripts">make_qiime_taxonomy_file.py</a> from ribogrove-tools v11.217 and later.</li>
+  <li>The process of sequence filtering has been modified:
+    <ul>
+      <li>we removed the step which searches the gene sequences for 16S rRNA conserved regions according to <a href="https://doi.org/10.7717%2Fpeerj.3036">Martinez-Porchas M et al.</a></li>
+      <li>now, the pipeline uses the ribotyper program from the <a href="https://github.com/ncbi/ribovore">Ribovore</a> suite to detect pivotal genes, instead of cmscan.</li>
+    </ul>
+  </li>
+  </ul>
+</p>
 <p>You can find notes to all RiboGrove releases on the <a href="../ribogrove_release_notes_en.html">release notes page</a>.</p>
 <hr>
 <div id="summary" class="pad-anchor"></div>
@@ -114,45 +117,45 @@
 <tr><th></th><th class="numcol">Bacteria</th><th class="numcol">Archaea</th><th class="numcol">Total</th></tr>
 <tr class="sumtab-row">
 <td>Number of gene sequences</td>
-<td class="numcol">158,769</td>
-<td class="numcol">813</td>
-<td class="numcol">159,582</td>
+<td class="numcol">168,890</td>
+<td class="numcol">842</td>
+<td class="numcol">169,742</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of unique gene sequences</td>
-<td class="numcol">43,247</td>
-<td class="numcol">592</td>
-<td class="numcol">43,839</td>
+<td class="numcol">44,824</td>
+<td class="numcol">604</td>
+<td class="numcol">45,428</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of species</td>
-<td class="numcol">7,717</td>
-<td class="numcol">381</td>
-<td class="numcol">8,098</td>
+<td class="numcol">8,118</td>
+<td class="numcol">392</td>
+<td class="numcol">8,512</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of genomes</td>
-<td class="numcol">29,922</td>
-<td class="numcol">478</td>
-<td class="numcol">30,400</td>
+<td class="numcol">31,680</td>
+<td class="numcol">497</td>
+<td class="numcol">32,179</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of genomes of category 1</td>
-<td class="numcol">19,915</td>
-<td class="numcol">174</td>
-<td class="numcol">20,089</td>
+<td class="numcol">21,196</td>
+<td class="numcol">185</td>
+<td class="numcol">21,381</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of genomes of category 2</td>
-<td class="numcol">9,876</td>
-<td class="numcol">304</td>
-<td class="numcol">10,180</td>
+<td class="numcol">10,343</td>
+<td class="numcol">312</td>
+<td class="numcol">10,657</td>
 </tr>
 <tr class="sumtab-row">
 <td>Number of genomes of category 3</td>
-<td class="numcol">131</td>
+<td class="numcol">141</td>
 <td class="numcol">0</td>
-<td class="numcol">131</td>
+<td class="numcol">141</td>
 </tr>
 </tbody>
 </table>
@@ -163,13 +166,13 @@
 <tr><th></th><th class="numcol">Bacteria</th><th class="numcol">Archaea</th></tr>
 <tr class="sumtab-row">
 <td>Minimum (bp)</td>
-<td class="numcol">1,448.00</td>
+<td class="numcol">1,401.00</td>
 <td class="numcol">1,439.00</td>
 </tr>
 <tr class="sumtab-row">
 <td>25th percentile (bp) <sup>*</sup></td>
 <td class="numcol">1,517.00</td>
-<td class="numcol">1,472.00</td>
+<td class="numcol">1,471.00</td>
 </tr>
 <tr class="sumtab-row">
 <td>Median (bp) <sup>*</sup></td>
@@ -179,12 +182,12 @@
 <tr class="sumtab-row">
 <td>75th percentile (bp) <sup>*</sup></td>
 <td class="numcol">1,542.00</td>
-<td class="numcol">1,486.50</td>
+<td class="numcol">1,486.00</td>
 </tr>
 <tr class="sumtab-row">
 <td>Average (bp) <sup>*</sup></td>
-<td class="numcol">1,528.01</td>
-<td class="numcol">1,496.32</td>
+<td class="numcol">1,527.15</td>
+<td class="numcol">1,495.44</td>
 </tr>
 <tr class="sumtab-row">
 <td>Mode (bp) <sup>*</sup></td>
@@ -198,12 +201,12 @@
 </tr>
 <tr class="sumtab-row">
 <td>Standard deviation (bp) <sup>*</sup></td>
-<td class="numcol">25.63</td>
-<td class="numcol">137.70</td>
+<td class="numcol">25.65</td>
+<td class="numcol">135.82</td>
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> Metrics marked with this sign were calculated with preliminary normalization, i.e. median within-species gene length was used for the summary.</p>
+<p><sup>*</sup> Metrics marked with an asterisk were calculated with preliminary normalization, i.e. median within-species gene length was used for the summary.</p>
 <div id="copy-number" class="pad-anchor"></div>
 <table class="sum-table">
 <caption>16S rRNA gene copy number</caption>
@@ -213,120 +216,120 @@
 
 <tr class="sumtab-row">
 <td class="numcol">1</td>
-<td class="numcol">949</td>
-<td class="numcol">12.30</td>
-<td class="numcol">205</td>
-<td class="numcol">53.81</td>
+<td class="numcol">981</td>
+<td class="numcol">12.08</td>
+<td class="numcol">212</td>
+<td class="numcol">54.08</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">2</td>
-<td class="numcol">1,431</td>
-<td class="numcol">18.54</td>
-<td class="numcol">106</td>
-<td class="numcol">27.82</td>
+<td class="numcol">1,475</td>
+<td class="numcol">18.17</td>
+<td class="numcol">109</td>
+<td class="numcol">27.81</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">3</td>
-<td class="numcol">1,164</td>
-<td class="numcol">15.08</td>
+<td class="numcol">1,229</td>
+<td class="numcol">15.14</td>
 <td class="numcol">56</td>
-<td class="numcol">14.70</td>
+<td class="numcol">14.29</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">4</td>
-<td class="numcol">1,003</td>
-<td class="numcol">13.00</td>
-<td class="numcol">9</td>
-<td class="numcol">2.36</td>
+<td class="numcol">1,052</td>
+<td class="numcol">12.96</td>
+<td class="numcol">10</td>
+<td class="numcol">2.55</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">5</td>
-<td class="numcol">657</td>
-<td class="numcol">8.51</td>
+<td class="numcol">669</td>
+<td class="numcol">8.24</td>
 <td class="numcol">5</td>
-<td class="numcol">1.31</td>
+<td class="numcol">1.28</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">6</td>
-<td class="numcol">825</td>
-<td class="numcol">10.69</td>
+<td class="numcol">885</td>
+<td class="numcol">10.90</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">7</td>
-<td class="numcol">650</td>
-<td class="numcol">8.42</td>
+<td class="numcol">708</td>
+<td class="numcol">8.72</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">8</td>
-<td class="numcol">389</td>
-<td class="numcol">5.04</td>
+<td class="numcol">410</td>
+<td class="numcol">5.05</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">9</td>
-<td class="numcol">202</td>
-<td class="numcol">2.62</td>
+<td class="numcol">225</td>
+<td class="numcol">2.77</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">10</td>
-<td class="numcol">172</td>
-<td class="numcol">2.23</td>
+<td class="numcol">183</td>
+<td class="numcol">2.25</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">11</td>
-<td class="numcol">92</td>
-<td class="numcol">1.19</td>
+<td class="numcol">99</td>
+<td class="numcol">1.22</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">12</td>
-<td class="numcol">67</td>
-<td class="numcol">0.87</td>
+<td class="numcol">80</td>
+<td class="numcol">0.99</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">13</td>
-<td class="numcol">34</td>
-<td class="numcol">0.44</td>
+<td class="numcol">32</td>
+<td class="numcol">0.39</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">14</td>
-<td class="numcol">49</td>
-<td class="numcol">0.63</td>
+<td class="numcol">48</td>
+<td class="numcol">0.59</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">15</td>
-<td class="numcol">12</td>
-<td class="numcol">0.16</td>
+<td class="numcol">17</td>
+<td class="numcol">0.21</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">16</td>
-<td class="numcol">5</td>
-<td class="numcol">0.06</td>
+<td class="numcol">4</td>
+<td class="numcol">0.05</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
 <td class="numcol">17</td>
-<td class="numcol">5</td>
-<td class="numcol">0.06</td>
+<td class="numcol">8</td>
+<td class="numcol">0.10</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
@@ -338,9 +341,23 @@
 <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
+<td class="numcol">19</td>
+<td class="numcol">1</td>
+<td class="numcol">0.01</td>
+<td class="numcol">0</td>
+<td class="numcol">0.00</td>
+</tr>
+<tr class="sumtab-row">
 <td class="numcol">20</td>
 <td class="numcol">4</td>
 <td class="numcol">0.05</td>
+<td class="numcol">0</td>
+<td class="numcol">0.00</td>
+</tr>
+<tr class="sumtab-row">
+<td class="numcol">21</td>
+<td class="numcol">1</td>
+<td class="numcol">0.01</td>
 <td class="numcol">0</td>
 <td class="numcol">0.00</td>
 </tr>
@@ -366,81 +383,69 @@
 <table class="sum-table"><caption>Top-10 longest 16S rRNA genes
 </caption>
 <tbody>
-<tr><th class="alnleft">Organism</th><th class="numcol">Gene length (bp)</th><th class="alnleft">RiboGrove Sequence ID(s)</th><th class="alnleft">Assembly ID</th></tr>
+<tr><th class="alnleft">Organism</th><th class="numcol">Gene length (bp)</th><th class="alnleft">RiboGrove Sequence ID(s)</th><th class="alnleft">Assembly<br>accession</th></tr>
 <tr>
 <td colspan="4" class="subhead">Bacteria</td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Thermus</i> <i>thermophilus</i> strain AA2-2</td>
 <td class="numcol">2,438</td>
-<td class="seqid-td">G_10898951:NZ_AP024929.1:249100-251537:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10898951">10898951</a></td>
+<td class="seqid-td">GCF_019974355.1:NZ_AP024929.1:249100-251537:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_019974355.1">GCF_019974355.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Ca. Annandia</i> <i>pinicola</i> strain Ad13-065</td>
 <td class="numcol">1,887</td>
-<td class="seqid-td">G_11277031:NZ_CP045876.1:290071-291957:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11277031">11277031</a></td>
+<td class="seqid-td">GCF_020541245.1:NZ_CP045876.1:290071-291957:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_020541245.1">GCF_020541245.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Nitrosophilus</i> <i>labii</i> strain HRV44</td>
 <td class="numcol">1,806</td>
-<td class="seqid-td">G_8028891:NZ_AP022826.1:1258017-1259822:minus<br>G_8028891:NZ_AP022826.1:1532588-1534393:minus<br>G_8028891:NZ_AP022826.1:1939914-1941719:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/8028891">8028891</a></td>
+<td class="seqid-td">GCF_014466985.1:NZ_AP022826.1:1258017-1259822:minus<br>GCF_014466985.1:NZ_AP022826.1:1532588-1534393:minus<br>GCF_014466985.1:NZ_AP022826.1:1939914-1941719:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_014466985.1">GCF_014466985.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Gelria</i> sp. Kuro-4</td>
 <td class="numcol">1,788</td>
-<td class="seqid-td">G_10731991:NZ_AP024619.1:2016182-2017969:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10731991">10731991</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Thermoanaerobacter</i><br><i>pseudethanolicus</i> strain ATCC 33223</td>
-<td class="numcol">1,781</td>
-<td class="seqid-td">G_40148:NC_010321.1:2265744-2267524:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/40148">40148</a></td>
+<td class="seqid-td">GCF_019668485.1:NZ_AP024619.1:2016182-2017969:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_019668485.1">GCF_019668485.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Thermoanaerobacter</i> <i>brockii</i> strain Ako-1</td>
 <td class="numcol">1,781</td>
-<td class="seqid-td">G_282748:NC_014964.1:2252888-2254668:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/282748">282748</a></td>
+<td class="seqid-td">GCF_000175295.2:NC_014964.1:2252888-2254668:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000175295.2">GCF_000175295.2</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Campylobacter</i> <i>sputorum</i> strain RM3237</td>
-<td class="numcol">1,744</td>
-<td class="seqid-td">G_1153941:NZ_CP019682.1:607981-609724:plus<br>G_1153941:NZ_CP019682.1:929565-931308:minus<br>G_1153941:NZ_CP019682.1:1501945-1503688:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1153941">1153941</a></td>
+<td><i>Thermoanaerobacter</i> <i>pseudethanolicus</i> strain ATCC 33223</td>
+<td class="numcol">1,781</td>
+<td class="seqid-td">GCF_000019085.1:NC_010321.1:2265744-2267524:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000019085.1">GCF_000019085.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Thermoanaerobacter</i> sp. RKWS2</td>
+<td class="numcol">1,754</td>
+<td class="seqid-td">GCF_026240795.1:NZ_CP110888.1:94012-95765:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_026240795.1">GCF_026240795.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> strain LMG 7795</td>
 <td class="numcol">1,744</td>
-<td class="seqid-td">G_4499991:NZ_CP043427.1:609141-610884:plus<br>G_4499991:NZ_CP043427.1:930699-932442:minus<br>G_4499991:NZ_CP043427.1:1503078-1504821:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/4499991">4499991</a></td>
+<td class="seqid-td">GCF_008245005.1:NZ_CP043427.1:609141-610884:plus<br>GCF_008245005.1:NZ_CP043427.1:930699-932442:minus<br>GCF_008245005.1:NZ_CP043427.1:1503078-1504821:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_008245005.1">GCF_008245005.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Campylobacter</i> <i>sputorum</i> strain RM3237</td>
+<td class="numcol">1,744</td>
+<td class="seqid-td">GCF_002220795.1:NZ_CP019682.1:607981-609724:plus<br>GCF_002220795.1:NZ_CP019682.1:929565-931308:minus<br>GCF_002220795.1:NZ_CP019682.1:1501945-1503688:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002220795.1">GCF_002220795.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Campylobacter</i> <i>sputorum</i> strain CCUG 20703</td>
 <td class="numcol">1,743</td>
-<td class="seqid-td">G_1153911:NZ_CP019683.1:606847-608589:plus<br>G_1153911:NZ_CP019683.1:935163-936905:minus<br>G_1153911:NZ_CP019683.1:1558189-1559931:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1153911">1153911</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Campylobacter</i> <i>hyointestinalis</i> strain CHY5</td>
-<td class="numcol">1,742</td>
-<td class="seqid-td">G_7294871:NZ_CP053828.1:357136-358877:plus<br>G_7294871:NZ_CP053828.1:1667816-1669557:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/7294871">7294871</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Campylobacter</i> sp. RM6137</td>
-<td class="numcol">1,742</td>
-<td class="seqid-td">G_1101781:NZ_CP018789.1:273370-275111:plus<br>G_1101781:NZ_CP018789.1:1545743-1547484:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1101781">1101781</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Campylobacter</i> <i>sputorum</i> strain RM8705</td>
-<td class="numcol">1,742</td>
-<td class="seqid-td">G_1153931:NZ_CP019685.1:577810-579551:plus<br>G_1153931:NZ_CP019685.1:891862-893603:minus<br>G_1153931:NZ_CP019685.1:1479764-1481505:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1153931">1153931</a></td>
+<td class="seqid-td">GCF_002220735.1:NZ_CP019683.1:606847-608589:plus<br>GCF_002220735.1:NZ_CP019683.1:935163-936905:minus<br>GCF_002220735.1:NZ_CP019683.1:1558189-1559931:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002220735.1">GCF_002220735.1</a></td>
 </tr>
 <tr>
 <td colspan="4" class="subhead">Archaea</td>
@@ -448,62 +453,62 @@
 <tr class="sumtab-row">
 <td><i>Pyrobaculum</i> <i>ferrireducens</i> strain 1860</td>
 <td class="numcol">3,604</td>
-<td class="seqid-td">G_351728:NC_016645.1:127214-130817:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/351728">351728</a></td>
+<td class="seqid-td">GCF_000234805.1:NC_016645.1:127214-130817:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000234805.1">GCF_000234805.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Pyrobaculum</i> <i>aerophilum</i> strain IM2</td>
 <td class="numcol">2,213</td>
-<td class="seqid-td">G_28808:NC_003364.1:1089640-1091852:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/28808">28808</a></td>
+<td class="seqid-td">GCF_000007225.1:NC_003364.1:1089640-1091852:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000007225.1">GCF_000007225.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Pyrobaculum</i> <i>arsenaticum</i> strain DSM 13514</td>
 <td class="numcol">2,212</td>
-<td class="seqid-td">G_37488:NC_009376.1:623323-625534:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/37488">37488</a></td>
+<td class="seqid-td">GCF_000016385.1:NC_009376.1:623323-625534:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000016385.1">GCF_000016385.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Aeropyrum</i> <i>pernix</i> strain K1</td>
 <td class="numcol">2,202</td>
-<td class="seqid-td">G_32288:NC_000854.2:1218712-1220913:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/32288">32288</a></td>
+<td class="seqid-td">GCF_000011125.1:NC_000854.2:1218712-1220913:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000011125.1">GCF_000011125.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Pyrobaculum</i> <i>neutrophilum</i> strain V24Sta</td>
 <td class="numcol">2,197</td>
-<td class="seqid-td">G_40848:NC_010525.1:690419-692615:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/40848">40848</a></td>
+<td class="seqid-td">GCF_000019805.1:NC_010525.1:690419-692615:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000019805.1">GCF_000019805.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Ca. Mancarchaeum</i> <i>acidiphilum</i> strain Mia14</td>
 <td class="numcol">2,008</td>
-<td class="seqid-td">G_1145431:NZ_CP019964.1:751297-753304:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1145431">1145431</a></td>
+<td class="seqid-td">GCF_002214165.1:NZ_CP019964.1:751297-753304:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002214165.1">GCF_002214165.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Ca. Micrarchaeum</i> sp. A_DKE</td>
 <td class="numcol">2,003</td>
-<td class="seqid-td">G_9220081:NZ_CP060530.1:203642-205644:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9220081">9220081</a></td>
+<td class="seqid-td">GCF_016806735.1:NZ_CP060530.1:203642-205644:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_016806735.1">GCF_016806735.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Caldivirga</i> <i>maquilingensis</i> strain IC-167</td>
 <td class="numcol">1,679</td>
-<td class="seqid-td">G_39388:NC_009954.1:129150-130828:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/39388">39388</a></td>
+<td class="seqid-td">GCF_000018305.1:NC_009954.1:129150-130828:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000018305.1">GCF_000018305.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Aeropyrum</i> <i>camini</i> strain SY1</td>
 <td class="numcol">1,650</td>
-<td class="seqid-td">G_127981:NC_022521.1:1165168-1166817:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/127981">127981</a></td>
+<td class="seqid-td">GCF_000591035.1:NC_022521.1:1165168-1166817:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000591035.1">GCF_000591035.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Pyrolobus</i> <i>fumarii</i> strain 1A</td>
 <td class="numcol">1,576</td>
-<td class="seqid-td">G_304318:NC_015931.1:84671-86246:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/304318">304318</a></td>
+<td class="seqid-td">GCF_000223395.1:NC_015931.1:84671-86246:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000223395.1">GCF_000223395.1</a></td>
 </tr>
 </tbody>
 </table>
@@ -511,93 +516,69 @@
 <table class="sum-table"><caption>Top-10 shortest 16S rRNA genes
 </caption>
 <tbody>
-<tr><th class="alnleft">Organism</th><th class="numcol">Gene length (bp)</th><th class="alnleft">RiboGrove Sequence ID(s)</th><th class="alnleft">Assembly ID</th></tr>
+<tr><th class="alnleft">Organism</th><th class="numcol">Gene length (bp)</th><th class="alnleft">RiboGrove Sequence ID(s)</th><th class="alnleft">Assembly<br>accession</th></tr>
 <tr>
 <td colspan="4" class="subhead">Bacteria</td>
 </tr>
 <tr class="sumtab-row">
+<td><i>Anabaena</i> sp. YBS01</td>
+<td class="numcol">1,401</td>
+<td class="seqid-td">GCF_009498015.1:NZ_CP034058.1:6920299-6921699:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_009498015.1">GCF_009498015.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Clostridioides</i> <i>difficile</i> strain TW11</td>
+<td class="numcol">1,426</td>
+<td class="seqid-td">GCF_009362915.1:NZ_CP045224.1:4068440-4069865:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_009362915.1">GCF_009362915.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Roseicitreum</i> <i>antarcticum</i> strain ZS2-28</td>
+<td class="numcol">1,447</td>
+<td class="seqid-td">GCF_014681765.1:NZ_CP061498.1:3436150-3437596:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_014681765.1">GCF_014681765.1</a></td>
+</tr>
+<tr class="sumtab-row">
 <td><i>Hirschia</i> <i>baltica</i> strain ATCC 49814</td>
 <td class="numcol">1,448</td>
-<td class="seqid-td">G_44428:NC_012982.1:2336679-2338126:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/44428">44428</a></td>
+<td class="seqid-td">GCF_000023785.1:NC_012982.1:2336679-2338126:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000023785.1">GCF_000023785.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Mameliella</i> <i>alba</i> strain KU6B</td>
+<td class="numcol">1,449</td>
+<td class="seqid-td">GCF_011405015.1:NZ_AP022337.1:267140-268588:plus<br>GCF_011405015.1:NZ_AP022337.1:1420943-1422391:plus<br>GCF_011405015.1:NZ_AP022337.1:3191212-3192660:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_011405015.1">GCF_011405015.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Sagittula</i> sp. P11</td>
 <td class="numcol">1,449</td>
-<td class="seqid-td">G_1460951:NZ_CP021913.1:2386837-2388285:plus<br>G_1460951:NZ_CP021913.1:3597920-3599368:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1460951">1460951</a></td>
+<td class="seqid-td">GCF_002814095.1:NZ_CP021913.1:2386837-2388285:plus<br>GCF_002814095.1:NZ_CP021913.1:3597920-3599368:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002814095.1">GCF_002814095.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Clostridioides</i> <i>difficile</i> strain Cd18</td>
+<td class="numcol">1,450</td>
+<td class="seqid-td">GCF_018884705.1:NZ_CP037806.1:136016-137465:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018884705.1">GCF_018884705.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Hyphomonas</i> sp. Mor2</td>
 <td class="numcol">1,451</td>
-<td class="seqid-td">G_860061:NZ_CP017718.1:2304269-2305719:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/860061">860061</a></td>
+<td class="seqid-td">GCF_001854405.1:NZ_CP017718.1:2304269-2305719:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_001854405.1">GCF_001854405.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Listeria</i> <i>monocytogenes</i> strain 3BS28</td>
+<td class="numcol">1,452</td>
+<td class="seqid-td">GCF_018604265.1:NZ_CP075876.1:2326384-2327835:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018604265.1">GCF_018604265.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Antarctobacter</i> <i>heliothermus</i> strain SMS3</td>
 <td class="numcol">1,453</td>
-<td class="seqid-td">G_1163161:NZ_CP022540.1:1369380-1370832:plus<br>G_1163161:NZ_CP022540.1:2482480-2483932:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1163161">1163161</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Mameliella</i> <i>alba</i> strain KU6B</td>
-<td class="numcol">1,454</td>
-<td class="seqid-td">G_6279751:NZ_AP022337.1:267139-268592:plus<br>G_6279751:NZ_AP022337.1:1420942-1422395:plus<br>G_6279751:NZ_AP022337.1:3191208-3192661:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/6279751">6279751</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Hyphomonas</i> <i>neptunium</i> strain ATCC 15444</td>
-<td class="numcol">1,455</td>
-<td class="seqid-td">G_34128:NC_008358.1:2818466-2819920:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/34128">34128</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Hyphomonas</i> sp. KY3</td>
-<td class="numcol">1,455</td>
-<td class="seqid-td">G_9503471:NZ_CP022271.1:2407999-2409453:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9503471">9503471</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Pseudooceanicola</i> <i>algae</i> strain Lw-13e</td>
-<td class="numcol">1,458</td>
-<td class="seqid-td">G_8694041:NZ_CP060436.1:2482207-2483664:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/8694041">8694041</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Ruegeria</i> sp. SCSIO 43209</td>
-<td class="numcol">1,458</td>
-<td class="seqid-td">G_10854641:NZ_CP065359.1:3157837-3159294:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10854641">10854641</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Paracoccus</i> <i>contaminans</i> strain LMG 29738T</td>
-<td class="numcol">1,459</td>
-<td class="seqid-td">G_1078381:NZ_CP020612.1:582021-583479:minus<br>G_1078381:NZ_CP020612.1:1166317-1167775:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1078381">1078381</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Sulfitobacter</i> <i>mediterraneus</i> strain SC1-11</td>
-<td class="numcol">1,459</td>
-<td class="seqid-td">G_9217271:NZ_CP069004.1:3093411-3094869:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9217271">9217271</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Pelagovum</i> <i>pacificum</i> strain SM1903</td>
-<td class="numcol">1,459</td>
-<td class="seqid-td">G_8872011:NZ_CP065915.1:2729819-2731277:minus<br>G_8872011:NZ_CP065915.1:3593071-3594529:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/8872011">8872011</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Sulfitobacter</i> <i>pontiacus</i> strain W028</td>
-<td class="numcol">1,459</td>
-<td class="seqid-td">G_13748391:NZ_CP081118.1:282264-284:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13748391">13748391</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Sulfitobacter</i> sp. B30-2</td>
-<td class="numcol">1,459</td>
-<td class="seqid-td">G_8738751:NZ_CP065429.1:477373-478831:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/8738751">8738751</a></td>
+<td class="seqid-td">GCF_002237555.1:NZ_CP022540.1:1369380-1370832:plus<br>GCF_002237555.1:NZ_CP022540.1:2482480-2483932:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002237555.1">GCF_002237555.1</a></td>
 </tr>
 <tr>
 <td colspan="4" class="subhead">Archaea</td>
@@ -605,80 +586,80 @@
 <tr class="sumtab-row">
 <td><i>Ignicoccus</i> <i>hospitalis</i> strain KIN4/I</td>
 <td class="numcol">1,439</td>
-<td class="seqid-td">G_39048:NC_009776.1:728362-729800:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/39048">39048</a></td>
+<td class="seqid-td">GCF_000017945.1:NC_009776.1:728362-729800:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000017945.1">GCF_000017945.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Methanocaldococcus</i> sp. SG7</td>
+<td><i>Methanocaldococcus</i> <i>lauensis</i> strain SG7</td>
 <td class="numcol">1,457</td>
-<td class="seqid-td">G_10131521:NZ_LR792632.1:542755-544211:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10131521">10131521</a></td>
+<td class="seqid-td">GCF_902827225.1:NZ_LR792632.1:542755-544211:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_902827225.1">GCF_902827225.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halorubrum</i> sp. BOL3-1</td>
 <td class="numcol">1,463</td>
-<td class="seqid-td">G_2220501:NZ_CP034692.1:397753-399215:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/2220501">2220501</a></td>
+<td class="seqid-td">GCF_004114375.1:NZ_CP034692.1:397753-399215:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_004114375.1">GCF_004114375.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Natronomonas</i> <i>halophila</i> strain C90</td>
+<td><i>Natronomonas</i> <i>gomsonensis</i> strain KCTC 4088</td>
 <td class="numcol">1,466</td>
-<td class="seqid-td">G_7330651:NZ_CP058334.1:1530622-1532087:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/7330651">7330651</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Ca. Methanomethylophilus</i><br><i>alvus</i> strain MGYG-HGUT-02456</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_4352521:NZ_LR699000.1:283607-285072:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/4352521">4352521</a></td>
+<td class="seqid-td">GCF_024300825.1:NZ_CP101323.1:2500564-2502029:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_024300825.1">GCF_024300825.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Natronomonas</i> sp. ZY43</td>
 <td class="numcol">1,466</td>
-<td class="seqid-td">G_13300761:NZ_CP101154.1:18680-20145:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13300761">13300761</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Methanospirillum</i> <i>hungatei</i> strain JF-1</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_34548:NC_007796.1:39814-41279:plus<br>G_34548:NC_007796.1:1301079-1302544:minus<br>G_34548:NC_007796.1:3501525-3502990:minus<br>G_34548:NC_007796.1:3507609-3509074:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/34548">34548</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Natronomonas</i> <i>gomsonensis</i><br>strain KCTC 4088</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_13300951:NZ_CP101323.1:2500564-2502029:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13300951">13300951</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Ca. Methanomethylophilus</i><br><i>alvus</i> strain Mx-05</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_2068141:NZ_CP017686.1:283608-285073:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/2068141">2068141</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Methanospirillum</i> <i>hungatei</i> strain GP1</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_10519241:NZ_CP077107.1:4649-6114:plus<br>G_10519241:NZ_CP077107.1:1359562-1361027:minus<br>G_10519241:NZ_CP077107.1:1365502-1366967:minus<br>G_10519241:NZ_CP077107.1:1986020-1987485:minus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10519241">10519241</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Methanospirillum</i> sp. J.3.6.1-F.2.7.3</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_10123301:NZ_CP075546.1:133354-134819:plus<br>G_10123301:NZ_CP075546.1:825954-827419:plus<br>G_10123301:NZ_CP075546.1:872641-874106:plus<br>G_10123301:NZ_CP075546.1:1727419-1728884:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10123301">10123301</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Ca. Methanomethylophilus</i><br><i>alvus</i> strain Mx1201</td>
-<td class="numcol">1,466</td>
-<td class="seqid-td">G_599268:NC_020913.1:283607-285072:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/599268">599268</a></td>
+<td class="seqid-td">GCF_024298905.1:NZ_CP101154.1:18680-20145:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_024298905.1">GCF_024298905.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Salinirubellus</i> <i>salinus</i> strain ZS-35-S2</td>
 <td class="numcol">1,466</td>
-<td class="seqid-td">G_13813051:NZ_CP104003.1:3070232-3071697:plus</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13813051">13813051</a></td>
+<td class="seqid-td">GCF_025231485.1:NZ_CP104003.1:3070232-3071697:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_025231485.1">GCF_025231485.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanospirillum</i> <i>hungatei</i> strain GP1</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_019263745.1:NZ_CP077107.1:4649-6114:plus<br>GCF_019263745.1:NZ_CP077107.1:1359562-1361027:minus<br>GCF_019263745.1:NZ_CP077107.1:1365502-1366967:minus<br>GCF_019263745.1:NZ_CP077107.1:1986020-1987485:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_019263745.1">GCF_019263745.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Natronomonas</i> <i>halophila</i> strain C90</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_013391085.1:NZ_CP058334.1:1530622-1532087:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_013391085.1">GCF_013391085.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanospirillum</i> <i>hungatei</i> strain JF-1</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_000013445.1:NC_007796.1:39814-41279:plus<br>GCF_000013445.1:NC_007796.1:1301079-1302544:minus<br>GCF_000013445.1:NC_007796.1:3501525-3502990:minus<br>GCF_000013445.1:NC_007796.1:3507609-3509074:minus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000013445.1">GCF_000013445.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Ca. Methanomethylophilus</i> <i>alvus</i> strain Mx-05</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_003711245.1:NZ_CP017686.1:283608-285073:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_003711245.1">GCF_003711245.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Ca. Methanomethylophilus</i> <i>alvus</i> strain Mx1201</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_000300255.2:NC_020913.1:283607-285072:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000300255.2">GCF_000300255.2</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanospirillum</i> sp. J.3.6.1-F.2.7.3</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_018502485.1:NZ_CP075546.1:133354-134819:plus<br>GCF_018502485.1:NZ_CP075546.1:825954-827419:plus<br>GCF_018502485.1:NZ_CP075546.1:872641-874106:plus<br>GCF_018502485.1:NZ_CP075546.1:1727419-1728884:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018502485.1">GCF_018502485.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Ca. Methanomethylophilus</i> <i>alvus</i><br>strain MGYG-HGUT-02456</td>
+<td class="numcol">1,466</td>
+<td class="seqid-td">GCF_902387285.1:NZ_LR699000.1:283607-285072:plus</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_902387285.1">GCF_902387285.1</a></td>
 </tr>
 </tbody>
 </table>
@@ -686,147 +667,182 @@
 <table class="sum-table"><caption>Top-10 genomes with the largest 16S rRNA copy numbers
 </caption>
 <tbody>
-<tr><th class="alnleft">Organism</th><th class="numcol">Copy number</th><th class="alnleft">Assembly ID</th></tr>
+<tr><th class="alnleft">Organism</th><th class="numcol">Copy number</th><th class="alnleft">Assembly<br>accession</th></tr>
 <tr>
 <td colspan="4" class="subhead">Bacteria</td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Tumebacillus</i> <i>avium</i> strain AR23208</td>
 <td class="numcol">37</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1115491">1115491</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002162355.1">GCF_002162355.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Tumebacillus</i> <i>algifaecis</i> strain THMBR28</td>
 <td class="numcol">27</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/1166771">1166771</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_002243515.1">GCF_002243515.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Peribacillus</i> <i>asahii</i> strain KF4</td>
 <td class="numcol">21</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13022701">13022701</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_023823975.1">GCF_023823975.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Priestia</i> <i>megaterium</i> strain S2</td>
 <td class="numcol">21</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/6720751">6720751</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_012275205.1">GCF_012275205.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Neobacillus</i> <i>drentensis</i> strain JC05</td>
-<td class="numcol">20</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11802511">11802511</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Moritella</i> sp. 28</td>
-<td class="numcol">20</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9972251">9972251</a></td>
+<td><i>Aneurinibacillus</i> sp. Ricciae_BoGa-3</td>
+<td class="numcol">21</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_028421645.1">GCF_028421645.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Moritella</i> sp. 5</td>
 <td class="numcol">20</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9972261">9972261</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018219455.1">GCF_018219455.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Neobacillus</i> <i>drentensis</i> strain JC05</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021560175.1">GCF_021560175.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Photobacterium</i> <i>damselae</i> strain AS-15-3942-7</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021768405.1">GCF_021768405.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Photobacterium</i> <i>damselae</i> strain 04Ya311</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_026001825.1">GCF_026001825.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Moritella</i> sp. 28</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018219435.1">GCF_018219435.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Photobacterium</i> <i>damselae</i> strain damselae RM-71</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_001708035.2">GCF_001708035.2</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Moritella</i> sp. 36</td>
 <td class="numcol">20</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9972241">9972241</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018219415.1">GCF_018219415.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Photobacterium</i> <i>damselae</i><br>strain AS-15-3942-7</td>
-<td class="numcol">19</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11907491">11907491</a></td>
+<td><i>Photobacterium</i> <i>damselae</i> strain AS-15-3942-9</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021768365.1">GCF_021768365.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Metabacillus</i> <i>litoralis</i> strain Bac94</td>
-<td class="numcol">19</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/2023811">2023811</a></td>
+<td><i>Photobacterium</i> <i>damselae</i> strain CSP DAM1</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021766015.1">GCF_021766015.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Photobacterium</i> <i>damselae</i> strain CSP DAM2</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021765875.1">GCF_021765875.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Photobacterium</i> <i>damselae</i> strain 9046-81</td>
+<td class="numcol">20</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_009763125.1">GCF_009763125.1</a></td>
 </tr>
 <tr>
 <td colspan="4" class="subhead">Archaea</td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Methanococcoides</i> <i>orientis</i> strain LMO-1</td>
-<td class="numcol">5</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11622961">11622961</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Natrinema</i> sp. SYSU A 869</td>
-<td class="numcol">5</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10842511">10842511</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Natronorubrum</i> <i>bangense</i> strain JCM 10635</td>
-<td class="numcol">5</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/2580821">2580821</a></td>
-</tr>
-<tr class="sumtab-row">
 <td><i>Natronorubrum</i> <i>aibiense</i> strain 7-3</td>
 <td class="numcol">5</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/5073821">5073821</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_009392895.1">GCF_009392895.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Methanoplanus</i> <i>endosymbiosus</i> strain DSM 3599</td>
 <td class="numcol">5</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/13492921">13492921</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_024662215.1">GCF_024662215.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Methanosphaera</i> <i>stadtmanae</i> strain DSM 3091</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/33648">33648</a></td>
+<td><i>Methanococcoides</i> <i>orientis</i> strain LMO-1</td>
+<td class="numcol">5</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_021184045.1">GCF_021184045.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Natronococcus</i> <i>occultus</i> strain SP4</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/521038">521038</a></td>
+<td><i>Natronorubrum</i> <i>bangense</i> strain JCM 10635</td>
+<td class="numcol">5</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_004799645.1">GCF_004799645.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Methanospirillum</i> sp. J.3.6.1-F.2.7.3</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10123301">10123301</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Methanospirillum</i> <i>hungatei</i> strain GP1</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/10519241">10519241</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Halosiccatus</i> <i>urmianus</i> strain IBRC-M: 10911</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11057071">11057071</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Halomicrobium</i> <i>salinisoli</i> strain LT50</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11151361">11151361</a></td>
+<td><i>Natrinema</i> sp. SYSU A 869</td>
+<td class="numcol">5</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_019879105.1">GCF_019879105.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Haloterrigena</i> <i>salifodinae</i> strain BOL5-1</td>
 <td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9298621">9298621</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Halomicrobium</i> <i>salinisoli</i> strain TH30</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/11151391">11151391</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Methanococcus</i> <i>vannielii</i> strain SB</td>
-<td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/38268">38268</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_016906025.1">GCF_016906025.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Methanospirillum</i> <i>hungatei</i> strain JF-1</td>
 <td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/34548">34548</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000013445.1">GCF_000013445.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanosphaera</i> <i>stadtmanae</i> strain DSM 3091</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000012545.1">GCF_000012545.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Natronococcus</i> <i>occultus</i> strain SP4</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000328685.1">GCF_000328685.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanococcus</i> <i>vannielii</i> strain SB</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_000017165.1">GCF_000017165.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Halomicrobium</i> <i>salinisoli</i> strain TH30</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_020405245.1">GCF_020405245.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Haloarcula</i> <i>sinaiiensis</i> strain ATCC 33800</td>
 <td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/9962651">9962651</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018200015.1">GCF_018200015.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanospirillum</i> sp. J.3.6.1-F.2.7.3</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_018502485.1">GCF_018502485.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Halomicrobium</i> <i>salinisoli</i> strain LT50</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_020405185.1">GCF_020405185.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Methanosphaera</i> <i>stadtmanae</i><br>strain MGYG-HGUT-02164</td>
 <td class="numcol">4</td>
-<td><a href="https://ncbi.nlm.nih.gov/assembly/4349641">4349641</a></td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_902384015.1">GCF_902384015.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanospirillum</i> <i>hungatei</i> strain GP1</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_019263745.1">GCF_019263745.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Halosiccatus</i> <i>urmianus</i> strain IBRC-M: 10911</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_020217425.1">GCF_020217425.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Methanogenium</i> <i>organophilum</i> strain DSM 3596</td>
+<td class="numcol">4</td>
+<td><a href="https://ncbi.nlm.nih.gov/assembly/GCF_026684035.1">GCF_026684035.1</a></td>
 </tr>
 </tbody>
 </table>
@@ -834,9 +850,41 @@
 <table class="sum-table"><caption>Top-10 genomes with the highest intragenomic variability of 16S rRNA genes
 </caption>
 <tbody>
-<tr><th class="alnleft">Organism</th><th class="numcol">Sum of entropy<sup> *</sup> (bits)</th><th class="numcol">Mean entropy<sup> *</sup> (bits)</th><th class="numcol">Number of variable positions</th><th class="numcol">Gene copy number</th><th class="alnleft">Assembly ID</th></tr>
+<tr><th class="alnleft">Organism</th><th class="numcol">Sum of entropy<sup> *</sup> (bits)</th><th class="numcol">Mean entropy<sup> *</sup> (bits)</th><th class="numcol">Number of variable positions</th><th class="numcol">Gene copy number</th><th class="alnleft">Assembly<br>accession</th></tr>
 <tr>
 <td colspan="6" class="subhead">Bacteria</td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Listeria</i> <i>monocytogenes</i><br>strain 10-092876-1155 LM6</td>
+<td class="numcol">357.10</td>
+<td class="numcol">0.20</td>
+<td class="numcol">370</td>
+<td class="numcol">3</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_001999045.1">GCF_001999045.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Escherichia</i> <i>coli</i> strain P276M</td>
+<td class="numcol">289.58</td>
+<td class="numcol">0.18</td>
+<td class="numcol">333</td>
+<td class="numcol">4</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_009762385.1">GCF_009762385.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Bacillus</i> <i>pumilus</i> strain EB130</td>
+<td class="numcol">272.85</td>
+<td class="numcol">0.16</td>
+<td class="numcol">427</td>
+<td class="numcol">8</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_019710455.1">GCF_019710455.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Klebsiella</i> <i>pneumoniae</i> strain GZ-1</td>
+<td class="numcol">252.41</td>
+<td class="numcol">0.15</td>
+<td class="numcol">375</td>
+<td class="numcol">7</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_014854815.1">GCF_014854815.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Synechococcus</i> sp. NB0720_010</td>
@@ -844,7 +892,15 @@
 <td class="numcol">0.16</td>
 <td class="numcol">265</td>
 <td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/12576831">12576831</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_023078835.1">GCF_023078835.1</a></td>
+</tr>
+<tr class="sumtab-row">
+<td><i>Caminibacter</i> <i>mediatlanticus</i> strain TB-2</td>
+<td class="numcol">228.78</td>
+<td class="numcol">0.15</td>
+<td class="numcol">282</td>
+<td class="numcol">4</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_005843985.1">GCF_005843985.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Xanthomonas</i> <i>oryzae</i> strain YNCX</td>
@@ -852,7 +908,7 @@
 <td class="numcol">0.15</td>
 <td class="numcol">248</td>
 <td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/13407211">13407211</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_024499285.1">GCF_024499285.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Sporomusa</i> <i>termitida</i> strain DSM 4440</td>
@@ -860,90 +916,50 @@
 <td class="numcol">0.13</td>
 <td class="numcol">247</td>
 <td class="numcol">12</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/4155511">4155511</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_007641255.1">GCF_007641255.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Campylobacter</i> <i>hyointestinalis</i><br>strain CHY5</td>
+<td><i>Campylobacter</i> <i>hyointestinalis</i> strain CHY5</td>
 <td class="numcol">217.64</td>
-<td class="numcol">0.12</td>
+<td class="numcol">0.13</td>
 <td class="numcol">237</td>
 <td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/7294871">7294871</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_013372165.1">GCF_013372165.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Campylobacter</i> sp. RM6137</td>
-<td class="numcol">211.21</td>
-<td class="numcol">0.12</td>
-<td class="numcol">230</td>
-<td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/1101781">1101781</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Acetivibrio</i> <i>thermocellus</i> strain M3</td>
-<td class="numcol">211.00</td>
-<td class="numcol">0.14</td>
-<td class="numcol">211</td>
+<td><i>Treponema</i> <i>parvum</i> strain OMZ 843</td>
+<td class="numcol">214.00</td>
+<td class="numcol">0.13</td>
+<td class="numcol">214</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/13802461">13802461</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Sinorhizobium</i> <i>meliloti</i> strain AK76</td>
-<td class="numcol">184.58</td>
-<td class="numcol">0.12</td>
-<td class="numcol">201</td>
-<td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/9010851">9010851</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Cylindrospermopsis</i> <i>raciborskii</i><br>strain KLL07</td>
-<td class="numcol">168.97</td>
-<td class="numcol">0.11</td>
-<td class="numcol">184</td>
-<td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/11851031">11851031</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Klebsiella</i> <i>pneumoniae</i> strain GZ-1</td>
-<td class="numcol">167.21</td>
-<td class="numcol">0.10</td>
-<td class="numcol">216</td>
-<td class="numcol">5</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/8227731">8227731</a></td>
-</tr>
-<tr class="sumtab-row">
-<td><i>Olleya</i> sp. Bg11-27</td>
-<td class="numcol">145.25</td>
-<td class="numcol">0.10</td>
-<td class="numcol">156</td>
-<td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/1469691">1469691</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_017893985.1">GCF_017893985.1</a></td>
 </tr>
 <tr>
 <td colspan="6" class="subhead">Archaea</td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Halomicrobium</i> sp. ZPS1 <sup> **</sup></td>
+<td><i>Halomicrobium</i> sp. ZPS1 <sup>**</sup></td>
 <td class="numcol">137.00</td>
 <td class="numcol">0.09</td>
 <td class="numcol">137</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/4982121">4982121</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_009217585.1">GCF_009217585.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Halosiccatus</i> <i>urmianus</i><br>strain IBRC-M: 10911</td>
+<td><i>Halosiccatus</i> <i>urmianus</i> strain IBRC-M: 10911</td>
 <td class="numcol">131.55</td>
 <td class="numcol">0.09</td>
 <td class="numcol">146</td>
 <td class="numcol">4</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/11057071">11057071</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_020217425.1">GCF_020217425.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Halapricum</i> <i>desulfuricans</i><br>strain HSR12-2</td>
+<td><i>Halapricum</i> <i>desulfuricans</i> strain HSR12-2</td>
 <td class="numcol">128.00</td>
 <td class="numcol">0.09</td>
 <td class="numcol">128</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/9390741">9390741</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_017094525.1">GCF_017094525.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halomicrobium</i> <i>salinisoli</i> strain TH30</td>
@@ -951,15 +967,15 @@
 <td class="numcol">0.09</td>
 <td class="numcol">145</td>
 <td class="numcol">4</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/11151391">11151391</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_020405245.1">GCF_020405245.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Halapricum</i> <i>desulfuricans</i><br>strain HSR-Bgl</td>
+<td><i>Halapricum</i> <i>desulfuricans</i> strain HSR-Bgl</td>
 <td class="numcol">127.00</td>
 <td class="numcol">0.09</td>
 <td class="numcol">127</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/9390521">9390521</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_017094445.1">GCF_017094445.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halomicrobium</i> <i>mukohataei</i> strain JP60</td>
@@ -967,7 +983,7 @@
 <td class="numcol">0.09</td>
 <td class="numcol">137</td>
 <td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/2582391">2582391</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_004803735.1">GCF_004803735.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halomicrobium</i> <i>salinisoli</i> strain LT50</td>
@@ -975,15 +991,15 @@
 <td class="numcol">0.08</td>
 <td class="numcol">140</td>
 <td class="numcol">4</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/11151361">11151361</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_020405185.1">GCF_020405185.1</a></td>
 </tr>
 <tr class="sumtab-row">
-<td><i>Halapricum</i> <i>desulfuricans</i><br>strain HSR-Est</td>
+<td><i>Halapricum</i> <i>desulfuricans</i> strain HSR-Est</td>
 <td class="numcol">111.00</td>
 <td class="numcol">0.08</td>
 <td class="numcol">111</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/9390681">9390681</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_017094465.1">GCF_017094465.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halapricum</i> <i>desulfuricans</i> strain HSR12-1</td>
@@ -991,7 +1007,7 @@
 <td class="numcol">0.07</td>
 <td class="numcol">109</td>
 <td class="numcol">2</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/9390731">9390731</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_017094505.1">GCF_017094505.1</a></td>
 </tr>
 <tr class="sumtab-row">
 <td><i>Halorussus</i> sp. XZYJT49</td>
@@ -999,11 +1015,11 @@
 <td class="numcol">0.07</td>
 <td class="numcol">113</td>
 <td class="numcol">3</td>
-<td><a href="https://www.ncbi.nlm.nih.gov/assembly/12653301">12653301</a></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_023238205.1">GCF_023238205.1</a></td>
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> Entropy is <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a> calculated for each column of the multiple sequence alignment (MSA) of all full-length 16S rRNA genes of a genome. Entropy is then summed up (column &ldquo;Sum of entropy&rdquo;) and averaged (column &ldquo;Mean entropy&rdquo;).</p>
+<p><sup>*</sup> Entropy is <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Shannon entropy</a> calculated for each column of the multiple sequence alignment (MSA) of all full-length 16S rRNA genes of a genome. Entropy is then summed up (column “Sum of entropy”) and averaged (column “Mean entropy”).</p>
 <p><sup>**</sup> <i>Halomicrobium</i> sp. ZPS1 is a quite remarkable case. This genome harbours two 16S rRNA genes, therefore entropy is equal to the number of mismatching nucleotides between sequences of the genes. Respectively, per cent of identity between these two gene sequences is 90.70%! This is remarkable because the usual (however arbitrary) <em>genus</em> demarcation threshold of per cent of identity is 95%.</p>
 <div id="primers-coverages" class="pad-anchor"></div>
 <table class="sum-table"><caption>Coverage<sup>*</sup> of primer pairs for different V-regions of bacterial 16S rRNA genes</caption>
@@ -1012,137 +1028,152 @@
   <th class="alnleft" rowspan="2">Phylum</th>
   <th class="numcol" rowspan="2">Number<br />of genomes</th>
   <th class="numcol">Full gene</th>
-  <th class="numcol">V1&ndash;V2</th>
-  <th class="numcol">V1&ndash;V3</th>
-  <th class="numcol">V3&ndash;V4</th>
-  <th class="numcol">V3&ndash;V5</th>
-  <th class="numcol">V4&ndash;V5</th>
-  <th class="numcol">V4&ndash;V6</th>
-  <th class="numcol">V5&ndash;V6</th>
-  <th class="numcol">V5&ndash;V7</th>
-  <th class="numcol">V6&ndash;V7</th>
-  <th class="numcol">V6&ndash;V8</th>
+  <th class="numcol">V1–V2</th>
+  <th class="numcol">V1–V3</th>
+  <th class="numcol">V3–V4</th>
+  <th class="numcol">V3–V5</th>
+  <th class="numcol">V4–V5</th>
+  <th class="numcol">V4–V6</th>
+  <th class="numcol">V5–V6</th>
+  <th class="numcol">V5–V7</th>
+  <th class="numcol">V6–V7</th>
+  <th class="numcol">V6–V8</th>
 </tr>
 <tr>
-  <th class="numcol">27F&ndash;1492R<br />(%)</th>
-  <th class="numcol">27F&ndash;338R<br />(%)</th>
-  <th class="numcol">27F&ndash;534R<br />(%)</th>
-  <th class="numcol">341F&ndash;785R<br />(%)</th>
-  <th class="numcol">341F&ndash;944R<br />(%)</th>
-  <th class="numcol">515F&ndash;944R<br />(%)</th>
-  <th class="numcol">515F&ndash;1100R<br />(%)</th>
-  <th class="numcol">784F&ndash;1100R<br />(%)</th>
-  <th class="numcol">784F&ndash;1193R<br />(%)</th>
-  <th class="numcol">939F&ndash;1193R<br />(%)</th>
-  <th class="numcol">939F&ndash;1378R<br />(%)</th>
+  <th class="numcol">27F–1492R<br />(%)</th>
+  <th class="numcol">27F–338R<br />(%)</th>
+  <th class="numcol">27F–534R<br />(%)</th>
+  <th class="numcol">341F–785R<br />(%)</th>
+  <th class="numcol">341F–944R<br />(%)</th>
+  <th class="numcol">515F–944R<br />(%)</th>
+  <th class="numcol">515F–1100R<br />(%)</th>
+  <th class="numcol">784F–1100R<br />(%)</th>
+  <th class="numcol">784F–1193R<br />(%)</th>
+  <th class="numcol">939F–1193R<br />(%)</th>
+  <th class="numcol">939F–1378R<br />(%)</th>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Proteobacteria</i></td>
-  <td class="numcol">17,538</td>
-  <td class="numcol">99.74</td>
-  <td class="numcol">99.53</td>
-  <td class="numcol">99.73</td>
-  <td class="numcol">99.95</td>
-  <td class="numcol">82.30</td>
-  <td class="numcol">82.34</td>
-  <td class="numcol">90.47</td>
-  <td class="numcol">90.16</td>
-  <td class="numcol">93.59</td>
-  <td class="numcol">92.59</td>
-  <td class="numcol">96.94</td>
+  <td><i>Pseudomonadota</i></td>
+  <td class="numcol">17,562</td>
+  <td class="numcol">99.69</td>
+  <td class="numcol">99.49</td>
+  <td class="numcol">99.68</td>
+  <td class="numcol">99.94</td>
+  <td class="numcol">81.60</td>
+  <td class="numcol">81.66</td>
+  <td class="numcol">89.51</td>
+  <td class="numcol">89.22</td>
+  <td class="numcol">93.41</td>
+  <td class="numcol">92.28</td>
+  <td class="numcol">96.51</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Firmicutes</i></td>
-  <td class="numcol">6,721</td>
-  <td class="numcol">99.97</td>
-  <td class="numcol">99.85</td>
+  <td><i>Bacillota</i></td>
+  <td class="numcol">6,942</td>
+  <td class="numcol">99.84</td>
+  <td class="numcol">99.71</td>
+  <td class="numcol">99.81</td>
   <td class="numcol">99.96</td>
-  <td class="numcol">99.96</td>
-  <td class="numcol">95.73</td>
-  <td class="numcol">95.63</td>
-  <td class="numcol">99.51</td>
+  <td class="numcol">95.74</td>
+  <td class="numcol">95.64</td>
+  <td class="numcol">99.50</td>
   <td class="numcol">97.87</td>
-  <td class="numcol">97.17</td>
-  <td class="numcol">98.54</td>
-  <td class="numcol">99.27</td>
+  <td class="numcol">97.21</td>
+  <td class="numcol">98.57</td>
+  <td class="numcol">99.29</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Actinobacteria</i></td>
-  <td class="numcol">2,840</td>
-  <td class="numcol">99.79</td>
-  <td class="numcol">98.80</td>
-  <td class="numcol">99.58</td>
-  <td class="numcol">94.05</td>
-  <td class="numcol">63.35</td>
-  <td class="numcol">63.13</td>
-  <td class="numcol">96.13</td>
-  <td class="numcol">99.61</td>
-  <td class="numcol">99.72</td>
-  <td class="numcol">99.75</td>
-  <td class="numcol">97.01</td>
+  <td><i>Actinomycetota</i></td>
+  <td class="numcol">3,015</td>
+  <td class="numcol">99.80</td>
+  <td class="numcol">98.84</td>
+  <td class="numcol">99.60</td>
+  <td class="numcol">94.03</td>
+  <td class="numcol">63.85</td>
+  <td class="numcol">63.65</td>
+  <td class="numcol">96.15</td>
+  <td class="numcol">99.64</td>
+  <td class="numcol">99.73</td>
+  <td class="numcol">99.77</td>
+  <td class="numcol">97.08</td>
 </tr>
 <tr class="sumtab-row">
   <td><i>Bacteroidota</i></td>
-  <td class="numcol">1,161</td>
-  <td class="numcol">95.09</td>
-  <td class="numcol">94.57</td>
-  <td class="numcol">95.00</td>
-  <td class="numcol">99.91</td>
-  <td class="numcol">61.15</td>
-  <td class="numcol">60.72</td>
-  <td class="numcol">38.67</td>
-  <td class="numcol">38.93</td>
-  <td class="numcol">94.83</td>
-  <td class="numcol">92.42</td>
-  <td class="numcol">94.49</td>
+  <td class="numcol">1,225</td>
+  <td class="numcol">95.35</td>
+  <td class="numcol">94.69</td>
+  <td class="numcol">95.27</td>
+  <td class="numcol">99.92</td>
+  <td class="numcol">62.04</td>
+  <td class="numcol">61.47</td>
+  <td class="numcol">38.94</td>
+  <td class="numcol">39.18</td>
+  <td class="numcol">94.61</td>
+  <td class="numcol">92.16</td>
+  <td class="numcol">94.53</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Tenericutes</i></td>
-  <td class="numcol">468</td>
-  <td class="numcol">97.22</td>
-  <td class="numcol">94.44</td>
-  <td class="numcol">73.29</td>
-  <td class="numcol">98.29</td>
-  <td class="numcol">90.38</td>
-  <td class="numcol">90.60</td>
-  <td class="numcol">73.50</td>
-  <td class="numcol">41.88</td>
-  <td class="numcol">42.95</td>
-  <td class="numcol">77.99</td>
-  <td class="numcol">0.43</td>
+  <td><i>Campylobacterota</i></td>
+  <td class="numcol">944</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">99.89</td>
+  <td class="numcol">99.89</td>
+  <td class="numcol">99.58</td>
+  <td class="numcol">99.58</td>
+  <td class="numcol">99.68</td>
+  <td class="numcol">99.47</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Spirochaetes</i></td>
-  <td class="numcol">261</td>
-  <td class="numcol">65.13</td>
-  <td class="numcol">65.13</td>
-  <td class="numcol">65.13</td>
-  <td class="numcol">93.87</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">72.03</td>
-  <td class="numcol">72.03</td>
-  <td class="numcol">88.12</td>
-  <td class="numcol">50.19</td>
+  <td><i>Mycoplasmatota</i></td>
+  <td class="numcol">494</td>
+  <td class="numcol">96.76</td>
+  <td class="numcol">94.13</td>
+  <td class="numcol">74.09</td>
+  <td class="numcol">97.98</td>
+  <td class="numcol">90.28</td>
+  <td class="numcol">90.49</td>
+  <td class="numcol">71.05</td>
+  <td class="numcol">41.09</td>
+  <td class="numcol">42.11</td>
+  <td class="numcol">78.34</td>
+  <td class="numcol">0.40</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Cyanobacteria</i></td>
-  <td class="numcol">213</td>
+  <td><i>Spirochaetota</i></td>
+  <td class="numcol">354</td>
+  <td class="numcol">49.15</td>
+  <td class="numcol">49.72</td>
+  <td class="numcol">49.72</td>
+  <td class="numcol">95.48</td>
+  <td class="numcol">99.72</td>
+  <td class="numcol">99.72</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">5.16</td>
-  <td class="numcol">5.16</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.94</td>
-  <td class="numcol">0.94</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">99.53</td>
+  <td class="numcol">78.53</td>
+  <td class="numcol">78.53</td>
+  <td class="numcol">91.24</td>
+  <td class="numcol">38.42</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Chlamydiae</i></td>
+  <td><i>Cyanobacteriota</i></td>
+  <td class="numcol">227</td>
+  <td class="numcol">99.56</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">99.56</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">5.29</td>
+  <td class="numcol">5.29</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">1.32</td>
+  <td class="numcol">1.32</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">99.56</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Chlamydiota</i></td>
   <td class="numcol">186</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
@@ -1154,41 +1185,56 @@
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">93.55</td>
+  <td class="numcol">94.09</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Verrucomicrobia</i></td>
+  <td><i>Verrucomicrobiota</i></td>
+  <td class="numcol">116</td>
+  <td class="numcol">99.14</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">99.14</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">8.62</td>
+  <td class="numcol">8.62</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.86</td>
+  <td class="numcol">0.86</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Thermodesulfobacteriota</i></td>
   <td class="numcol">113</td>
+  <td class="numcol">100.00</td>
   <td class="numcol">99.12</td>
-  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">46.02</td>
+  <td class="numcol">46.02</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">93.81</td>
+  <td class="numcol">89.38</td>
+  <td class="numcol">95.58</td>
   <td class="numcol">99.12</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">8.85</td>
-  <td class="numcol">8.85</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.88</td>
-  <td class="numcol">0.88</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Fusobacteria</i></td>
-  <td class="numcol">80</td>
+  <td><i>Fusobacteriota</i></td>
+  <td class="numcol">86</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">96.25</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
+  <td class="numcol">96.51</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">98.75</td>
-  <td class="numcol">98.75</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">98.84</td>
+  <td class="numcol">98.84</td>
   <td class="numcol">100.00</td>
   <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Deinococcus-Thermus</i></td>
-  <td class="numcol">74</td>
+  <td><i>Deinococcota</i></td>
+  <td class="numcol">79</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1198,26 +1244,41 @@
   <td class="numcol">100.00</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
-  <td class="numcol">50.00</td>
+  <td class="numcol">50.63</td>
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
   <td><i>Planctomycetota</i></td>
-  <td class="numcol">57</td>
+  <td class="numcol">59</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">19.30</td>
+  <td class="numcol">18.64</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">64.91</td>
-  <td class="numcol">64.91</td>
+  <td class="numcol">62.71</td>
+  <td class="numcol">62.71</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
-  <td class="numcol">3.51</td>
+  <td class="numcol">3.39</td>
   <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Thermotogae</i></td>
+  <td><i>Myxococcota</i></td>
+  <td class="numcol">47</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Thermotogota</i></td>
   <td class="numcol">42</td>
   <td class="numcol">100.00</td>
   <td class="numcol">97.62</td>
@@ -1232,12 +1293,12 @@
   <td class="numcol">97.62</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Chloroflexi</i></td>
+  <td><i>Chloroflexota</i></td>
   <td class="numcol">41</td>
   <td class="numcol">100.00</td>
   <td class="numcol">90.24</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">39.02</td>
+  <td class="numcol">36.59</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
   <td class="numcol">87.80</td>
@@ -1247,7 +1308,7 @@
   <td class="numcol">26.83</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Acidobacteria</i></td>
+  <td><i>Acidobacteriota</i></td>
   <td class="numcol">31</td>
   <td class="numcol">96.77</td>
   <td class="numcol">96.77</td>
@@ -1262,7 +1323,37 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Aquificae</i></td>
+  <td><i>Bdellovibrionota</i></td>
+  <td class="numcol">19</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">68.42</td>
+  <td class="numcol">68.42</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Chlorobiota</i></td>
+  <td class="numcol">15</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">93.33</td>
+  <td class="numcol">86.67</td>
+  <td class="numcol">6.67</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Aquificota</i></td>
   <td class="numcol">14</td>
   <td class="numcol">100.00</td>
   <td class="numcol">21.43</td>
@@ -1277,22 +1368,7 @@
   <td class="numcol">21.43</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Chlorobi</i></td>
-  <td class="numcol">14</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">92.86</td>
-  <td class="numcol">85.71</td>
-  <td class="numcol">7.14</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Nitrospirae</i></td>
+  <td><i>Nitrospirota</i></td>
   <td class="numcol">10</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1307,7 +1383,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Thermodesulfobacteria</i></td>
+  <td><i>Synergistota</i></td>
   <td class="numcol">7</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1322,7 +1398,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Deferribacteres</i></td>
+  <td><i>Deferribacterota</i></td>
   <td class="numcol">6</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1333,21 +1409,6 @@
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Synergistetes</i></td>
-  <td class="numcol">6</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
 </tr>
@@ -1367,7 +1428,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Elusimicrobia</i></td>
+  <td><i>Elusimicrobiota</i></td>
   <td class="numcol">4</td>
   <td class="numcol">100.00</td>
   <td class="numcol">50.00</td>
@@ -1382,7 +1443,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Gemmatimonadetes</i></td>
+  <td><i>Gemmatimonadota</i></td>
   <td class="numcol">4</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1397,22 +1458,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Kiritimatiellaeota</i></td>
-  <td class="numcol">2</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Ignavibacteriae</i></td>
+  <td><i>Ignavibacteriota</i></td>
   <td class="numcol">2</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1427,7 +1473,37 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Fibrobacteres</i></td>
+  <td><i>Kiritimatiellota</i></td>
+  <td class="numcol">2</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Thermomicrobiota</i></td>
+  <td class="numcol">2</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">50.00</td>
+  <td class="numcol">50.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Fibrobacterota</i></td>
   <td class="numcol">2</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1442,7 +1518,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Dictyoglomi</i></td>
+  <td><i>Dictyoglomota</i></td>
   <td class="numcol">2</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1457,7 +1533,7 @@
   <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Chrysiogenetes</i></td>
+  <td><i>Chrysiogenota</i></td>
   <td class="numcol">2</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1472,37 +1548,7 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Balneolaeota</i></td>
-  <td class="numcol">1</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Ca. Bipolaricaulota</i></td>
-  <td class="numcol">1</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Caldiserica</i></td>
+  <td><i>Caldisericota</i></td>
   <td class="numcol">1</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1512,6 +1558,51 @@
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Lentisphaerota</i></td>
+  <td class="numcol">1</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Atribacterota</i></td>
+  <td class="numcol">1</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Balneolota</i></td>
+  <td class="numcol">1</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1532,40 +1623,10 @@
   <td class="numcol">0.00</td>
 </tr>
 <tr class="sumtab-row">
-  <td><i>Atribacterota</i></td>
-  <td class="numcol">1</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Armatimonadetes</i></td>
+  <td><i>Armatimonadota</i></td>
   <td class="numcol">1</td>
   <td class="numcol">100.00</td>
   <td class="numcol">0.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
-</tr>
-<tr class="sumtab-row">
-  <td><i>Calditrichaeota</i></td>
-  <td class="numcol">1</td>
-  <td class="numcol">100.00</td>
-  <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
   <td class="numcol">100.00</td>
@@ -1607,6 +1668,21 @@
   <td class="numcol">100.00</td>
 </tr>
 <tr class="sumtab-row">
+  <td><i>Ca. Bipolaricaulota</i></td>
+  <td class="numcol">1</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+  <td class="numcol">0.00</td>
+</tr>
+<tr class="sumtab-row">
   <td><i>Ca. Absconditabacteria</i></td>
   <td class="numcol">1</td>
   <td class="numcol">100.00</td>
@@ -1620,6 +1696,21 @@
   <td class="numcol">100.00</td>
   <td class="numcol">0.00</td>
   <td class="numcol">0.00</td>
+</tr>
+<tr class="sumtab-row">
+  <td><i>Calditrichota</i></td>
+  <td class="numcol">1</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
+  <td class="numcol">100.00</td>
 </tr>
 </tbody>
 </table>
@@ -1642,20 +1733,20 @@
   <tr class="sumtab-row"><td>1492R</td><td>TACCTTGTTACGACTT</td><td><a href="https://doi.org/10.1128/AEM.02272-07">Frank et al., 2008</a></td></tr>
 </tbody>
 </table>
-<p><sup>*</sup> Primers 341F and 785R are used in the <a href="https://support.illumina.com/downloads/16s_metagenomic_sequencing_library_preparation.html">protocol</a> for library preparation for sequencing of V3&ndash;V4 region of 16S rRNA genes on Illumina MiSeq.</p>
+<p><sup>*</sup> Primers 341F and 785R are used in the <a href="https://support.illumina.com/downloads/16s_metagenomic_sequencing_library_preparation.html">protocol</a> for library preparation for sequencing of V3–V4 region of 16S rRNA genes on Illumina MiSeq.</p>
 <hr>
 <div id="searching-data" class="pad-anchor"></div>
 <h2>Searching data in RiboGrove</h2>
-<p>RiboGrove is a very minimalistic database &mdash; it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and select RiboGrove data.</p>
+<p>RiboGrove is a very minimalistic database — it comprises a collection of plain fasta files with metadata. Thus, extended search instruments are not available for it. We admit this problem and provide a list of suggestions below. The suggestions would help you to explore and select RiboGrove data.</p>
 <div id="header-format" class="pad-anchor"></div>
 <h3>Header format</h3>
 <p>RiboGrove fasta data has the following format of header:</p>
-<p class="samp-highl samp-vwide" style="font-size:14px">&gt;G_324861:NZ_CP009686.1:8908-10459:plus ;d__Bacteria;p__Firmicutes;c__Bacilli;o__Bacillales;f__Bacillaceae;g__Bacillus;s__cereus; category:1</p>
+<p class="samp-highl samp-vwide" style="font-size:14px">&gt;GCF_000978375.1:NZ_CP009686.1:8908-10459:plus ;d__Bacteria;p__Firmicutes;c__Bacilli;o__Bacillales;f__Bacillaceae;g__Bacillus;s__cereus; category:1</p>
 <p>Major blocks of a header are separated by spaces. A header consists of three such blocks:</p>
 <ol>
-<li>Sequence ID (seqID): <span class="samp-highl">G_324861:NZ_CP009686.1:8908-10459:plus</span>. SeqID, in turn, consists of four parts separated by semicolons (<span class="samp-highl">:</span>):
+<li>Sequence ID (seqID): <span class="samp-highl">GCF_000978375.1:NZ_CP009686.1:8908-10459:plus</span>. SeqID, in turn, consists of four parts separated by semicolons (<span class="samp-highl">:</span>):
 <ol>
-<li>The assembly ID of the genome, from which the gene originates: <span class="samp-highl">G_324861</span>. Assembly ID is preceded by the prefix <span class="samp-highl">G_</span> to ensure search specificity.</li>
+<li>The Assembly accession of the genome from which the gene originates: <span class="samp-highl">GCF_000978375.1</span>.</li>
 <li>The accession number of the RefSeq sequence, from which the gene originates: <span class="samp-highl">NZ_CP009686.1</span>.</li>
 <li>Coordinates of the gene within this RefSeq genomic sequence: <span class="samp-highl">8908-10459</span> (coordinates are 1-based, left-closed and right-closed).</li>
 <li>Strand of the RefSeq genomic sequence, where the gene is located: <span class="samp-highl">plus</span> (or <span class="samp-highl">minus</span>).</li>
@@ -1670,53 +1761,53 @@ The taxonomic names are separated and flanked by semicolons (<span class="samp-h
 <p>You can select specific sequences from fasta files using the <strong>Seqkit</strong> program (<a href="https://github.com/shenwei356/seqkit">GitHub repo</a>, <a href="https://bioinf.shenwei.me/seqkit/">documentation</a>). It is free, cross-platform, multifunctional and pretty fast and can process both gzipped and uncompressed fasta files. Programs <span class="samp">seqkit grep</span> and <span class="samp">seqkit seq</span> are useful for sequence selection.</p>
 <div id="select-by-header" class="pad-anchor"></div>
 <h4>Search sequences by header</h4>
-<p>Given the downloaded fasta file <span class="samp">ribogrove_9.215_sequences.fasta.gz</span>, consider the following examples of sequence selection using <span class="samp">seqkit grep</span>:</p>
+<p>Given the downloaded fasta file <span class="samp">ribogrove_11.217_sequences.fasta.gz</span>, consider the following examples of sequence selection using <span class="samp">seqkit grep</span>:</p>
 <p><strong>Example 1</strong>. Select a single sequence by SeqID.</p>
-<p class="samp-highl samp-vwide">seqkit grep -p "G_324861:NZ_CP009686.1:8908-10459:plus" ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit grep -p "GCF_000978375.1:NZ_CP009686.1:8908-10459:plus" ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-p</span> option sets a pattern to search in fasta headers (only in sequence IDs, actually).</p>
 <p><strong>Example 2</strong>. Select all gene sequences of a single RefSeq genomic sequence by accession number <span class="samp">NZ_CP009686.1</span>.</p>
-<p class="samp-highl samp-vwide">seqkit grep -nrp ":NZ_CP009686.1:" ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit grep -nrp ":NZ_CP009686.1:" ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">Here, two more options are required: <span class="samp">-n</span> and <span class="samp">-r</span>. The former tells the program to match the whole headers instead of IDs only. The latter tells the program not to exclude partial matches from output, i.e. if the pattern is a substring of a header, the header will be printed to output.</p>
 <p class="samp-comment">To ensure search specificity, surround the Accession.Version with colons (<span class="samp-highl">:</span>).</p>
-<p><strong>Example 3</strong>. Select all gene sequences of a single genome (Assembly ID <a href="https://www.ncbi.nlm.nih.gov/assembly/10577151">10577151</a>).</p>
-<p class="samp-highl samp-vwide">seqkit grep -nrp "G_10577151:" ribogrove_9.215_sequences.fasta.gz</p>
-<p class="samp-comment">To ensure search specificity, Assembly ID should be preceded by prefix <span class="samp-highl">G_</span> and followed by a colon (<span class="samp-highl">:</span>).</p>
+<p><strong>Example 3</strong>. Select all gene sequences of a single genome (Assembly accession <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_019357495.1">GCF_019357495.1</a>).</p>
+<p class="samp-highl samp-vwide">seqkit grep -nrp "GCF_019357495.1:" ribogrove_11.217_sequences.fasta.gz</p>
+<p class="samp-comment">To ensure search specificity, put a colon (<span class="samp-highl">:</span>) after the assembly accession.</p>
 <p><strong>Example 4</strong>. Select all actinobacterial sequences.</p>
-<p class="samp-highl samp-vwide">seqkit grep -nrp ";p__Actinobacteria;" ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit grep -nrp ";p__Actinobacteria;" ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">To ensure search specificity, surround the taxonomy name with semicolons (<span class="samp-highl">;</span>).</p>
 <p><strong>Example 5</strong>. Select all sequences originating from category 1 genomes.</p>
-<p class="samp-highl samp-vwide">seqkit grep -nrp "category:1" ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit grep -nrp "category:1" ribogrove_11.217_sequences.fasta.gz</p>
 <p><strong>Example 6</strong>. Select all sequences except for those belonging to <i>Firmicutes</i>.</p>
-<p class="samp-highl samp-vwide">seqkit grep -nvrp ";p__Firmicutes;" ribogrove_9.215_sequences.fasta.gz</p>
-<p class="samp-comment">Recognize the <span class="samp">-v</span> option within the option sequence <span class="samp">-nvrp</span>. This option inverts match, i.e. output will comprise sequences, headers of which do <strong>not</strong> contain thesubstring &ldquo;<span class="samp">;p__Firmicutes;</span>&rdquo;.</p>
+<p class="samp-highl samp-vwide">seqkit grep -nvrp ";p__Firmicutes;" ribogrove_11.217_sequences.fasta.gz</p>
+<p class="samp-comment">Recognize the <span class="samp">-v</span> option within the option sequence <span class="samp">-nvrp</span>. This option inverts match, i.e. output will comprise sequences, headers of which do <strong>not</strong> contain the substring “<span class="samp">;p__Firmicutes;</span>”.</p>
 <div id="select-by-len" class="pad-anchor"></div>
 <h4>Search sequences by length</h4>
 <p>You can use the <span class="samp">seqkit seq</span> program to select sequences by length.</p>
 <p><strong>Example 1</strong>. Select all sequences longer than 1600 bp.</p>
-<p class="samp-highl samp-vwide">seqkit seq -m 1601 ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit seq -m 1601 ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-m</span> option sets the minimum length of a sequence to be printed to output.</p>
 <p><strong>Example 2</strong>. Select all sequences shorter than 1500 bp.</p>
-<p class="samp-highl samp-vwide">seqkit seq -M 1499 ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit seq -M 1499 ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-M</span> option sets the maximum length of a sequence to be printed to output.</p>
 <p><strong>Example 3</strong>. Select all sequences having length in range [1500, 1600] bp.</p>
-<p class="samp-highl samp-vwide">seqkit seq -m 1500 -M 1600 ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit seq -m 1500 -M 1600 ribogrove_11.217_sequences.fasta.gz</p>
 <div id="select-head" class="pad-anchor"></div>
 <h4>Selecting header data</h4>
 <p>It is sometimes useful to retrieve only header information from a fasta file. You can use the <span class="samp">seqkit seq</span> program for it.</p>
 <p><strong>Example 1</strong>. Select all headers.</p>
-<p class="samp-highl samp-vwide">seqkit seq -n ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit seq -n ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-n</span> option tells the program to output only headers.</p>
 <p><strong>Example 2</strong>. Select all SeqIDs (header parts before the first space).</p>
-<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_9.215_sequences.fasta.gz</p>
+<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_11.217_sequences.fasta.gz</p>
 <p class="samp-comment">The <span class="samp">-i</span> option tells the program to output only sequence IDs.</p>
-<p><strong>Example 3</strong>. Select all &ldquo;Assession.Version&rdquo;s.</p>
-<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_9.215_sequences.fasta.gz | cut -f2 -d':' | sort | uniq</p>
+<p><strong>Example 3</strong>. Select all RefSeq “Assession.Version”s.</p>
+<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_11.217_sequences.fasta.gz | cut -f2 -d':' | sort | uniq</p>
 <p class="samp-comment">This might be done only if you have <span class="samp">cut</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
-<p><strong>Example 4</strong>. Select all Assembly IDs.</p>
-<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_9.215_sequences.fasta.gz | cut -f1 -d':' | sed 's/G_//' | sort | uniq</p>
-<p class="samp-comment">This might be done only if you have <span class="samp">cut</span>, <span class="samp">sed</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
+<p><strong>Example 4</strong>. Select all Assembly accessions.</p>
+<p class="samp-highl samp-vwide">seqkit seq -ni ribogrove_11.217_sequences.fasta.gz | cut -f1 -d':' | sort | uniq</p>
+<p class="samp-comment">This might be done only if you have <span class="samp">cut</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
 <p><strong>Example 5</strong>. Select all phylum names.</p>
-<p class="samp-highl samp-vwide">seqkit seq -n ribogrove_9.215_sequences.fasta.gz | grep -Eo ';p__[^;]+' | sed -E 's/;|p__//g' | sort | uniq</p>
+<p class="samp-highl samp-vwide">seqkit seq -n ribogrove_11.217_sequences.fasta.gz | grep -Eo ';p__[^;]+' | sed -E 's/;|p__//g' | sort | uniq</p>
 <p class="samp-comment">This might be done only if you have <span class="samp">grep</span>, <span class="samp">sed</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
 <br>
 <hr>
