@@ -1,78 +1,97 @@
+17.223
+
+seqs -- https://www.dropbox.com/scl/fi/t9bxd2q2qdws1amlltysh/ribogrove_17.223_sequences.fasta.gz?rlkey=znr5436oibfxnzgnggo399ia7&dl=0
+metadata -- https://www.dropbox.com/scl/fi/pcpuqbzv3b09ffpr92uuh/metadata_ribogrove_17.223.zip?rlkey=itrb460xdwf8nq61d3wl4cddb&dl=0
+
+16.222
+
+seqs -- https://www.dropbox.com/scl/fi/vo9oa6b6k96kuy2ighkv7/ribogrove_16.222_sequences.fasta.gz?rlkey=tk5qatvtktf9ejron57r7x41v&dl=0
+metadata -- https://www.dropbox.com/scl/fi/5ck5uum02bdalvsksk3xy/metadata_ribogrove_16.222.zip?rlkey=bwl7xvhck40vfkonzh5thk4v2&dl=0
+
+15.221
+
+seqs -- https://www.dropbox.com/scl/fi/01653ki2ng4tiqluctme5/ribogrove_15.221_sequences.fasta.gz?rlkey=gbxzwmb1s8bkuxtzslsh5w1rs&dl=0
+metadata -- https://www.dropbox.com/scl/fi/ps1m8wa0gxeisekqtwe7q/metadata_ribogrove_15.221.zip?rlkey=cm2h6yr4rhegyczai1436kclr&dl=0
+
+14.220
+
+seqs -- https://www.dropbox.com/scl/fi/nz5ivu1gbk5tupi9cfzvs/ribogrove_14.220_sequences.fasta.gz?rlkey=mdb0mkuez1wy7shz0l8880w7s&dl=0
+metadata -- https://www.dropbox.com/scl/fi/ue2luvjb792k2cbq8nf83/metadata_ribogrove_14.220.zip?rlkey=vva6ju04wst27ixv0hxf03ne0&dl=0
 
 13.219
 
-final -- https://www.dropbox.com/scl/fi/qw50iuifa2yysevcy58ht/ribogrove_13.219_sequences.fasta.gz?rlkey=uwbrhxyxcou82rie20lmzmtt9&dl=0
+seqs -- https://www.dropbox.com/scl/fi/qw50iuifa2yysevcy58ht/ribogrove_13.219_sequences.fasta.gz?rlkey=uwbrhxyxcou82rie20lmzmtt9&dl=0
 metadata -- https://www.dropbox.com/scl/fi/b89nnjelmerg05clwnk8n/metadata_ribogrove_13.219.zip?rlkey=j4hrnbo40dls46uykkpy8rgkl&dl=0
 
 12.218
 
-final -- https://www.dropbox.com/s/y247nj6oh27aoe8/ribogrove_12.218_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/y247nj6oh27aoe8/ribogrove_12.218_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/7ralplwup8b6p4x/metadata_ribogrove_12.218.zip?dl=0
 
 11.217
 
-final -- https://www.dropbox.com/s/slpnzhmf554g5jr/ribogrove_11.217_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/slpnzhmf554g5jr/ribogrove_11.217_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/djr8dwj1b1rjz3a/metadata_ribogrove_11.217.zip?dl=0
 
 10.216
 
-final -- https://www.dropbox.com/s/a91rb9udlr1v3j3/ribogrove_10.216_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/a91rb9udlr1v3j3/ribogrove_10.216_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/m2eq2k3g132i1xm/metadata_ribogrove_10.216.zip?dl=0
 
 9.215
 
-final -- https://www.dropbox.com/s/hsexqh2h55tippb/ribogrove_9.215_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/hsexqh2h55tippb/ribogrove_9.215_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/c1mna630rm0dhar/metadata_ribogrove_9.215.zip?dl=0
 
 8.214
 
-final -- https://www.dropbox.com/s/w5fppbgr22ev8jd/ribogrove_8.214_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/w5fppbgr22ev8jd/ribogrove_8.214_sequences.fasta.gz?dl=0
 no raw file starting with 8.214
 metadata -- https://www.dropbox.com/s/jcry1eipj3j0mmc/metadata_ribogrove_8.214.zip?dl=0
 
 7.213
 
-final -- https://www.dropbox.com/s/jxkgghrqngwpywm/ribogrove_7.213_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/jxkgghrqngwpywm/ribogrove_7.213_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/ywp136pfwsa3x4m/raw_ribogrove_7.213_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/8fxf1stpxvq8af2/metadata_ribogrove_7.213.zip?dl=0
 
 6.212
 
-final -- https://www.dropbox.com/s/ra4hpzu2dx7a9u3/ribogrove_6.212_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/ra4hpzu2dx7a9u3/ribogrove_6.212_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/045nrgdsth9rloo/raw_ribogrove_6.212_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/5wyketcazxpraw4/metadata_ribogrove_6.212.zip?dl=0
 
 
 5.211
 
-final -- https://www.dropbox.com/s/8duzzbkslpirqrx/ribogrove_5.211_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/8duzzbkslpirqrx/ribogrove_5.211_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/nrl427gns7bqhau/raw_ribogrove_5.211_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/t72cmcta8dusabo/metadata_ribogrove_5.211.zip?dl=0
 
 
 4.210
 
-final -- https://www.dropbox.com/s/erfpgop4n95nnrj/ribogrove_4.210_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/erfpgop4n95nnrj/ribogrove_4.210_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/bnmmudtxxrh4fbe/raw_ribogrove_4.210_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/835cu999ejtztic/metadata_ribogrove_4.210.zip?dl=0
 
 
 3.209
 
-final -- https://www.dropbox.com/s/rbgaw8qcgh5osz3/ribogrove_3.209_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/rbgaw8qcgh5osz3/ribogrove_3.209_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/q2ufu35t56rgh7w/raw_ribogrove_3.209_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/g232cwh7rd4lc2r/metadata_ribogrove_3.209.zip?dl=0
 
 
 2.208
 
-final -- https://www.dropbox.com/s/3lra4bxsji00ykd/ribogrove_2.208_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/3lra4bxsji00ykd/ribogrove_2.208_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/tu68q350jf0kzo8/raw_ribogrove_2.208_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/gfhffs71kwjeven/metadata_ribogrove_2.208.zip?dl=0
 
 
 1.207
 
-final -- https://www.dropbox.com/s/duie7tpicpm811c/ribogrove_1.207_sequences.fasta.gz?dl=0
+seqs -- https://www.dropbox.com/s/duie7tpicpm811c/ribogrove_1.207_sequences.fasta.gz?dl=0
 raw -- https://www.dropbox.com/s/8dhi09ceyuqx6n4/raw_ribogrove_1.207_sequences.fasta.gz?dl=0
 metadata -- https://www.dropbox.com/s/lphyvdcneb140ng/metadata_ribogrove_1.207.zip?dl=0
