@@ -1,3 +1,8 @@
+20.226
+
+seqs -- https://www.dropbox.com/scl/fi/y0sxfnqy7iehogz7vqj43/ribogrove_20.226_sequences.fasta.gz?rlkey=d6iz5sibxidoizsw29fbj9eqg&st=765kz8s6&dl=0
+metadata -- https://www.dropbox.com/scl/fi/dqyp8b91q1c3x1v44ijbu/metadata_ribogrove_20.226.zip?rlkey=0kz7lqg3d285l61fk3c3oj1z3&st=0htb3r7n&dl=0
+
 19.225
 
 seqs -- https://www.dropbox.com/scl/fi/y60iv2txhsk8yrclj5to9/ribogrove_19.225_sequences.fasta.gz?rlkey=t10kspo9mjg8189yz6sqvodmg&st=v0vpgik9&dl=0
