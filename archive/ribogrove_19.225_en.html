@@ -15,17 +15,9 @@
 <p><a href="../index.html">Home</a> / <a href="ribogrove_archive_en.html">Release archive</a> / 19.225</p>
 <h2>Contents</h2>
 <ul>
-<li><a href="#overview">What is RiboGrove</a>
-<ul class="ribogrove-nested-list">
-<li><a href="#other-databases">RiboGrove and other 16S rRNA databases</a></li>
-<li><a href="#genome-categories">Genome categories</a></li>
-</ul>
-</li>
 <li><a href="#downloads">Downloads</a>
 <ul class="ribogrove-nested-list">
-  
   <li><a href="#current-release">RiboGrove release 19.225</li>
-  
   <li><a href="#release-archive">RiboGrove release archive</li>
   <li><a href="#release-notes">Release notes</li>
 </ul>
@@ -50,44 +42,7 @@
 <li><a href="#select-head">Selecting header data</a></li>
 </ul>
 </li>
-<li><a href="#contacts">Contacts</a></li>
-<li><a href="#citing-ribogrove">Citing RiboGrove</a></li>
-<li><a href="#faq">Questions people ask about RiboGrove</a></li>
 </ul>
-<hr>
-<div id="overview" class="pad-anchor"></div>
-<h2>What is RiboGrove</h2>
-<p>RiboGrove is a database of 16S rRNA gene sequences of bacteria and archaea.</p>
-<p>RiboGrove is based on the <a href="https://ncbi.nlm.nih.gov/refseq/">RefSeq</a> database. It contains only full-length sequences of 16S rRNA genes, and the sequences are derived from completely assembled prokaryotic genomes deposited in RefSeq. Hence we posit high reliability of RiboGrove sequences.</p>
-<div id="other-databases" class="pad-anchor"></div>
-<h3>RiboGrove and other 16S rRNA databases</h3>
-<p>Here is a summary showing what is the (qualitative) difference between RiboGrove and similar rRNA sequence databases, namely <a href="https://rrndb.umms.med.umich.edu/"><i>rrn</i>DB</a>, <a href="https://www.arb-silva.de/">Silva</a>, <a href="http://rdp.cme.msu.edu/">RDP</a>, and <a href="https://greengenes.secondgenome.com/">Greengenes</a>. Briefly, RiboGrove is inferior in sequence amount and diversity, but superior in sequence reliability.</p>
-<table class="sum-table">
-<tbody>
-  <tr class="sumtab-row"><th></th><th class="alcentr">RiboGrove</th><th class="alcentr"><i>rrn</i>DB</th><th class="alcentr">Silva</th><th class="alcentr">RDP</th><th class="alcentr">Greengenes</th></tr>
-  <tr class="sumtab-row"><td class="feature-col">Represented organisms</td><td class="alcentr">Bacteria<br>Archaea</td><td class="alcentr">Bacteria<br>Archaea</td><td class="alcentr">Bacteria<br>Archaea<br>Eukaryotes</td><td class="alcentr">Bacteria<br>Archaea<br>Eukaryotes</td><td class="alcentr">Bacteria<br>Archaea</td></tr>
-  <tr class="sumtab-row"><td class="feature-col">Represented ribosome subunits</td><td class="alcentr">Small</td><td class="alcentr">Small</td><td class="alcentr">Large<br>Small</td><td class="alcentr">Large<br>Small</td><td class="alcentr">Small</td></tr>
-  <tr class="sumtab-row"><td class="feature-col">Contains sequences from assembled genomes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td></tr>
-  <tr class="sumtab-row"><td class="feature-col">Contains amplicon sequences</td><td class="alcentr">No</td><td class="alcentr">No</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td></tr>
-  <tr class="sumtab-row"><td class="feature-col">Contains partial gene sequences</td><td class="alcentr">No</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td><td class="alcentr">Yes</td></tr>
-  <tr class="sumtab-row"><td class="feature-col">Discriminates genome categories</td><td class="alcentr">Yes</td><td class="alcentr">No</td><td class="alcentr"><i>Not<br>applicable</i></td><td class="alcentr"><i>Not<br>applicable</i></td><td class="alcentr"><i>Not<br>applicable</i></td></tr>
-</tbody>
-</table>
-<div id="genome-categories" class="pad-anchor"></div>
-<h3>Genome categories</h3>
-<p>All genomes used for RiboGrove construction were divided into three categories according to their expected reliability:</p>
-<ol style="list-style:none;">
-  <li><strong>Category 1</strong> (the highest reliability). Genomes showing no signs of a low-quality assembly and sequenced either with PacBio technology or with a combination “Oxford&nbsp;Nanopore&nbsp;+&nbsp;Illumina”.</li>
-  <li><strong>Category 2.</strong> Genomes showing no signs of a low-quality assembly and sequenced with any other technology (or the technology is not specified).</li>
-  <li><strong>Category 3</strong> (the lowest reliability). Genomes showing at least one sign of a low-quality assembly.</li>
-</ol>
-<p>Signs of a low-quality assembly are the following:</p>
-<ul>
-  <li>The genome contains degenerate base(s) in 16S rRNA gene sequences.</li>
-  <li>The assembly includes at least one RefSeq record whose title contains the phrase “map unlocalized” and this record contains a 16S rRNA gene or a part of it.</li>
-</ul>
-<br>
-<p>The software used for the RiboGrove construction can be found in the following GitHub repository: <a href="https://github.com/masikol/ribogrove-tools">ribogrove-tools</a>.</p>
 <hr>
 <div id="downloads" class="pad-anchor"></div>
 <h2>Downloads</h2>
@@ -2123,7 +2078,7 @@ The taxonomic names are separated and flanked by semicolons (<span class="samp-h
 <p class="samp-comment">This might be done only if you have <span class="samp">grep</span>, <span class="samp">sed</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
 <br>
 <hr>
-<p>RiboGrove, 2024-09-18</p>
+<p>RiboGrove, 2024-11-15</p>
 </div>
 </body>
 </html>
