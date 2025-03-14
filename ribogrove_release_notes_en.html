@@ -14,15 +14,15 @@
 <img src="img/RiboGrove_logo.png"><br><br>
 <p><a href="index.html">Home</a> / Release notes</p>
 <h1 class="archive-title">RiboGrove release notes</h1>
-
-<h2 style="margin-top: 1.0rem;">Release 22.228 (2025-01-14). Latest release.</h2>
+<h2 style="margin-top: .5rem;">Release 23.229 (2025-03-13). Latest release.</h2>
+<p>Coverage estimation for primer pairs for different V-regions: more archaeal primers added.<br /> <a href="index.html">Go to release 23.229.</a></p>
+<h2 style="margin-top: .5rem;">Release 22.228 (2025-01-14).</h2>
 <p>Starting with RiboGrove 22.228,</p>
 <ol>
   <li>We publish coverage values for PCR primers pairs commonly used to amplify V-regions of archaeal 16S rRNA genes. See the section “Coverage of primer pairs for different V-regions of bacterial 16S rRNA genes” on a RiboGrove release page.</li>
   <li>Metadata does not contain tables <span class="samp">gene_seqs_statistics.tsv</span> and <span class="samp">discarded_gene_seqs_statistics.tsv</span>, because they contain much redundant data: taxonomy and genome categories. This data is in the separate tables: <span class="samp">taxonomy.tsv</span> and <span class="samp">categories.tsv</span>. In place of the removed files, metadata now contains files <span class="samp">gene_seqs_base_counts.tsv</span> and <span class="samp">discarded_gene_seqs_base_counts.tsv</span>. One can still make a <span class="samp">gene_seqs_statistics.tsv</span> table using the script <a href="https://github.com/masikol/ribogrove-tools/tree/main/data_transformation_scripts">merge_bases_categories_taxonomy.py</a> from ribogrove-tools.</li>
 </ol>
-<p><a href="inde.html">Go to release 22.228.</a></p>
-
+<p><a href="archive/ribogrove_22.228_en.html">Go to release 22.228.</a></p>
 <h2 style="margin-top: .5rem;">Release 21.227 (2024-11-15).</h2>
 <p><i style="font-size: 14px;">No significant differences from the previous release.</i><br /> <a href="archive/ribogrove_21.227_en.html">Go to release 21.227.</a></p>
 <h2 style="margin-top: .5rem;">Release 20.226 (2024-09-18).</h2>
