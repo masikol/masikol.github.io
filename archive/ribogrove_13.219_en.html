@@ -10,7 +10,7 @@
 
 <body>
 <div class="container">
-<p><div class="warn-section">The <a href="https://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br>Hence this mirror has been created, and RiboGrove files are available through Dropbox (links are <a href="#downloads">below</a>).</div></p><br>
+<p><div class="warn-section">The <a href="https://mbio.bas-net.by/cager/en/ribogrove">main website</a> where RiboGrove is hosted may be unavailable outside Belarus due to technical troubles and the overall disaster.<br>Hence this mirror has been created, and RiboGrove files are available through Zenodo (links are <a href="#downloads">below</a>).</div></p><br>
 <img src="../img/RiboGrove_logo.png"><br><br>
 <p><a href="../index.html">Home</a> / <a href="ribogrove_archive_en.html">Release archive</a> / 13.219</p>
 <h2>Contents</h2>
@@ -53,8 +53,8 @@
 <h3>RiboGrove release 13.219 (2023-07-19)</h3>
 <p>The release is based on RefSeq release 219.</p>
 <ul>
-<li>A fasta file of full-length 16S gene sequences. <a href="https://www.dropbox.com/scl/fi/qw50iuifa2yysevcy58ht/ribogrove_13.219_sequences.fasta.gz?rlkey=uwbrhxyxcou82rie20lmzmtt9&dl=0">Download (gzipped fasta file, 7.49 MB)</a></li>
-<li>Metadata <a href="https://www.dropbox.com/scl/fi/b89nnjelmerg05clwnk8n/metadata_ribogrove_13.219.zip?rlkey=j4hrnbo40dls46uykkpy8rgkl&dl=0">Download (zip archive 5.50 MB)</a><br>
+<li>A fasta file of full-length 16S gene sequences. <a href="https://zenodo.org/records/17192147/files/ribogrove_13.219_sequences.fasta.gz?download=1">Download (gzipped fasta file, 7.49 MB)</a></li>
+<li>Metadata <a href="https://zenodo.org/records/17192147/files/metadata_ribogrove_13.219.zip?download=1">Download (zip archive 5.50 MB)</a><br>
   <details>
     <summary><small>What information exactly does the metadata contain?</small></summary>
     <small>
@@ -1935,7 +1935,7 @@ The taxonomic names are separated and flanked by semicolons (<span class="samp-h
 <p class="samp-highl samp-vwide">seqkit seq -n ribogrove_13.219_sequences.fasta.gz | grep -Eo ';p__[^;]+' | sed -E 's/;|p__//g' | sort | uniq</p>
 <p class="samp-comment">This might be done only if you have <span class="samp">grep</span>, <span class="samp">sed</span>, <span class="samp">sort</span> and <span class="samp">uniq</span> utilities installed (Linux and Mac OS systems should have them built-in).</p>
 <hr>
-<p>RiboGrove, 2024-08-21</p>
+<p>RiboGrove, 2025-09-28</p>
 </div>
 </body>
 </html>
