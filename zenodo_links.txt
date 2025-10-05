@@ -1,143 +1,166 @@
+DOI for all versions: https://doi.org/10.5281/zenodo.17190266
+
 
 26.232
 
 seqs -- https://zenodo.org/records/17201587/files/ribogrove_26.232_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17201587/files/metadata_ribogrove_26.232.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17201587
 
 25.231
 
 seqs -- https://zenodo.org/records/17201214/files/ribogrove_25.231_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17201214/files/metadata_ribogrove_25.231.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17201214
 
 24.230
 
 seqs -- https://zenodo.org/records/17201015/files/ribogrove_24.230_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17201015/files/metadata_ribogrove_24.230.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17201015
 
 23.229
 
 seqs -- https://zenodo.org/records/17200783/files/ribogrove_23.229_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17200783/files/metadata_ribogrove_23.229.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17200783
 
 22.228
 
 seqs -- https://zenodo.org/records/17200498/files/ribogrove_22.228_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17200498/files/metadata_ribogrove_22.228.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17200498
 
 21.227
 
 seqs -- https://zenodo.org/records/17199879/files/ribogrove_21.227_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17199879/files/metadata_ribogrove_21.227.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17199879
 
 20.226
 
 seqs -- https://zenodo.org/records/17193679/files/ribogrove_20.226_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17193679/files/metadata_ribogrove_20.226.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17193679
 
 19.225
 
 seqs -- https://zenodo.org/records/17193566/files/ribogrove_19.225_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17193566/files/metadata_ribogrove_19.225.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17193566
 
 18.224
 
 seqs -- https://zenodo.org/records/17193515/files/ribogrove_18.224_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17193515/files/metadata_ribogrove_18.224.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17193515
 
 17.223
 
 seqs -- https://zenodo.org/records/17193318/files/ribogrove_17.223_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17193318/files/metadata_ribogrove_17.223.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17193318
 
 16.222
 
 seqs -- https://zenodo.org/records/17193148/files/ribogrove_16.222_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17193148/files/metadata_ribogrove_16.222.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17193148
 
 15.221
 
 seqs -- https://zenodo.org/records/17192624/files/ribogrove_15.221_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17192624/files/metadata_ribogrove_15.221.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17192624
 
 14.220
 
 seqs -- https://zenodo.org/records/17192510/files/ribogrove_14.220_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17192510/files/metadata_ribogrove_14.220.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17192510
 
 13.219
 
 seqs -- https://zenodo.org/records/17192147/files/ribogrove_13.219_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17192147/files/metadata_ribogrove_13.219.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17192147
 
 12.218
 
 seqs -- https://zenodo.org/records/17191895/files/ribogrove_12.218_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17191895/files/metadata_ribogrove_12.218.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17191895
 
 11.217
 
 seqs -- https://zenodo.org/records/17191620/files/ribogrove_11.217_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17191620/files/metadata_ribogrove_11.217.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17191620
 
 10.216
 
 seqs -- https://zenodo.org/records/17191439/files/ribogrove_10.216_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17191439/files/metadata_ribogrove_10.216.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17191439
 
 9.215
 
 seqs -- https://zenodo.org/records/17190948/files/ribogrove_9.215_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190948/files/metadata_ribogrove_9.215.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17190948
 
 8.214
 
 seqs -- https://zenodo.org/records/17190873/files/ribogrove_8.214_sequences.fasta.gz?download=1
 no raw file starting with 8.214
 metadata -- https://zenodo.org/records/17190873/files/metadata_ribogrove_8.214.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17190873
 
 7.213
 
 seqs -- https://zenodo.org/records/17190826/files/ribogrove_7.213_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190826/files/raw_ribogrove_7.213_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190826/files/metadata_ribogrove_7.213.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17190826
 
 6.212
 
 seqs -- https://zenodo.org/records/17190682/files/ribogrove_6.212_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190682/files/raw_ribogrove_6.212_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190682/files/metadata_ribogrove_6.212.zip?download=1
-
+DOI -- https://doi.org/10.5281/zenodo.17190682
 
 5.211
 
 seqs -- https://zenodo.org/records/17190527/files/ribogrove_5.211_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190527/files/raw_ribogrove_5.211_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190527/files/metadata_ribogrove_5.211.zip?download=1
-
+DOI -- https://doi.org/10.5281/zenodo.17190527
 
 4.210
 
 seqs -- https://zenodo.org/records/17190490/files/ribogrove_4.210_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190490/files/raw_ribogrove_4.210_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190490/files/metadata_ribogrove_4.210.zip?download=1
-
+DOI -- https://doi.org/10.5281/zenodo.17190490
 
 3.209
 
 seqs -- https://zenodo.org/records/17190457/files/ribogrove_3.209_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190457/files/raw_ribogrove_3.209_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190457/files/metadata_ribogrove_3.209.zip?download=1
-
+DOI -- https://doi.org/10.5281/zenodo.17190457
 
 2.208
 
 seqs -- https://zenodo.org/records/17190407/files/ribogrove_2.208_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190407/files/raw_ribogrove_2.208_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190407/files/metadata_ribogrove_2.208.zip?download=1
-
+DOI -- https://doi.org/10.5281/zenodo.17190407
 
 1.207
 
 seqs -- https://zenodo.org/records/17190267/files/ribogrove_1.207_sequences.fasta.gz?download=1
 raw -- https://zenodo.org/records/17190267/files/raw_ribogrove_1.207_sequences.fasta.gz?download=1
 metadata -- https://zenodo.org/records/17190267/files/metadata_ribogrove_1.207.zip?download=1
+DOI -- https://doi.org/10.5281/zenodo.17190267
